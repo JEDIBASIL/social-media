@@ -1,0 +1,26 @@
+.formContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .authForm {
+        width: 450px;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        background-color: white;
+        padding: 50px 20px;
+        border: 1px solid gainsboro;
+        border-radius: 5px;
+    
+        h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+    
+        button {
+            width: 100%;
+            margin-top: 10px;
+        }
+    }
+}

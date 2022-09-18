@@ -1,0 +1,22 @@
+.users {
+    .userSortingContainer {
+        background-color: var(--componentBackground);
+        padding: 10px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+    }
+    .userTable {
+        background-color: var(--componentBackground);
+        padding: 20px;
+        border-radius: 10px;
+        @include flexDisplay(flex-start, flex-end, column);
+
+        .main {
+            background-color: var(--componentBackground) !important;
+            width: 100%;
+            .rdt_TableHead {
+                font-size: 16px !important;
+            }
+        }
+    }
+}

@@ -1,0 +1,83 @@
+.notification {
+    background-color: var(--componentBackground);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    h3 {
+        font-weight: 400;
+    }
+
+    .notificationContainer {
+        padding: 10px;
+        min-width: 0;
+        width: 100%;
+        margin: 0px auto;
+        height: 500px;
+        h2 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-weight: 500;
+            color: gray;
+        }
+        ul {
+            width: 100%;
+            li {
+                padding: 10px 20px;
+                padding-right: 40px;
+                border-radius: 10px;
+                margin-bottom: 10px;
+                @include flexDisplay(
+                    space-between,
+                    flex-start,
+                    row
+                );
+                transition: 0.2s
+                    cubic-bezier(0.445, 0.05, 0.55, 0.95);
+
+                &:hover {
+                    background-color: var(--background);
+                    border-bottom: none;
+                }
+
+                .notificationDetails {
+                    @include flexDisplay(
+                        flex-start,
+                        flex-start,
+                        row
+                    );
+
+                    gap: 10px;
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                        object-fit: cover;
+                        background-color: slategray;
+                    }
+                    .text {
+                        @include flexDisplay(
+                            flex-start,
+                            flex-start,
+                            column
+                        );
+                        p {
+                            font-size: 17px;
+                            a {
+                                color: royalblue;
+                            }
+                        }
+                        .time {
+                            font-size: 13px;
+                            color: gray;
+                        }
+                        button {
+                            margin-top: 10px;
+                            background-color: royalblue;
+                            border: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
