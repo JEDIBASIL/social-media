@@ -1,6 +1,6 @@
 import { Autocomplete } from "@mantine/core";
 import { BsSearch, BsBell } from 'react-icons/bs'
-import userImg from '../../anime.jpg'
+import userImg from '../../static/images/anime.jpg'
 const TopBar = () => {
     return (
         <div className="topBar">

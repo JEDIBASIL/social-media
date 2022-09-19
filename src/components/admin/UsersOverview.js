@@ -10,10 +10,6 @@ const UsersOverview = () => {
                     <h3>Total users</h3>
                     <div className='status'>
                         <h1>300</h1>
-                        <div  style={{color:'lightgreen'}} className='statistics'>
-                            <MdOutlineArrowUpward/>
-                            <p>+10 users</p>
-                        </div>
                     </div>
                 </div>
                 <div className="card">
@@ -32,10 +28,6 @@ const UsersOverview = () => {
                 <h3>Active users</h3>
                     <div className='status'>
                         <h1>280</h1>
-                        <div style={{color:'crimson'}} className='statistics'>
-                            <MdOutlineArrowDownward/>
-                            <p>-10 unactive users</p>
-                        </div>
                     </div>
                 </div>
                 <div className="card">

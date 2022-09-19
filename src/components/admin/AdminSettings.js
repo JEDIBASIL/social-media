@@ -2,7 +2,7 @@ import { Button, Select, Tooltip } from "@mantine/core";
 import { Modal, Radio, TextInput } from "@mantine/core";
 import { BsTrash } from "react-icons/bs";
 import { BiBlock } from "react-icons/bi";
-import userImg from "../../anime.jpg";
+import userImg from "../../static/images/anime.jpg";
 import AdminSettingsContext from "./AdminSettingsContext";
 import { useState } from "react";
 

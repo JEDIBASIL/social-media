@@ -15,6 +15,7 @@ import UserProfile from "./pages/Admin/UserProfile";
 import { useEffect,useState } from "react";
 import { AdminSettingsContextProvider } from "./components/admin/AdminSettingsContext";
 import UserApp from "./components/user/UserApp";
+import Home from "./pages/users/Home";
 
 function App() {
     const [loggedin,setLoggedin] = useState(true);
@@ -49,7 +50,9 @@ function App() {
 
                         <Route path="/auth/log-in" element={<Login />}></Route>
                         <Route path="/auth/sign-up" element={<Signup />}></Route>
-                        <Route path="/" element={loggedin === true? <UserApp/> : <>hello world</>}></Route>
+                        <Route  path="/" element={loggedin === true? <UserApp/> : <>hello world</>}>
+                            <Route path="/" element={<Home />}></Route>
+                        </Route>
 
                     </Routes>
                 </div>

@@ -11,7 +11,6 @@ const Overview = () => {
                 <DailyChart />
                 <MonthlyChart />
             </div>
-            <UsersOverview/>
             <RecentUsers/>
         </>
     );
