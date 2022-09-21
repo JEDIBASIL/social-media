@@ -1,13 +1,26 @@
+:root {
+  --background: whitesmoke;
+  --componentBackground: white;
+  --color: black;
+  --lightColor: rgb(77, 77, 77);
+  --lighterColor: gray;
+  --hover: rgb(250, 250, 250);
+  --majorColor: royalblue;
+  --topBar: rgba(245, 245, 245, 0.507);
+  --shadow1: 0px 0px 30px rgba(0, 0, 0, 0.062);
+  --shadow2: 0px 0px 20px #5946ffa9;
+  --border: gainsboro;
+}
 .homeContainer {
   @include flexDisplay(center, flex-start, row);
   padding: 0px 30px;
-  padding-top: 30px;
   .HomeSideBar {
-    width: 350px;
-    background-color: white;
+    width: 280px;
+    background-color: var(--componentBackground);
     padding: 20px;
     border-radius: 10px;
-    border: 1px solid rgb(240, 240, 240);
+    // rgb(240, 240, 240)
+    border: 1px solid var(--border);
     margin-bottom: 10px;
     .userDetailsContainer {
       @include flexDisplay(center, center, column);
@@ -26,6 +39,7 @@
   .upgradeAds {
     padding: 20px;
     height: 200px;
+    width: 280px;
     background: linear-gradient(60deg, royalblue, purple, orange, crimson);
     border-radius: 10px;
     text-align: center;
@@ -42,130 +56,195 @@
       cursor: pointer;
     }
   }
-  .postContainer {
-    width: 520px;
-    min-width: 520px;
-    min-height: calc(100vh - 70px);
-    padding: 0px 30px;
-    .card {
-      padding: 20px;
-      background-color: white;
-      width: 100%;
-      background-color: white;
-      border: 1px solid rgb(240, 240, 240);
-      border-radius: 10px;
+
+}
+
+.ActivityAndTrendingBar {
+  &.notificationContainer {
+    width: 750px;
+    position: static;
+    background-color: var(--componentBackground);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+  }
+  position: sticky;
+  top: 100px;
+  width: 350px;
+  height: calc(100vh - 110px);
+  // rgb(253, 254, 255)
+  background-color: var(--componentBackground);
+  padding: 20px;
+  border-radius: 10px;
+  .noActivity {
+    height: 80%;
+    @include flexDisplay(center, center, column);
+    font-size: 16px;
+    svg {
+      font-size: 50px;
       margin-bottom: 20px;
-      .postProfile {
-        @include flexDisplay(space-between, flex-start, row);
-        .profileDetails {
-          @include flexDisplay(center, center, row);
-          img {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 10px;
-          }
-          span {
-            color: gray;
-            font-size: 12px;
-          }
-          h4 {
+    }
+  }
+  .activityContainer {
+    .activityBox {
+      margin-top: 20px;
+      @include flexDisplay(space-between, flex-start, row);
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 10px;
+      .notificationDetails {
+        @include flexDisplay(center, flex-start, row);
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-right: 10px;
+        }
+        p {
+          font-size: 15px;
+          margin-bottom: 5px;
+          a {
             font-weight: 600;
           }
         }
-      }
-      .postCaption {
-        margin-top: 10px;
-      }
-      .postContent {
-        margin-top: 20px;
-        width: 100%;
-        max-height: 550px;
-        &.grid4 {
-          display: grid;
-          grid-template-columns: repeat(2, 1fr);
-          gap: 15px;
+        .time {
+          color: gray;
+          font-size: 13px;
         }
-        img {
-          width: 100%;
-          border-radius: 10px;
-          object-fit: cover;
-        }
-      }
-      .postReactions {
-        margin-top: 20px;
-        width: 100%;
-        border-radius: 20px;
-        @include flexDisplay(space-between, center, row);
-        .postReactionsContent {
-          border: 1px solid rgb(206, 212, 218);
-          width: 150px;
-          border-radius: 30px;
-          padding: 5px 10px;
-          @include flexDisplay(space-between, center, row);
-          background-color: rgb(252, 252, 252);
-          .postReactionIconContainer {
-            cursor: pointer;
-            svg {
-              font-size: 22px;
-              fill: gray;
-            }
-            // &:nth-child(1){
-            //     svg{
-            //         fill: royalblue;
-            //     }
-            // }
-            // &:nth-child(2){
-            //     svg{
-            //         fill: crimson;
-            //     }
-            // }
-            // &:nth-child(3){
-            //     svg{
-            //         fill: rgb(123, 203, 2);
-            //     }
-            // }
-          }
-          .postCommentSection {
-          }
+        .btnContainer {
+          margin: 5px 0px;
         }
       }
     }
   }
-  .ActivityAndTrendingBar {
-    position: sticky;
-    top: 100px;
-    width: 350px;
-    height: calc(100vh - 110px);
-    background-color: rgb(253, 254, 255);
+}
+
+.postContainer {
+  width: 600px;
+  min-width: 600px;
+  min-height: calc(100vh - 70px);
+  padding: 0px 30px;
+  margin:  auto;
+  .card {
     padding: 20px;
+    background-color: var(--componentBackground);
+    width: 100%;
+    background-color: var(--componentBackground);
+    border: 1px solid var(--border);
     border-radius: 10px;
-    .activityContainer {
-      .activityBox {
-        margin-top: 20px;
-        @include flexDisplay(flex-start, flex-start, row);
-        border-bottom: 1px solid gainsboro;
-        padding-bottom: 10px;
+    margin-bottom: 20px;
+    .postProfile {
+      @include flexDisplay(space-between, flex-start, row);
+      .profileDetails {
+        @include flexDisplay(center, center, row);
         img {
-          width: 35px;
-          height: 35px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           object-fit: cover;
           margin-right: 10px;
-         
         }
-        p {
-            font-size: 15px;
-            margin-bottom: 5px;
-            a{
-                font-weight: 600;
-            }
+        span {
+          color: gray;
+          font-size: 12px;
+        }
+        h4 {
+          font-weight: 600;
+        }
+      }
+    }
+    .postCaption {
+      margin-top: 10px;
+    }
+    .postContent {
+      margin-top: 20px;
+      width: 100%;
+      max-height: 550px;
+      min-height: 0;
+      &.grid4 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 15px;
+      }
+      &.grid2 {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        img{
+          grid-row:1 /span 2 ;
+        }
+        gap: 15px;
+      }
+      &.gridBigTop {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+        gap: 15px;
+        img{
+          width: 100%;
+          &:nth-child(1){
+            height:100%;
+            // display: none;
+            grid-column:1 /span 3 ;
+            grid-row:1 /span 2 ;
           }
-          .time{
-            color: gray;
-            font-size: 13px;
+        }
+      }
+      &.gridBigLeft {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        gap: 15px;
+        img{
+          width: 100%;
+          &:nth-child(1){
+            height: 100%;
+            // display: none;
+            grid-row:1 /span 3 ;
+            grid-column:1 /span 2 ;
           }
+        }
+      }
+      img {
+        width: 100%;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    }
+    .postReactions {
+      margin-top: 20px;
+      width: 100%;
+      border-radius: 20px;
+      @include flexDisplay(space-between, center, row);
+      .postReactionsContent {
+        width: 150px;
+        border-radius: 30px;
+        padding: 5px 10px;
+        @include flexDisplay(space-between, center, row);
+        .postReactionIconContainer {
+          cursor: pointer;
+          svg {
+            font-size: 22px;
+            fill: gray;
+          }
+          // &:nth-child(1){
+          //     svg{
+          //         fill: royalblue;
+          //     }
+          // }
+          // &:nth-child(2){
+          //     svg{
+          //         fill: crimson;
+          //     }
+          // }
+          // &:nth-child(3){
+          //     svg{
+          //         fill: rgb(123, 203, 2);
+          //     }
+          // }
+        }
+        .postCommentSection {
+        }
       }
     }
   }

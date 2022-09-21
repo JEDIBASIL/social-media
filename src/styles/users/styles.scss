@@ -28,8 +28,8 @@ textarea {
 }
 
 [data-theme="dark"] {
-    --background: rgb(34, 35, 41);
-    --componentBackground: rgb(26, 27, 29);
+    --background: rgb(24,24,24);
+    --componentBackground: rgb(33,33,33);
     --color: white;
     --lightColor: whitesmoke;
     --lighterColor: rgb(211, 211, 211);
@@ -37,7 +37,7 @@ textarea {
     --topBar: rgba(34, 35, 41, 0.533);
     --shadow1: 0px 0px 30px rgba(13, 13, 13, 0.548);
     --shadow2: 0px 0px 20px #5946ffa9;
-    --border: rgb(77, 77, 77);
+    --border: rgb(49,49,49);
 }
 
 @mixin flexDisplay($justify, $align, $direction) {
@@ -45,19 +45,34 @@ textarea {
     justify-content: $justify;
     align-items: $align;
     flex-direction: $direction;
+}body{
+    width: 100%;
+    height: 100%;
+    background-color: inherit;
 }
+
+
 
 a {
     color: inherit;
 }
 
 .userApp{
-    background-color: rgb(246,248,250);
+    background-color:var(--background) ;
     width: 100%;
     min-height: 100vh;
+    color: var(--color);
+    border-color: var(--border) !important;
     @import "side_bar";
+    input{
+        background-color: var(--componentBackground);
+        color: var(--color);
+    }
     .appContainer{
+    padding-top: 30px;
+    @include flexDisplay(center, flex-start, row); 
      @import "home";
-
+     @import "explore";
+    
     }
 }

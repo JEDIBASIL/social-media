@@ -7,7 +7,7 @@
     z-index: 200;
    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.093);
     @include flexDisplay(space-between, center, row);
-    background-color: white;
+    background-color: var(--componentBackground);
     .searchBar-Logo{
         @include flexDisplay(space-between, center, row);
         .logo{
@@ -20,7 +20,6 @@
         }
     }
     menu{
-        background-color: white;
         border-radius: 10px;
         height: 100%;
         @include flexDisplay(space-between, center, row);
@@ -33,7 +32,7 @@
             margin-left: 15px;
             transition: ease-in-out 0.2s;
             &:hover{
-                background-color: whitesmoke;
+                background-color:var(--hover);
             }
             svg{
                 font-size: 30px;

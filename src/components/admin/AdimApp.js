@@ -17,8 +17,9 @@ const AdimApp = () => {
             withGlobalStyles
             withNormalizeCSS
         >
+            <div>
             <div className="adminApp" data-theme={appearanceTheme}>
-                <SideBar />
+                <SideBar/>
                 <div className="adminAppContainer">
                     <Notification
                         className="popUpNotification"
@@ -33,6 +34,7 @@ const AdimApp = () => {
                         <Outlet />
                     </div>
                 </div>
+            </div>
             </div>
         </MantineProvider>
     );

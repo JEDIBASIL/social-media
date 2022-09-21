@@ -37,11 +37,11 @@ const PostCard = () => {
 
       </div>
 
-      <div className="postContent grid4">
+      <div className="postContent grid2">
         <img src={profileImg2} alt="" />
         <img src={profileImg2} alt="" />
-        <img src={profileImg2} alt="" />
-        <img src={profileImg2} alt="" />
+        {/* <img src={profileImg2} alt="" />
+        <img src={profileImg2} alt="" /> */}
       </div>
 
       <div className="postReactions">

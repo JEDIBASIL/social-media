@@ -3,6 +3,7 @@ import DailyChart from "../../components/admin/DailyChart";
 import MonthlyChart from "../../components/admin/MonthlyChart";
 import UsersOverview from "../../components/admin/UsersOverview";
 import RecentUsers from "../../components/admin/RecentUsers";
+import IncomeMap from "../../components/admin/IncomeMap";
 const Overview = () => {
     return (
         <>
@@ -11,6 +12,7 @@ const Overview = () => {
                 <DailyChart />
                 <MonthlyChart />
             </div>
+            <IncomeMap />
             <RecentUsers/>
         </>
     );

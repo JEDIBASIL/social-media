@@ -1,15 +1,24 @@
 import '../../styles/users/styles.css'
 import SideBar from './SideBar'
 import { Outlet } from 'react-router-dom'
+import { MantineProvider } from '@mantine/core'
+import { useState } from 'react'
 
 const UserApp = () => {
+  const [theme,setTheme] = useState("light");
   return (
-    <div className="userApp">
+    <MantineProvider
+    theme={{ colorScheme: theme}}
+    withGlobalStyles
+    withNormalizeCSS
+>
+    <div className="userApp" data-theme={theme}>
         <SideBar/>
         <div className='appContainer'>
             <Outlet />
         </div>
     </div>
+    </MantineProvider>
   )
 }
 

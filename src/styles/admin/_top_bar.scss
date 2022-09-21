@@ -9,7 +9,7 @@
     height: 60px;
     @include flexDisplay(space-between, center, row);
     padding: 0px 20px;
-
+    border-radius: 20px;
     .adminProfile {
         background-color: var(--componentBackground);
         padding: 5px 20px;

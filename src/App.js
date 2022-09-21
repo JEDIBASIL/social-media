@@ -16,6 +16,8 @@ import { useEffect,useState } from "react";
 import { AdminSettingsContextProvider } from "./components/admin/AdminSettingsContext";
 import UserApp from "./components/user/UserApp";
 import Home from "./pages/users/Home";
+import Activity from "./pages/users/Activity";
+import Explore from "./pages/users/Explore";
 
 function App() {
     const [loggedin,setLoggedin] = useState(true);
@@ -52,6 +54,8 @@ function App() {
                         <Route path="/auth/sign-up" element={<Signup />}></Route>
                         <Route  path="/" element={loggedin === true? <UserApp/> : <>hello world</>}>
                             <Route path="/" element={<Home />}></Route>
+                            <Route path="/activity" element={<Activity />}></Route>
+                            <Route path="/explore" element={<Explore />}></Route>
                         </Route>
 
                     </Routes>

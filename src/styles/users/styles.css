@@ -28,8 +28,8 @@ textarea {
 }
 
 [data-theme=dark] {
-  --background: rgb(34, 35, 41);
-  --componentBackground: rgb(26, 27, 29);
+  --background: rgb(24,24,24);
+  --componentBackground: rgb(33,33,33);
   --color: white;
   --lightColor: whitesmoke;
   --lighterColor: rgb(211, 211, 211);
@@ -37,7 +37,13 @@ textarea {
   --topBar: rgba(34, 35, 41, 0.533);
   --shadow1: 0px 0px 30px rgba(13, 13, 13, 0.548);
   --shadow2: 0px 0px 20px #5946ffa9;
-  --border: rgb(77, 77, 77);
+  --border: rgb(49,49,49);
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
 }
 
 a {
@@ -45,9 +51,11 @@ a {
 }
 
 .userApp {
-  background-color: rgb(246, 248, 250);
+  background-color: var(--background);
   width: 100%;
   min-height: 100vh;
+  color: var(--color);
+  border-color: var(--border) !important;
 }
 .userApp .sideBar {
   width: 100%;
@@ -62,7 +70,7 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  background-color: white;
+  background-color: var(--componentBackground);
 }
 .userApp .sideBar .searchBar-Logo {
   display: flex;
@@ -78,7 +86,6 @@ a {
   font-size: 25px;
 }
 .userApp .sideBar menu {
-  background-color: white;
   border-radius: 10px;
   height: 100%;
   display: flex;
@@ -98,7 +105,7 @@ a {
   transition: ease-in-out 0.2s;
 }
 .userApp .sideBar menu a:not(.profileImg):hover {
-  background-color: whitesmoke;
+  background-color: var(--hover);
 }
 .userApp .sideBar menu a:not(.profileImg) svg {
   font-size: 30px;
@@ -120,20 +127,43 @@ a {
   -o-object-fit: cover;
      object-fit: cover;
 }
+.userApp input {
+  background-color: var(--componentBackground);
+  color: var(--color);
+}
+.userApp .appContainer {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.userApp .appContainer :root {
+  --background: whitesmoke;
+  --componentBackground: white;
+  --color: black;
+  --lightColor: rgb(77, 77, 77);
+  --lighterColor: gray;
+  --hover: rgb(250, 250, 250);
+  --majorColor: royalblue;
+  --topBar: rgba(245, 245, 245, 0.507);
+  --shadow1: 0px 0px 30px rgba(0, 0, 0, 0.062);
+  --shadow2: 0px 0px 20px #5946ffa9;
+  --border: gainsboro;
+}
 .userApp .appContainer .homeContainer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: row;
   padding: 0px 30px;
-  padding-top: 30px;
 }
 .userApp .appContainer .homeContainer .HomeSideBar {
-  width: 350px;
-  background-color: white;
+  width: 280px;
+  background-color: var(--componentBackground);
   padding: 20px;
   border-radius: 10px;
-  border: 1px solid rgb(240, 240, 240);
+  border: 1px solid var(--border);
   margin-bottom: 10px;
 }
 .userApp .appContainer .homeContainer .HomeSideBar .userDetailsContainer {
@@ -156,6 +186,7 @@ a {
 .userApp .appContainer .homeContainer .upgradeAds {
   padding: 20px;
   height: 200px;
+  width: 280px;
   background: linear-gradient(60deg, royalblue, purple, orange, crimson);
   border-radius: 10px;
   text-align: center;
@@ -175,34 +206,101 @@ a {
   font-size: 16px;
   cursor: pointer;
 }
-.userApp .appContainer .homeContainer .postContainer {
-  width: 520px;
-  min-width: 520px;
+.userApp .appContainer .ActivityAndTrendingBar {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 100px;
+  width: 350px;
+  height: calc(100vh - 110px);
+  background-color: var(--componentBackground);
+  padding: 20px;
+  border-radius: 10px;
+}
+.userApp .appContainer .ActivityAndTrendingBar.notificationContainer {
+  width: 750px;
+  position: static;
+  background-color: var(--componentBackground);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .noActivity {
+  height: 80%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 16px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .noActivity svg {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 10px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails p {
+  font-size: 15px;
+  margin-bottom: 5px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails p a {
+  font-weight: 600;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails .time {
+  color: gray;
+  font-size: 13px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails .btnContainer {
+  margin: 5px 0px;
+}
+.userApp .appContainer .postContainer {
+  width: 600px;
+  min-width: 600px;
   min-height: calc(100vh - 70px);
   padding: 0px 30px;
+  margin: auto;
 }
-.userApp .appContainer .homeContainer .postContainer .card {
+.userApp .appContainer .postContainer .card {
   padding: 20px;
-  background-color: white;
+  background-color: var(--componentBackground);
   width: 100%;
-  background-color: white;
-  border: 1px solid rgb(240, 240, 240);
+  background-color: var(--componentBackground);
+  border: 1px solid var(--border);
   border-radius: 10px;
   margin-bottom: 20px;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postProfile {
+.userApp .appContainer .postContainer .card .postProfile {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   flex-direction: row;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postProfile .profileDetails {
+.userApp .appContainer .postContainer .card .postProfile .profileDetails {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postProfile .profileDetails img {
+.userApp .appContainer .postContainer .card .postProfile .profileDetails img {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -210,33 +308,72 @@ a {
      object-fit: cover;
   margin-right: 10px;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postProfile .profileDetails span {
+.userApp .appContainer .postContainer .card .postProfile .profileDetails span {
   color: gray;
   font-size: 12px;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postProfile .profileDetails h4 {
+.userApp .appContainer .postContainer .card .postProfile .profileDetails h4 {
   font-weight: 600;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postCaption {
+.userApp .appContainer .postContainer .card .postCaption {
   margin-top: 10px;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postContent {
+.userApp .appContainer .postContainer .card .postContent {
   margin-top: 20px;
   width: 100%;
   max-height: 550px;
+  min-height: 0;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postContent.grid4 {
+.userApp .appContainer .postContainer .card .postContent.grid4 {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
   gap: 15px;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postContent img {
+.userApp .appContainer .postContainer .card .postContent.grid2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
+}
+.userApp .appContainer .postContainer .card .postContent.grid2 img {
+  grid-row: 1/span 2;
+}
+.userApp .appContainer .postContainer .card .postContent.gridBigTop {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 15px;
+}
+.userApp .appContainer .postContainer .card .postContent.gridBigTop img {
+  width: 100%;
+}
+.userApp .appContainer .postContainer .card .postContent.gridBigTop img:nth-child(1) {
+  height: 100%;
+  grid-column: 1/span 3;
+  grid-row: 1/span 2;
+}
+.userApp .appContainer .postContainer .card .postContent.gridBigLeft {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 15px;
+}
+.userApp .appContainer .postContainer .card .postContent.gridBigLeft img {
+  width: 100%;
+}
+.userApp .appContainer .postContainer .card .postContent.gridBigLeft img:nth-child(1) {
+  height: 100%;
+  grid-row: 1/span 3;
+  grid-column: 1/span 2;
+}
+.userApp .appContainer .postContainer .card .postContent img {
   width: 100%;
   border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postReactions {
+.userApp .appContainer .postContainer .card .postReactions {
   margin-top: 20px;
   width: 100%;
   border-radius: 20px;
@@ -245,8 +382,7 @@ a {
   align-items: center;
   flex-direction: row;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postReactions .postReactionsContent {
-  border: 1px solid rgb(206, 212, 218);
+.userApp .appContainer .postContainer .card .postReactions .postReactionsContent {
   width: 150px;
   border-radius: 30px;
   padding: 5px 10px;
@@ -254,50 +390,92 @@ a {
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
-  background-color: rgb(252, 252, 252);
 }
-.userApp .appContainer .homeContainer .postContainer .card .postReactions .postReactionsContent .postReactionIconContainer {
+.userApp .appContainer .postContainer .card .postReactions .postReactionsContent .postReactionIconContainer {
   cursor: pointer;
 }
-.userApp .appContainer .homeContainer .postContainer .card .postReactions .postReactionsContent .postReactionIconContainer svg {
+.userApp .appContainer .postContainer .card .postReactions .postReactionsContent .postReactionIconContainer svg {
   font-size: 22px;
   fill: gray;
 }
-.userApp .appContainer .homeContainer .ActivityAndTrendingBar {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 100px;
-  width: 350px;
-  height: calc(100vh - 110px);
-  background-color: rgb(253, 254, 255);
-  padding: 20px;
-  border-radius: 10px;
+.userApp .appContainer .exploreContainer {
+  width: 950px;
 }
-.userApp .appContainer .homeContainer .ActivityAndTrendingBar .activityContainer .activityBox {
-  margin-top: 20px;
+.userApp .appContainer .exploreContainer .ExploreCategories {
+  width: 100%;
+  height: 150px;
+  overflow: hidden;
+  background-color: inherit;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+.userApp .appContainer .exploreContainer .ExploreCategories .card {
+  background-color: var(--componentBackground);
+  height: 100%;
+  min-width: 200px;
+  max-width: 200px;
+  padding: 3% 20px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: column;
+  margin-right: 15px;
+  border: 1px solid var(--border);
+}
+.userApp .appContainer .exploreContainer .ExploreCategories .card svg {
+  font-size: 45px;
+}
+.userApp .appContainer .exploreContainer .ExploreCategories .card h3 {
+  color: var(--color);
+}
+.userApp .appContainer .exploreContainer .exploreTrendingPost {
+  width: 650px;
+  margin: 40px auto;
+}
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending {
+  width: 100%;
+}
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending h4 {
+  margin-bottom: 30px;
+}
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card {
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 20px;
   display: flex;
   justify-content: flex-start;
   align-items: flex-start;
   flex-direction: row;
-  border-bottom: 1px solid gainsboro;
-  padding-bottom: 10px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background-color: var(--componentBackground);
 }
-.userApp .appContainer .homeContainer .ActivityAndTrendingBar .activityContainer .activityBox img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card img {
+  width: 90px;
+  height: 90px;
+  border-radius: 10px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-right: 10px;
+  margin-right: 20px;
 }
-.userApp .appContainer .homeContainer .ActivityAndTrendingBar .activityContainer .activityBox p {
-  font-size: 15px;
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card .text {
+  padding-top: 10px;
+}
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card .text h4 {
+  margin: 0;
   margin-bottom: 5px;
 }
-.userApp .appContainer .homeContainer .ActivityAndTrendingBar .activityContainer .activityBox p a {
-  font-weight: 600;
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card .text p {
+  color: var(--lighterColor);
+  line-height: 1.5;
+  font-size: 16.5px;
 }
-.userApp .appContainer .homeContainer .ActivityAndTrendingBar .activityContainer .activityBox .time {
-  color: gray;
-  font-size: 13px;
+.userApp .appContainer .exploreContainer .postContainer {
+  width: 650px;
+  min-width: 650px;
+  margin-top: 30px;
+  padding: 0;
 }/*# sourceMappingURL=styles.css.map */
