@@ -5,7 +5,7 @@ import { MantineProvider } from '@mantine/core'
 import { useState } from 'react'
 
 const UserApp = () => {
-  const [theme,setTheme] = useState("light");
+  const [theme,setTheme] = useState("dark");
   return (
     <MantineProvider
     theme={{ colorScheme: theme}}

@@ -1,0 +1,71 @@
+.call{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--componentBackground);
+    z-index: 1000;
+    @include flexDisplay(center, center, column);
+    .callIcons{
+        width: 400px;
+        position: absolute;
+        bottom: 50px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: var(--componentBackground);
+        box-shadow:0px 0px 20px rgba(0, 0, 0, 0.173);
+        padding: 10px 20px;
+        border-radius: 10px;
+        @include flexDisplay(space-between,center, row);
+        svg{
+            font-size: 24px;
+        }
+    }
+    .callDetails{
+        @include flexDisplay(center, center, column);
+        padding-bottom: 30px;
+        img{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+        video{
+            width: 0;
+            height: 0;
+        }
+    
+        &.answered{
+            video{
+                width: 550px;
+                height: 450px;
+                background-color: black;
+                border-radius: 10px;
+            }
+            div{
+                @include flexDisplay(center,center, row);
+                margin-top: 10px;
+            img{
+                width: 40px;
+                height: 40px;
+            }
+            p,h2{
+                display: none;
+            }
+        }
+        }
+    }
+    .Webcam{
+        position: absolute;
+        bottom: 50px;
+        right: 20px;
+        overflow: hidden;
+        border-radius: 10px;
+        background-color: red;
+        width: 300px;
+        height: 250px;
+        box-shadow:0px 0px 20px rgba(0, 0, 0, 0.173);
+
+    }
+}

@@ -1,0 +1,247 @@
+.Chat {
+  width: 1100px;
+  height: calc(100vh - 110px);
+  background-color: var(--componentBackground);
+  border-radius: 5px;
+  border: 1px solid var(--border);
+  @include flexDisplay(flex-start, flex-start, row);
+  .chatSideBar {
+    width: 350px;
+    min-width: 350px;
+    height: 100%;
+    border-right: 2px solid var(--border);
+    .chatSearch {
+      padding: 5px;
+      border-bottom: 2px solid var(--border);
+      input {
+        border: none;
+        &:focus {
+          &::placeholder {
+            color: var(--majorColor);
+          }
+        }
+      }
+    }
+    .chatList {
+      // padding: 0px 10px;
+      .chatListCard {
+        position: relative;
+        @include flexDisplay(flex-start, center, row);
+        border-bottom: 1px solid var(--border);
+        padding: 6px 5px;
+        &:hover{
+          background-color: var(--background);
+        }
+        &.active{
+          background-color: var(--background) !important;
+          &::before{
+            content: '';
+            position: absolute;
+            left: 0px;
+            height: 100%;
+            width: 5px;
+            background-color: var(--majorColor);
+            border-radius: 10px;
+          }
+        }
+        .img {
+          position: relative;
+          .chatActive {
+            position: absolute;
+            top: -5px;
+            right: 10px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50px;
+            background-color: rgb(102, 194, 10);
+            border: 2px solid var(--componentBackground);
+          }
+          img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 10px;
+            object-fit: cover;
+          }
+        }
+
+        h4 {
+          margin: 0;
+          font-size: 15px;
+          font-weight: 600;
+        }
+        p {
+          font-size: 15px;
+          color: var(--lighterColor);
+          margin: 0 !important;
+          line-height: 1.1;
+        }
+        .time {
+          color: gray;
+          font-size: 12px;
+        }
+        .chatCounter {
+          @include flexDisplay(center, center, row);
+          font-size: 11px;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          padding: 1px 4.5px;
+          min-width: 25px;
+          border-radius: 10px;
+          color: white;
+          font-weight: 800;
+          background-color: royalblue;
+        }
+      }
+    }
+  }
+  .chatBox {
+    width: 100%;
+    height: 100%;
+    @include flexDisplay(flex-start, flex-start, column);
+
+    .chartTopBar {
+      width: 100%;
+      height: 48px;
+      min-height: 48px;
+      border-bottom: 1px solid var(--border);
+      padding: 0px 10px;
+      @include flexDisplay(space-between, center, row);
+      .chatDetails {
+        @include flexDisplay(center, center, row);
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          margin-right: 10px;
+          object-fit: cover;
+        }
+        h4 {
+          font-weight: 600;
+          line-height: 0.6;
+          margin-top: 2px;
+        }
+        .status {
+          color: gray;
+          font-size: 12px;
+          font-weight: 600;
+        }
+      }
+      .chartTopBarIcons {
+        width: max-content;
+        @include flexDisplay(space-between, center, row);
+      }
+    }
+    .messageContainer {
+      background-image: var(--chatBackgroundImage);
+      background-blend-mode: var(--chatBackgroundBlendMode);
+      background-color: var(--chatBackgroundColor);
+      background-repeat: repeat;
+      background-position-x: center;
+      width: 100%;
+      height: 100%;
+      .chatMessagesContainer{
+        width: 100%;
+        .chatMessagesContent{
+          width: 100%;
+          @include flexDisplay(flex-start,center, row);
+          &.userChatMessagesContent{
+            @include flexDisplay(flex-end,center, row);
+            .chatMessage{
+              background-color: var(--chatSenderMessageBackgroundColor);
+            }
+          }
+          padding:10px;
+          .chatMessage{
+            background-color: var(--chatReciverMessageBackgroundColor);
+            padding: 10px;
+            border-radius: 10px;
+            max-width: 55%;
+            box-shadow: var(--shadow1);
+            p{
+              font-weight: 400;
+            }
+          }
+        }
+      }
+    }
+    .composeMessageContainer {
+      width: 100%;
+      height: 60px;
+      padding: 1% 10px;
+      border-top: 1px solid var(--border);
+      @include flexDisplay(space-between, center, row);
+      .chatAttachments {
+        width: max-content;
+        @include flexDisplay(space-between, center, row);
+        .icons{
+            margin-right: 15px;
+
+        &.fileChooser{
+            position: relative;
+            overflow: hidden;
+            input{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 200px;
+                height: 200px;
+                opacity: 0;
+                cursor: pointer;
+            }
+        }
+        &.mic{
+            margin: 0 ;
+          }
+        svg{
+          font-size: 24px;
+          color: var(--lighterColor);
+          cursor: pointer;
+          z-index: 2;
+        }
+    }
+      }
+      .chatTextarea {
+        height: 100%;
+        @include flexDisplay(center, center, row);
+        .textareaContainer {
+          height: 100%;
+          width: 400px;
+          background-color: var(--background);
+          @include flexDisplay(center, center, row);
+          border-radius: 20px;
+          overflow: hidden;
+          padding: 0 20px;
+          margin-right: 10px;
+          border: 1px solid var(--border);
+          svg {
+            font-size: 25px;
+          }
+          textarea {
+            font-weight: 600;
+            min-height: 100%;
+            max-height: 100%;
+            margin-top: 20px;
+            width: calc(100% - 30px);
+            max-width: calc(100% - 30px);
+            min-width: calc(100% - 30px);
+            height: 100%;
+            background-color: transparent;
+            border: none;
+            margin-left: 10px;
+            color: var(--color);
+            outline: none;
+          }
+        }
+        button {
+          font-size: 30px;
+          color: var(--majorColor);
+          background-color: transparent;
+          border: none;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}

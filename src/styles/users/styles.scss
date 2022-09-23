@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -6,6 +7,8 @@
     font-family: "Livvic", sans-serif;
     text-decoration: none;
     list-style: none;
+    // font-family: 'Urbanist', sans-serif;
+
 }
 
 input,
@@ -19,25 +22,35 @@ textarea {
     --color: black;
     --lightColor: rgb(77, 77, 77);
     --lighterColor: gray;
-    --hover: rgb(250, 250, 250);
-    --majorColor: royalblue;
+    --hover: rgb(251, 251, 251);
+    --majorColor: rgb(32,155,240);
     --topBar: rgba(245, 245, 245, 0.507);
-    --shadow1: 0px 0px 30px rgba(0, 0, 0, 0.062);
+    --shadow1:0px 0px 2.5px rgba(0, 0, 0, 0.184);
     --shadow2: 0px 0px 20px #5946ffa9;
-    --border: gainsboro;
+    --border: rgba(222, 226, 230, 0.746);
+    --chatBackgroundImage:url('../../static/images/chat-light-theme.jpeg');
+    --chatBackgroundBlendMode:lighten;
+    --chatBackgroundColor:rgba(245, 245, 245, 0.946);
+    --chatReciverMessageBackgroundColor:rgb(255, 255, 255);
+    --chatSenderMessageBackgroundColor:rgb(129, 202, 255);
 }
 
 [data-theme="dark"] {
-    --background: rgb(24,24,24);
-    --componentBackground: rgb(33,33,33);
+    --background: rgb(37, 37, 42);
+    --componentBackground: rgb(32, 32, 36);
     --color: white;
     --lightColor: whitesmoke;
     --lighterColor: rgb(211, 211, 211);
-    --hover: rgb(25, 25, 25);
+    --hover: rgb(28, 29, 31);
     --topBar: rgba(34, 35, 41, 0.533);
-    --shadow1: 0px 0px 30px rgba(13, 13, 13, 0.548);
+    --shadow1:0px 0px 2px rgba(225, 225, 225, 0.184);
     --shadow2: 0px 0px 20px #5946ffa9;
-    --border: rgb(49,49,49);
+    --border: rgb(55,58,64);
+    --chatBackgroundImage:url('../../static/images/chat-dark-theme.jpeg');
+    --chatBackgroundBlendMode:darken;
+    --chatBackgroundColor:rgba(19, 19, 20, 0.946);
+    --chatReciverMessageBackgroundColor:rgb(52, 52, 52);
+    --chatSenderMessageBackgroundColor:rgb(67, 177, 255);
 }
 
 @mixin flexDisplay($justify, $align, $direction) {
@@ -58,7 +71,7 @@ a {
 }
 
 .userApp{
-    background-color:var(--background) ;
+    background-color:var(--componentBackground) ;
     width: 100%;
     min-height: 100vh;
     color: var(--color);
@@ -69,10 +82,12 @@ a {
         color: var(--color);
     }
     .appContainer{
-    padding-top: 30px;
+    padding-top: 15px;
     @include flexDisplay(center, flex-start, row); 
      @import "home";
      @import "explore";
+     @import "chat";
+     @import "call";
     
     }
 }

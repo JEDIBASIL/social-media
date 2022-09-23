@@ -1,53 +1,57 @@
-import React from "react";
-import { BiSearch, BiHomeSmile, BiHeart, BiMoviePlay,BiMenuAltLeft,BiMessageDetail,BiCompass } from "react-icons/bi";
+import {Link as A,useLocation} from 'react-router-dom'
+import { BiSearch, BiMoviePlay,BiMessageDetail,BiCompass, BiHeart } from "react-icons/bi";
 import profileImg from "../../static/images/lolita.jpg"
 import { TextInput, } from "@mantine/core";
+import { GoHeart, GoHome } from 'react-icons/go';
+import {GrAppsRounded} from 'react-icons/gr'
 const SideBar = () => {
+  const location = useLocation();
   return (
     <nav className="sideBar">
       <div className="searchBar-Logo">
         <div className="logo">
-          <a>Let's Meet</a>
+          <A to={"/"}>Le</A>
         </div>
         <div>
-          <TextInput radius={"xl"} size={"md"} icon={<BiSearch />} placeholder={"Search..."} />
+          <TextInput radius={10} size={"md"} icon={<BiSearch />} placeholder={"Search..."} />
         </div>
       </div>
       <menu>
-        <a className="active" href="">
-          <BiHomeSmile />
+        <A to={"/"} className={location.pathname=='/' && 'active'} href="">
+          <GoHome />
           <span>Home</span>
-        </a>
+        </A>
 
-        <a href="">
+        <A to={"/activity"} className={location.pathname=='/activity' && 'active'}  href="">
           <BiHeart />
           <span>Activity</span>
-        </a>
+        </A>
 
-        <a href="">
+        <A to={"/explore"} className={location.pathname=='/explore' && 'active'}  href="">
           <BiCompass />
           <span>Explore</span>
-        </a>
+        </A>
 
-        <a href="">
+        <A to={"/clip"} className={location.pathname=='/clips' && 'active'}  href="">
           <BiMoviePlay />
           <span>Clips</span>
-        </a>
+        </A>
 
-        <a href="">
+        <A to={"/chats"} className={location.pathname=='/chats' && 'active'}  href="">
           <BiMessageDetail />
           <span>Chats</span>
-        </a>
+        </A>
       </menu>
 
       <menu>
-        <a href="">
-          <BiMenuAltLeft />
-        </a>
+        <A to={"/"} href="">
+          <GrAppsRounded />
+          <span>Menu</span>
+        </A>
 
-        <a href="" className="profileImg">
+        <A to={"/"} href="" className="profileImg">
          <img src={profileImg} alt="" />
-        </a>
+        </A>
 
       </menu>
     </nav>

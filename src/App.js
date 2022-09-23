@@ -18,6 +18,8 @@ import UserApp from "./components/user/UserApp";
 import Home from "./pages/users/Home";
 import Activity from "./pages/users/Activity";
 import Explore from "./pages/users/Explore";
+import Chat from "./pages/users/Chat";
+import Call from "./pages/users/Call";
 
 function App() {
     const [loggedin,setLoggedin] = useState(true);
@@ -56,6 +58,8 @@ function App() {
                             <Route path="/" element={<Home />}></Route>
                             <Route path="/activity" element={<Activity />}></Route>
                             <Route path="/explore" element={<Explore />}></Route>
+                            <Route path="/chats" element={<Chat />}></Route>
+                            <Route path="/call" element={<Call />}></Route>
                         </Route>
 
                     </Routes>
