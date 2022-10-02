@@ -12,7 +12,7 @@ const ExploreCategories = () => {
     <div>
         <Swiper
         spaceBetween={30}
-        slidesPerView={2.6}
+        slidesPerView={2.3}
         pagination={{
           clickable: true,
         }}

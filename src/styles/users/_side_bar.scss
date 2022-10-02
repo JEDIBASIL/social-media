@@ -28,6 +28,10 @@
     menu{
         border-radius: 10px;
         height: 100%;
+        width: 25%;
+        &:nth-child(1){
+            background-color: red
+        }
         @include flexDisplay(center, center, row);       
         a:not(.profileImg){
             @include flexDisplay(center, center, column);

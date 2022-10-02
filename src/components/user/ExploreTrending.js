@@ -12,8 +12,7 @@ const ExploreTrending = () => {
           <div className="text">
             <h4>The best guiterist in the world</h4>
             <p>
-              You can add webfonts, meta tags, or analytics to this file. The
-              build step will...
+              You can add webfonts, meta tags, or
             </p>
           </div>
           <Menu shadow="md" width={200}>
@@ -38,8 +37,7 @@ const ExploreTrending = () => {
           <div className="text">
             <h4>The best guiterist in the world</h4>
             <p>
-              You can add webfonts, meta tags, or analytics to this file. The
-              build step will...
+              You can add webfonts, meta tags, or
             </p>
           </div>
           <Menu shadow="md" width={200}>
@@ -64,8 +62,7 @@ const ExploreTrending = () => {
           <div className="text">
             <h4>The best guiterist in the world</h4>
             <p>
-              You can add webfonts, meta tags, or analytics to this file. The
-              build step will...
+              You can add webfonts, meta tags, or
             </p>
           </div>
           <Menu shadow="md" width={200}>
@@ -84,9 +81,7 @@ const ExploreTrending = () => {
               </Menu.Item>
             </Menu.Dropdown>
           </Menu>
-        </div>
-        <Center><Button radius={50} variant={"outline"}>See more</Button></Center>
-        
+        </div>        
       </div>
     </div>
   );

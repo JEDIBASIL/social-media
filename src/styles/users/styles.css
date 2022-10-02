@@ -35,7 +35,7 @@ textarea {
 
 [data-theme=dark] {
   --background: rgb(37, 37, 42);
-  --componentBackground: rgb(32, 32, 36);
+  --componentBackground: black;
   --color: white;
   --lightColor: whitesmoke;
   --lighterColor: rgb(211, 211, 211);
@@ -104,10 +104,14 @@ a {
 .userApp .sideBar menu {
   border-radius: 10px;
   height: 100%;
+  width: 25%;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
+}
+.userApp .sideBar menu:nth-child(1) {
+  background-color: red;
 }
 .userApp .sideBar menu a:not(.profileImg) {
   display: flex;
@@ -176,7 +180,7 @@ a {
   width: 280px;
   background-color: var(--componentBackground);
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 10px;
   border: 1px solid var(--border);
   margin-bottom: 20px;
 }
@@ -205,7 +209,7 @@ a {
   position: sticky;
   top: 80px;
   background: linear-gradient(60deg, royalblue, purple, orange, crimson);
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   color: white;
   display: flex;
@@ -227,18 +231,39 @@ a {
   position: -webkit-sticky;
   position: sticky;
   top: 80px;
-  width: 350px;
-  height: calc(100vh - 110px);
+  width: 380px;
+  height: calc(100vh - 90px);
   background-color: var(--background);
-  padding: 20px;
-  border-radius: 5px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  overflow-y: auto;
+}
+.userApp .appContainer .ActivityAndTrendingBar::-webkit-scrollbar {
+  background-color: transparent;
+  width: 8px;
+  padding-right: 5px;
+}
+.userApp .appContainer .ActivityAndTrendingBar::-webkit-scrollbar-thumb {
+  border-radius: 50px;
+  background: none;
+}
+.userApp .appContainer .ActivityAndTrendingBar:hover::-webkit-scrollbar-thumb {
+  background-color: var(--border);
+}
+.userApp .appContainer .ActivityAndTrendingBar .heading {
+  padding: 10px 20px;
+  border-bottom: 1px solid var(--border);
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  background-color: var(--background);
 }
 .userApp .appContainer .ActivityAndTrendingBar.notificationContainer {
   width: 750px;
   position: static;
   background-color: var(--componentBackground);
   border: 1px solid var(--border);
-  border-radius: 5px;
+  border-radius: 10px;
 }
 .userApp .appContainer .ActivityAndTrendingBar .noActivity {
   height: 80%;
@@ -268,8 +293,8 @@ a {
   flex-direction: row;
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails img {
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -277,7 +302,7 @@ a {
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails p {
   font-size: 15px;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails p a {
   font-weight: 600;
@@ -289,9 +314,40 @@ a {
 .userApp .appContainer .ActivityAndTrendingBar .activityContainer .activityBox .notificationDetails .btnContainer {
   margin: 5px 0px;
 }
+.userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card {
+  width: 100%;
+  padding: 20px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card:hover {
+  background-color: var(--hover);
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card img {
+  width: 80px;
+  height: 80px;
+  border-radius: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 20px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text {
+  padding-top: 10px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text h4 {
+  margin: 0;
+  margin-bottom: 5px;
+}
+.userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text p {
+  color: var(--lighterColor);
+  line-height: 1.5;
+  font-size: 16.5px;
+}
 .userApp .appContainer .postContainer {
-  width: 600px;
-  min-width: 600px;
+  width: 550px;
+  min-width: 550px;
   min-height: calc(100vh - 70px);
   padding: 0px 30px;
   margin: auto;
@@ -302,7 +358,7 @@ a {
   width: 100%;
   background-color: var(--componentBackground);
   transition: 0.2s;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-bottom: 20px;
   border: 1px solid var(--border);
 }
@@ -420,11 +476,36 @@ a {
   fill: gray;
 }
 .userApp .appContainer .exploreContainer {
-  width: 600px;
+  width: 550px;
   padding: 0 30px;
 }
+.userApp .appContainer .exploreContainer .swiper-wrapper {
+  width: calc(100% - 30px);
+  margin: 0px auto;
+}
+.userApp .appContainer .exploreContainer .swiper-button-next:after,
+.userApp .appContainer .exploreContainer .swiper-button-prev:after {
+  font-size: 18px;
+  font-weight: 900;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background-color: var(--background);
+  border: 1px solid var(--border);
+  border-radius: 50%;
+}
 .userApp .appContainer .exploreContainer .ExploreCategories {
-  height: 80px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  padding-right: 20px;
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card {
   background-color: var(--background);
@@ -432,16 +513,17 @@ a {
   min-width: 200px;
   max-width: 200px;
   padding: 10px 20px;
-  border-radius: 5px;
+  border-radius: 50px;
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
   margin-right: 15px;
   border: 1px solid var(--border);
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card svg {
   font-size: 26px;
+  margin-right: 10px;
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card h3 {
   color: var(--color);
@@ -449,7 +531,7 @@ a {
 }
 .userApp .appContainer .exploreContainer .exploreTrendingPost {
   width: 100%;
-  margin: 40px auto;
+  margin: 20px auto;
 }
 .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending {
   width: 100%;
@@ -457,36 +539,41 @@ a {
 .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending h4 {
   margin-bottom: 30px;
 }
-.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card {
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer {
   width: 100%;
-  margin-bottom: 10px;
-  padding: 20px;
-  display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-direction: row;
-  border-radius: 10px;
-  background-color: var(--componentBackground);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card {
+  position: relative;
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 15px;
+}
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card:hover {
+  background-color: var(--hover);
 }
 .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card img {
-  width: 90px;
-  height: 90px;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  height: 200px;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-right: 20px;
 }
 .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card .text {
-  padding-top: 10px;
+  padding: 10px;
 }
 .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card .text h4 {
   margin: 0;
-  margin-bottom: 5px;
 }
 .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card .text p {
-  color: var(--lighterColor);
-  line-height: 1.5;
-  font-size: 16.5px;
+  margin: 0;
+}
+.userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card .more {
+  position: absolute;
+  top: 10px;
+  right: 10px;
 }
 .userApp .appContainer .exploreContainer .postContainer {
   width: 100%;
@@ -664,6 +751,7 @@ a {
   background-position-x: center;
   width: 100%;
   height: 100%;
+  padding: 0px 30px;
 }
 .userApp .appContainer .Chat .chatBox .messageContainer .chatMessagesContainer {
   width: 100%;

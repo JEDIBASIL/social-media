@@ -1,79 +1,103 @@
-.exploreContainer{
-    width: 600px;
-    padding: 0 30px;
-    .ExploreCategories{
-        height: 80px;
-        .card{
-            background-color: var(--background);
-            height: 100%;
-            min-width: 200px;
-            max-width: 200px;
-            padding:10px 20px;
-            border-radius: 5px;
-            @include flexDisplay(space-between, flex-start, column);
-            margin-right: 15px;
-            border: 1px solid var(--border);
-            svg{
-                font-size:26px;
-            }
-            h3{
-                color: var(--color);
-                font-size: 14px;
-            }
-        }   
+.exploreContainer {
+  width: 550px;
+  padding: 0 30px;
+  // .swiper-button-next{
+  //     transform: translateX(10px);
+  // }
+  .swiper-wrapper {
+    width: calc(100% - 30px);
+    margin: 0px auto;
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    font-size: 18px;
+    font-weight: 900;
+    min-width: 40px;
+    max-width: 40px;
+    min-height: 40px;
+    max-height: 40px;
+    @include flexDisplay(center, center, row);
+    background-color: var(--background);
+    border: 1px solid var(--border);
+    border-radius: 50%;
+  }
+  .ExploreCategories {
+    height: 60px;
+    @include flexDisplay(center, center, row);
+    padding-right: 20px;
+    .card {
+      background-color: var(--background);
+      height: 100%;
+      min-width: 200px;
+      max-width: 200px;
+      padding: 10px 20px;
+      border-radius: 50px;
+      @include flexDisplay(flex-start, center, row);
+      margin-right: 15px;
+      border: 1px solid var(--border);
+      svg {
+        font-size: 26px;
+        margin-right: 10px;
+      }
+      h3 {
+        color: var(--color);
+        font-size: 14px;
+      }
     }
-    
-        .exploreTrendingPost{
-            width: 100%;
-            margin: 40px auto;
+  }
 
-            .ExploreTrending{
+  .exploreTrendingPost {
+    width: 100%;
+    margin: 20px auto;
+    .ExploreTrending {
+      width: 100%;
+      h4 {
+        margin-bottom: 30px;
+      }
+      .trendingPostContainer{
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        .card{
+            position: relative;
+            width: 100%;
+            border: 1px solid var(--border);
+            border-radius: 15px;
+            &:hover{
+                background-color: var(--hover);
+            }
+            img{
                 width: 100%;
-                
+                border-radius: 15px 15px 0 0;
+                height: 200px;
+                object-fit: cover;
+            }
+            .text{
+                padding: 10px;
                 h4{
-                    margin-bottom: 30px;
+                    margin: 0;
                 }
-
-                .trendingPostContainer{
-                .card{
-                    width: 100%;
-                    margin-bottom: 10px;
-                    padding: 20px;
-                    @include flexDisplay(flex-start, flex-start, row);
-                    //  border: 1px solid var(--border);
-                     border-radius: 10px;
-                    background-color: var(--componentBackground);
-                    img{
-                        width: 90px;
-                        height: 90px;
-                        border-radius: 10px;
-                        object-fit: cover;
-                        margin-right: 20px;
-                    }
-                    .text{
-                        padding-top: 10px;
-                        h4{
-                            margin: 0;
-                            margin-bottom: 5px;
-                        }
-                        p{
-                            color:var(--lighterColor) ;
-                            line-height: 1.5;
-                            font-size: 16.5px;
-                        }
-                    }
+                p{
+                    margin: 0;
                 }
             }
-      
+            .more{
+                position: absolute;
+                top: 10px;
+                right: 10px;
             }
         }
-        .postContainer{
-            width: 100%;
-            min-width: 100%;
-            padding: 0;
-            // padding: 0px 30px;
-            margin: 0 auto;
-            margin-top: 30px;
-        }
+      }
+    }
+  }
+  .postContainer {
+    width: 100%;
+    min-width: 100%;
+    padding: 0;
+    // padding: 0px 30px;
+    margin: 0 auto;
+    margin-top: 30px;
+  }
 }
 

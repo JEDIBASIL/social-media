@@ -6,7 +6,7 @@
     width: 280px;
     background-color: var(--componentBackground);
     padding: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     // rgb(240, 240, 240)
     border: 1px solid var(--border);
     margin-bottom: 20px;
@@ -34,7 +34,7 @@
   position: sticky;
   top: 80px;
   background: linear-gradient(60deg, royalblue, purple, orange, crimson);
-  border-radius: 5px;
+  border-radius: 10px;
   text-align: center;
   color: white;
   @include flexDisplay(center, center, column);
@@ -54,18 +54,40 @@
 .ActivityAndTrendingBar {
   position: sticky;
   top: 80px;
-  width: 350px;
-  height: calc(100vh - 110px);
+  width: 380px;
+  height: calc(100vh - 90px);
   // rgb(253, 254, 255)
   background-color: var(--background);
-  padding: 20px;
-  border-radius: 5px;
+  padding-bottom: 20px;
+  border-radius: 10px;
+  overflow-y: auto;
+  &::-webkit-scrollbar{
+    background-color: transparent;
+    width: 8px;
+    padding-right: 5px;
+  }
+  &::-webkit-scrollbar-thumb{
+    border-radius: 50px;
+    background:none;
+  }
+  &:hover{
+    &::-webkit-scrollbar-thumb{
+      background-color: var(--border);
+    }
+  }
+  .heading{
+    padding:10px 20px;
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 0px;
+    background-color: var(--background);
+  }
   &.notificationContainer {
     width: 750px;
     position: static;
     background-color: var(--componentBackground);
     border: 1px solid var(--border);
-    border-radius: 5px;
+    border-radius: 10px;
   }
   .noActivity {
     height: 80%;
@@ -85,15 +107,15 @@
       .notificationDetails {
         @include flexDisplay(center, flex-start, row);
         img {
-          width: 40px;
-          height: 40px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           object-fit: cover;
           margin-right: 10px;
         }
         p {
           font-size: 15px;
-          margin-bottom: 5px;
+          margin-bottom: 0px;
           a {
             font-weight: 600;
           }
@@ -108,11 +130,43 @@
       }
     }
   }
+
+  .activityCardContainer {
+    .card {
+      width: 100%;
+      padding:20px 10px;
+      @include flexDisplay(space-between, flex-start, row);
+      //  border: 1px solid var(--border);
+      // background-color: var(--componentBackground);
+      &:hover{
+        background-color: var(--hover);
+      }
+      img {
+        width: 80px;
+        height: 80px;
+        border-radius: 10px;
+        object-fit: cover;
+        margin-right: 20px;
+      }
+      .text {
+        padding-top: 10px;
+        h4 {
+          margin: 0;
+          margin-bottom: 5px;
+        }
+        p {
+          color: var(--lighterColor);
+          line-height: 1.5;
+          font-size: 16.5px;
+        }
+      }
+    }
+  }
 }
 
 .postContainer {
-  width: 600px;
-  min-width: 600px;
+  width: 550px;
+  min-width: 550px;
   min-height: calc(100vh - 70px);
   padding: 0px 30px;
   margin:  auto;
@@ -122,7 +176,7 @@
     width: 100%;
     background-color: var(--componentBackground);
     transition: 0.2s;
-    border-radius: 5px;
+    border-radius: 10px;
     margin-bottom: 20px;
     border: 1px solid var(--border);
     &:hover{

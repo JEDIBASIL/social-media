@@ -34,10 +34,10 @@ textarea {
     --chatReciverMessageBackgroundColor:rgb(255, 255, 255);
     --chatSenderMessageBackgroundColor:rgb(129, 202, 255);
 }
-
+// rgb(32, 32, 36)
 [data-theme="dark"] {
     --background: rgb(37, 37, 42);
-    --componentBackground: rgb(32, 32, 36);
+    --componentBackground: black;
     --color: white;
     --lightColor: whitesmoke;
     --lighterColor: rgb(211, 211, 211);

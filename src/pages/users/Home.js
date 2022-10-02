@@ -20,7 +20,6 @@ const Home = () => {
             <PostCard />
             <PostCard />
         </div>
-
         <ActivityAndTrendingBar />
     </div>
   )
