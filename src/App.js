@@ -24,8 +24,8 @@ import Profile from "./pages/users/Profile";
 function App() {
     const [loggedin,setLoggedin] = useState(true);
     useEffect(()=>{
-        setLoggedin(true);
-    },[])
+        setLoggedin(true)
+    },[loggedin])
     return (
         <AdminSettingsContextProvider>
             <Router>
