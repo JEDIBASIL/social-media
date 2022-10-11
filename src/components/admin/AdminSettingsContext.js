@@ -38,10 +38,14 @@ export const AdminSettingsContextProvider = ({ children }) => {
             }
         }
     };
+
+    const themeSwitcher = switchTheme();
+    
     useEffect(() => {
         localStorage.setItem("theme", JSON.stringify(settings.theme));
-        switchTheme;
-    }, [settings, appearanceTheme]);
+        themeSwitcher()
+    },[settings.theme, appearanceTheme, themeSwitcher]);
+
 
     return (
         <AdminSettingsContext.Provider value={{ settings, settingsDispatch,appearanceTheme }}>
