@@ -1,8 +1,5 @@
 import { TextInput } from '@mantine/core'
-import { HiSpeakerphone } from 'react-icons/hi'
 import {FcAddImage, FcVideoCall, FcAdvertising} from "react-icons/fc"
-import { ImVideoCamera } from "react-icons/im"
-import React from 'react'
 
 const CreatePost = () => {
   return (

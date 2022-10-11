@@ -7,6 +7,7 @@ const modalReducer = (state, { type, payload }) => {
             return { theme: (state.theme = "light") };
         case "system-theme":
             return { theme: (state.theme = "system") };
+        default: return state;
     }
 };
 

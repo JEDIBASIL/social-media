@@ -1,7 +1,5 @@
-import profileImg2 from "../../static/images/lolita.jpg";
-import pics from "../../static/images/lolita.jpg";
 import { Button, Center, Menu } from "@mantine/core";
-import { BiDotsVerticalRounded, BiUser, BiBlock,BiBellOff } from "react-icons/bi";
+import { BiDotsVerticalRounded, BiUser, BiBlock } from "react-icons/bi";
 const ActivityAndTrendingBar = () => {
   return (
     <div className="ActivityAndTrendingBar">

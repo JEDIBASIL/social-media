@@ -1,7 +1,3 @@
-import React from "react";
-import {CgArrowTopRight} from 'react-icons/cg'
-import {MdOutlineArrowUpward,MdOutlineArrowDownward} from 'react-icons/md'
-
 const UsersOverview = () => {
     return (
         <div className="usersOverview">

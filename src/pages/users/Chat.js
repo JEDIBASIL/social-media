@@ -1,9 +1,8 @@
-import { Button, Center, Menu, Tabs, Textarea, TextInput } from "@mantine/core";
+import { Menu, Tabs, TextInput } from "@mantine/core";
 import { Link as A } from 'react-router-dom'
 import {
   BiUser,
   BiBlock,
-  BiCommentDots,
   BiDotsHorizontalRounded,
   BiImageAdd,
   BiPaperclip,
@@ -11,8 +10,6 @@ import {
 } from "react-icons/bi";
 import {
   BsEmojiSmile,
-  BsFillEmojiSmileFill,
-  BsPaperclip,
 } from "react-icons/bs";
 import { FaSearch } from "react-icons/fa";
 import { MdChat, MdPhone, MdSend, MdVideoCall } from "react-icons/md";

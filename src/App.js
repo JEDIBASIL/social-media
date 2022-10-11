@@ -2,7 +2,6 @@ import {
     BrowserRouter as Router,
     Routes,
     Route,
-    useNavigate,
 } from "react-router-dom";
 import AdimApp from "./components/admin/AdimApp";
 import Overview from "./pages/Admin/Overview";
@@ -12,7 +11,7 @@ import Users from "./pages/Admin/Users";
 import Login from "./pages/Admin/auth/Login";
 import Signup from "./pages/Admin/auth/Signup";
 import UserProfile from "./pages/Admin/UserProfile";
-import { useEffect,useState } from "react";
+import { useState, useEffect } from "react";
 import { AdminSettingsContextProvider } from "./components/admin/AdminSettingsContext";
 import UserApp from "./components/user/UserApp";
 import Home from "./pages/users/Home";
@@ -24,6 +23,9 @@ import Profile from "./pages/users/Profile";
 
 function App() {
     const [loggedin,setLoggedin] = useState(true);
+    useEffect(()=>{
+        setLoggedin(true);
+    },[])
     return (
         <AdminSettingsContextProvider>
             <Router>

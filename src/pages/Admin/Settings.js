@@ -1,12 +1,7 @@
 import { Tabs } from "@mantine/core";
-import { CgProfile } from "react-icons/cg";
-import { Link as A } from "react-router-dom";
 import SettingsNotification from "../../components/admin/SettingsNotification";
 import AdminSettings from "../../components/admin/AdminSettings";
 import AdminSecurity from "../../components/admin/AdminSecurity";
-import { useReducer,useContext } from "react";
-
-import { AdminSettingsContextProvider } from "../../components/admin/AdminSettingsContext";
 import GeneralSettings from "../../components/admin/GeneralSettings";
 const Settings = () => {
    

@@ -2,8 +2,8 @@ import { Outlet } from "react-router-dom";
 import SideBar from "./SideBar";
 import TopBar from "./TopBar";
 import { MantineProvider, Notification } from "@mantine/core";
-import { MdReport, MdWifiOff } from "react-icons/md";
-import { useContext, useState } from "react";
+import { MdWifiOff } from "react-icons/md";
+import { useContext } from "react";
 import AdminSettingsContext from "./AdminSettingsContext";
 import '../../styles/admin/styles.css'
 const AdimApp = () => {

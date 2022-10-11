@@ -1,6 +1,5 @@
-import profileImg2 from "../../static/images/lolita.jpg";
 import pics from "../../static/images/lolita.jpg";
-import { Button, Menu, Center } from "@mantine/core";
+import { Menu } from "@mantine/core";
 import { BiDotsVerticalRounded, BiUser, BiBlock } from "react-icons/bi";
 
 const Activity = () => {

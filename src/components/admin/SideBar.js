@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link as A,useLocation} from 'react-router-dom'
-import {BsGridFill,BsPeopleFill,BsGearFill,BsPersonFill,BsBellFill} from 'react-icons/bs'
+import {BsGridFill,BsPeopleFill,BsGearFill,BsBellFill} from 'react-icons/bs'
 
 const SideBar = () => {
     const location = useLocation()
