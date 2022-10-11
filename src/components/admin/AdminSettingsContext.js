@@ -41,7 +41,6 @@ export const AdminSettingsContextProvider = ({ children }) => {
     useEffect(() => {
         localStorage.setItem("theme", JSON.stringify(settings.theme));
         console.log(settings.theme);
-        switchTheme();
     }, [settings, appearanceTheme]);
 
     return (
