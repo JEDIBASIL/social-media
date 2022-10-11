@@ -1,0 +1,102 @@
+.Profile {
+  @include flexDisplay(center, flex-start, row);
+  min-height: 100vh;
+  width: 92%;
+  margin: 0px auto;
+  .backArrow{
+    color: var(--color);
+  }
+  .profileDetailsContainer {
+    width: 100%;
+    overflow: hidden;
+    // border-radius: 15px 15px 0 0;
+    border-radius: 15px;
+    border: 1px solid var(--border);
+    padding-bottom: 30px;
+    .profileImgContainer {
+      width: 100%;
+      height: 220px;
+      background-size: cover;
+      position: relative;
+      margin-bottom: 70px;
+      img {
+        position: absolute;
+        bottom: -70px;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        border: 5px solid var(--componentBackground);
+        left: 30px;
+      }
+      .profileName{
+        position: absolute;
+        bottom: -40px;
+        left: 200px;
+        svg{
+            color: var(--majorColor);
+        }
+      }
+    }
+    .followAndMore {
+        @include flexDisplay(space-between, center, row);
+        padding: 0px 20px;
+      .followersOverview {
+        @include flexDisplay(flex-start, center, row);
+        gap: 8px;
+        p{
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--lighterColor);
+            span{
+                font-weight: 400;
+            }
+        }
+      }
+      .profileActionsContainer{
+        @include flexDisplay(center, center, row);
+        button{
+            font-size: 15px;
+            margin-left: 10px;
+            font-weight: 600;
+            &.more{
+                border: 1px solid var(--border);
+                width: 35px;
+                height: 35px;
+                svg{
+                    font-size: 25px;
+                }
+            }
+        }
+      }
+    }
+  }
+  .profileMediaAndSuggested{
+    @include flexDisplay(center, flex-start, row);
+    gap: 30px;
+    .profileTab{
+        width: 520px;
+        .postContainer {
+            width: 100%;
+            min-width: 100%;
+            padding: 0;
+        }
+        .mantine-Tabs-tabsList{
+            position: sticky;
+            top: 65px;
+            background-color: var(--componentBackground);
+           border: 1px solid var(--border);
+           border-radius: 0px 0px 15px 15px;
+           border-top: 0;
+           overflow: hidden;
+           padding-bottom: 2px;
+           .mantine-Tabs-tab{
+            // border-bottom: 2px solid var(--majorColor);
+           }
+        }
+    }
+    .ActivityAndTrendingBar{
+        margin-top: 30px;
+        width: 420px;
+    }
+  }
+}

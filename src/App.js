@@ -20,6 +20,7 @@ import Activity from "./pages/users/Activity";
 import Explore from "./pages/users/Explore";
 import Chat from "./pages/users/Chat";
 import Call from "./pages/users/Call";
+import Profile from "./pages/users/Profile";
 
 function App() {
     const [loggedin,setLoggedin] = useState(true);
@@ -60,6 +61,7 @@ function App() {
                             <Route path="/explore" element={<Explore />}></Route>
                             <Route path="/chats" element={<Chat />}></Route>
                             <Route path="/call" element={<Call />}></Route>
+                            <Route path="/profile" element={<Profile />}></Route>
                         </Route>
 
                     </Routes>

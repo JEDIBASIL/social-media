@@ -1,6 +1,4 @@
 import profileImg from "../../static/images/anime.jpg";
-import profileImg2 from "../../static/images/lolita.jpg";
-import profileImg3 from "../../static/images/Reading book-cuate.png";
 import { Menu, TextInput } from "@mantine/core";
 import { BiDotsVerticalRounded, BiUser, BiBlock,BiCommentDots } from "react-icons/bi";
 import {FaHeart,FaStar, FaFacebookMessenger} from 'react-icons/fa'
@@ -37,9 +35,11 @@ const PostCard = () => {
 
       </div>
 
-      <div className="postContent grid2">
-        <img src={profileImg2} alt="" />
-        <img src={profileImg2} alt="" />
+      <div className="postContent gridBigTop">
+        <img src="https://pbs.twimg.com/media/FdLhlX7XwAEeAjd?format=jpg&name=900x900" alt="" />
+        <img src={"https://pbs.twimg.com/media/FdWwJ0HXgAImS8U?format=jpg&name=small"} alt="" />
+        <img src={"https://pbs.twimg.com/media/Fd_jMWkXEAEIEKW?format=jpg&name=small"} alt="" />
+        {/* <img src={profileImg2} alt="" /> */}
         {/* <img src={profileImg2} alt="" />
         <img src={profileImg2} alt="" /> */}
       </div>

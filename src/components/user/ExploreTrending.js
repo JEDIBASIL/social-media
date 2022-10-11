@@ -1,14 +1,13 @@
 import pics from "../../static/images/lolita.jpg";
-import { Button, Center, Menu } from "@mantine/core";
+import { Menu } from "@mantine/core";
 import { BiDotsVerticalRounded, BiUser, BiBlock } from "react-icons/bi";
-import PostCard from "./PostCard";
 const ExploreTrending = () => {
   return (
     <div className="ExploreTrending">
       <h4>Trending</h4>
       <div className="trendingPostContainer">
         <div className="card">
-          <img src={pics} alt="" />
+          <img src={"https://pbs.twimg.com/semantic_core_img/1576124032361140226/dlGy5tEL?format=jpg&name=small"} alt="" />
           <div className="text">
             <h4>The best guiterist in the world</h4>
             <p>
@@ -33,7 +32,7 @@ const ExploreTrending = () => {
           </Menu>
         </div>
         <div className="card">
-          <img src={pics} alt="" />
+          <img src={"https://pbs.twimg.com/semantic_core_img/1549915092229111809/QVqCM_5n?format=jpg&name=240x240"} alt="" />
           <div className="text">
             <h4>The best guiterist in the world</h4>
             <p>

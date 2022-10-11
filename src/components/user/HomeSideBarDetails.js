@@ -5,7 +5,9 @@ const HomeSideBarDetails = () => {
   return (
     <div className="HomeSideBar">
         <div className="userDetailsContainer">
+            <div className="profileBackgroundImg">
             <img src={profileImg} alt="" />
+            </div>
             <h3>Shadow</h3>
             <p>shadow@gmail.com</p>
         </div>

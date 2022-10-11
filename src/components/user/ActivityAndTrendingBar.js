@@ -42,7 +42,7 @@ const ActivityAndTrendingBar = () => {
 
 <div className="activityCardContainer">
         <div className="card">
-          <img src={pics} alt="" />
+          <img src={"https://pbs.twimg.com/media/ERn62xjXsAAPuPU?format=jpg&name=medium"} alt="" />
           <div className="text">
             <h4>The best guiterist in the world</h4>
             <p>
@@ -68,7 +68,7 @@ const ActivityAndTrendingBar = () => {
           </Menu>
         </div>
         <div className="card">
-          <img src={pics} alt="" />
+          <img src={"https://pbs.twimg.com/media/FdN5sA-XoAARUDA?format=jpg&name=900x900"} alt="" />
           <div className="text">
             <h4>The best guiterist in the world</h4>
             <p>
@@ -94,7 +94,7 @@ const ActivityAndTrendingBar = () => {
           </Menu>
         </div>
         <div className="card">
-          <img src={pics} alt="" />
+          <img src={"https://pbs.twimg.com/media/FdHreMWXEAA6MF_?format=jpg&name=small"} alt="" />
           <div className="text">
             <h4>The best guiterist in the world</h4>
             <p>

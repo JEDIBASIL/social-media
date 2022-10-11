@@ -1,5 +1,6 @@
 import { Button, Modal } from "@mantine/core"
 import ActivityAndTrendingBar from "../../components/user/ActivityAndTrendingBar"
+import CreatePost from "../../components/user/CreatePost"
 import HomeSideBarDetails from "../../components/user/HomeSideBarDetails"
 import PostCard from "../../components/user/PostCard"
 import UpgradeAds from "../../components/user/UpgradeAds"
@@ -16,6 +17,7 @@ const Home = () => {
        </div>
 
         <div className="postContainer">
+          <div><CreatePost /></div>
             <PostCard />
             <PostCard />
             <PostCard />

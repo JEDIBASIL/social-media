@@ -1,13 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Livvic", sans-serif;
+
     text-decoration: none;
     list-style: none;
     // font-family: 'Urbanist', sans-serif;
+
 
 }
 
@@ -17,12 +20,12 @@ textarea {
 }
 
 :root {
-    --background: whitesmoke;
+    --background: rgb(247,249,249);
     --componentBackground: white;
     --color: black;
     --lightColor: rgb(77, 77, 77);
     --lighterColor: gray;
-    --hover: rgb(251, 251, 251);
+    --hover: rgb(248, 248, 248);
     --majorColor: rgb(32,155,240);
     --topBar: rgba(245, 245, 245, 0.507);
     --shadow1:0px 0px 2.5px rgba(0, 0, 0, 0.184);
@@ -70,6 +73,12 @@ a {
     color: inherit;
 }
 
+.backArrow{
+    color: var(--color) !important;
+    fill: var(--color) !important;
+    font-size: 25px;
+}
+
 .userApp{
     background-color:var(--componentBackground) ;
     width: 100%;
@@ -88,6 +97,7 @@ a {
      @import "explore";
      @import "chat";
      @import "call";
+     @import "profile";
     
     }
 }

@@ -15,22 +15,25 @@
     .searchBar-Logo{
         @include flexDisplay(space-between, center, row);
         .logo{
-            margin-right: 30px;
+            margin-right: 20px;
             a{
                 // font-family: "Outfit", sans-serif;
                 font-family: 'Urbanist', sans-serif;
                 font-weight: 600;
                 color: var(--majorColor);
                 font-size: 25px;
+                img{
+                    width: 50px;
+                }
             }
         }
     }
     menu{
         border-radius: 10px;
         height: 100%;
-        width: 25%;
-        &:nth-child(1){
-            background-color: red
+        &.navigators{
+            width: 55%;
+            @include flexDisplay(flex-start, center, row);       
         }
         @include flexDisplay(center, center, row);       
         a:not(.profileImg){
@@ -40,23 +43,23 @@
             border-radius: 10px;
             margin-left: 15px;
             transition: ease-in-out 0.2s;
-            // color: var(--lighterColor); 
+             color: var(--lightColor); 
             &:hover{
                 background-color:var(--hover);
             }
             svg{
-                font-size: 28px;
-                fill: var(--color);
-                color: var(--color);
-                stroke: var(--color);
+                font-size: 30px;
+                fill: var(--lightColor);
+                color: var(--lightColor);
+                stroke: var(--lightColor);
                 path{
-                    stroke: var(--color);
+                    stroke: var(--lightColor);
                 }
             }
             span{
                 font-size: 11px;
-                font-weight: 600;
-                // display: none;
+                font-weight: 800;
+                display: none;
                 transform: translateY(-2px);
             }
             &.active{

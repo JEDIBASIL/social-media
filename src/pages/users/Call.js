@@ -1,7 +1,6 @@
 import { Button } from "@mantine/core"
-import { CgDisplayGrid, CgUserAdd } from "react-icons/cg"
 import {  } from "react-icons/di"
-import { MdMicOff, MdCallEnd, MdPortableWifiOff, MdVideocamOff, MdZoomOutMap } from "react-icons/md"
+import { MdMicOff, MdCallEnd, MdVideocamOff, MdZoomOutMap } from "react-icons/md"
 import {HiUserAdd} from 'react-icons/hi'
 import pics from '../../static/images/anime.jpg'
 import Webcam from "react-webcam"
