@@ -42,7 +42,7 @@ export const AdminSettingsContextProvider = ({ children }) => {
         localStorage.setItem("theme", JSON.stringify(settings.theme));
         console.log(settings.theme);
         switchTheme();
-    }, [settings.theme, appearanceTheme]);
+    }, [settings, appearanceTheme]);
 
     return (
         <AdminSettingsContext.Provider value={{ settings, settingsDispatch,appearanceTheme }}>

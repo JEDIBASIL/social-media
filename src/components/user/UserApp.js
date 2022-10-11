@@ -8,7 +8,7 @@ const UserApp = () => {
   const [theme,setTheme] = useState("light");
   useEffect(()=>{
     setTheme("light")
-  })
+  },[])
   return (
     <MantineProvider
     theme={{ colorScheme: theme}}
