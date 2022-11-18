@@ -1,18 +1,45 @@
 .users {
+    background-color: var(--admin-componentBackground);
+    .mantine-Tabs-root	{
+        .mantine-Tabs-tabsList	{
+        width: 220px;
+        padding-left: 15px;
+        padding-top: 15px;
+        padding: 15px;
+        height: calc(100vh - 60px);
+        position: sticky;
+        top: 60px;
+        .mantine-Tabs-tab	{
+            border-radius: 8px;
+            border-color: transparent;
+            padding: 12px 20px;
+            margin-bottom: 5px;
+            h3{
+                font-weight: 500;
+                font-size: 14px;
+            }
+        }
+        [data-active]{
+            background-color: rgb(34,139,230) !important;
+            color: white;
+
+        }
+        }
+    }
     .userSortingContainer {
-        background-color: var(--componentBackground);
+        background-color: var(--admin-componentBackground);
         padding: 10px;
         margin-bottom: 10px;
-        border-radius: 10px;
+        border-bottom: 1px solid var(--admin-border);
     }
     .userTable {
-        background-color: var(--componentBackground);
+        background-color: var(--admin-componentBackground);
         padding: 20px;
         border-radius: 10px;
         @include flexDisplay(flex-start, flex-end, column);
 
         .main {
-            background-color: var(--componentBackground) !important;
+            background-color: var(--admin-componentBackground) !important;
             width: 100%;
             .rdt_TableHead {
                 font-size: 16px !important;

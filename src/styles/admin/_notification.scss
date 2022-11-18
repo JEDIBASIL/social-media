@@ -1,5 +1,5 @@
 .notification {
-    background-color: var(--componentBackground);
+    background-color: var(--admin-componentBackground);
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 30px;
@@ -35,7 +35,7 @@
                     cubic-bezier(0.445, 0.05, 0.55, 0.95);
 
                 &:hover {
-                    background-color: var(--background);
+                    background-color: var(--admin-background);
                     border-bottom: none;
                 }
 

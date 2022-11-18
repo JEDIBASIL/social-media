@@ -1,85 +1,150 @@
-.sideBar{
-    width: 100%;
-    height: 65px;
-    padding:0px 20px;
-    position: sticky;
-    top: 0;
-    z-index: 200;
-    // box-shadow:var(--shadow1) ;
-    border-bottom: 1px solid var(--border);
+.sideBar {
+  width: 100%;
+  height: 65px;
+  padding: 0px 20px;
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  border-bottom: 1px solid var(--border);
+  @include flexDisplay(space-between, center, row);
+  background-color: var(--componentBackground);
+  .searchBar-Logo {
     @include flexDisplay(space-between, center, row);
-    background-color: var(--componentBackground);
-    input{
-        background-color: var(--background)
+    .logo {
+      margin-right: 20px;
+      a {
+        // font-family: "Outfit", sans-serif;
+        font-family: "Urbanist", sans-serif;
+        font-weight: 600;
+        color: var(--majorColor);
+        font-size: 25px;
+        img {
+          width: 50px;
+        }
+      }
     }
-    .searchBar-Logo{
-        @include flexDisplay(space-between, center, row);
-        .logo{
-            margin-right: 20px;
-            a{
-                // font-family: "Outfit", sans-serif;
-                font-family: 'Urbanist', sans-serif;
-                font-weight: 600;
-                color: var(--majorColor);
-                font-size: 25px;
-                img{
-                    width: 50px;
-                }
-            }
-        }
+  }
+  menu {
+    border-radius: 10px;
+    height: 100%;
+    svg {
+      font-size: 22px;
     }
-    menu{
-        border-radius: 10px;
-        height: 100%;
-        &.navigators{
-            width: 55%;
-            @include flexDisplay(flex-start, center, row);       
+    &.navigators {
+      width: 50%;
+      @include flexDisplay(flex-start, center, row);
+    }
+    @include flexDisplay(center, center, row);
+    a {
+      @include flexDisplay(center, center, column);
+      padding: 0px 15px;
+      height: 80%;
+      border-radius: 10px;
+      margin-left: 15px;
+      transition: ease-in-out 0.2s;
+      color: var(--lightColor);
+      &:hover {
+        background-color: var(--hover);
+      }
+      svg {
+        font-size: 30px;
+        fill: var(--lightColor);
+        color: var(--lightColor);
+        stroke: var(--lightColor);
+        path {
+          stroke: var(--lightColor);
         }
-        @include flexDisplay(center, center, row);       
-        a:not(.profileImg){
-            @include flexDisplay(center, center, column);
-            padding: 0px 15px;
-            height: 80%;
-            border-radius: 10px;
-            margin-left: 15px;
-            transition: ease-in-out 0.2s;
-             color: var(--lightColor); 
-            &:hover{
-                background-color:var(--hover);
-            }
-            svg{
-                font-size: 30px;
-                fill: var(--lightColor);
-                color: var(--lightColor);
-                stroke: var(--lightColor);
-                path{
-                    stroke: var(--lightColor);
-                }
-            }
-            span{
-                font-size: 11px;
-                font-weight: 800;
-                display: none;
-                transform: translateY(-2px);
-            }
-            &.active{
-                color:var(--majorColor);
-                svg{
-                    fill: var(--majorColor);
-                }
-            }
-            
+      }
+      span {
+        font-size: 11px;
+        font-weight: 800;
+        // display: none;
+        transform: translateY(-2px);
+      }
+      &.active {
+        color: var(--majorColor);
+        svg {
+          fill: var(--majorColor);
         }
-        .profileImg{
-            margin-left: 10px;
-            img{
-                width: 40px;
-                height: 40px;
-                border-radius: 50%;
-                object-fit: cover;
-            }
+      }
+    }
+    .sideBarMenu {
+      a {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: transparent !important;
+        h4 {
+          font-weight: 600;
         }
+        font-size: 16px;
+        svg {
+          font-size: 20px;
+        }
+      }
+      .profileImg {
+        margin-left: 10px;
+        background-color: transparent;
+        cursor: pointer;
+        border: none;
+        img {
+          width: 40px;
+          height: 40px;
+          border-radius: 50%;
+          object-fit: cover;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
 
-
+@media screen and (max-width: 891px) {
+  .sideBar {
+    padding: 0px 10px;
+    .searchBar-Logo {
+      .logo {
+        margin-right: 0;
+      }
     }
+    .searchBarContainer {
+      display: none;
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .sideBar {
+    .searchBar-Logo {
+      .logo {
+        margin-right: 0;
+        a {
+          img {
+            width: 40px;
+          }
+        }
+      }
+    }
+    menu {
+      &.navigators {
+        width: 100%;
+        @include flexDisplay(center, center, row);
+      }
+      a:not(.profileImg) {
+        margin-left: 8px;
+        padding: 0px 8px;
+        height: 60%;
+        svg {
+          font-size: 25px;
+        }
+      }
+      .profileImg {
+        margin-left: 5px;
+        img {
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+  }
 }

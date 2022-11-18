@@ -1,5 +1,5 @@
 .Chat {
-  width: 950px;
+  width: 1000px;
   height: calc(100vh - 90px);
   transform: translateY(-10px);
   background-color: var(--componentBackground);
@@ -7,13 +7,13 @@
   border: 1px solid var(--border);
   @include flexDisplay(flex-start, flex-start, row);
   .chatSideBar {
-    width: 350px;
-    min-width: 350px;
+    width: 300px;
+    min-width: 300px;
     height: 100%;
     border-right: 2px solid var(--border);
     .chatSearch {
-      padding: 5px;
       border-bottom: 2px solid var(--border);
+      overflow: hidden;
       input {
         border: none;
         &:focus {
@@ -30,13 +30,13 @@
         @include flexDisplay(flex-start, center, row);
         border-bottom: 1px solid var(--border);
         padding: 6px 5px;
-        &:hover{
+        &:hover {
           background-color: var(--background);
         }
-        &.active{
+        &.active {
           background-color: var(--background) !important;
-          &::before{
-            content: '';
+          &::before {
+            content: "";
             position: absolute;
             left: 0px;
             height: 100%;
@@ -131,7 +131,7 @@
       .chartTopBarIcons {
         width: 120px;
         @include flexDisplay(space-between, center, row);
-        svg{
+        svg {
           font-size: 25px !important;
           color: var(--lightColor);
         }
@@ -146,25 +146,25 @@
       width: 100%;
       height: 100%;
       padding: 0px 30px;
-      .chatMessagesContainer{
+      .chatMessagesContainer {
         width: 100%;
-        .chatMessagesContent{
+        .chatMessagesContent {
           width: 100%;
-          @include flexDisplay(flex-start,center, row);
-          &.userChatMessagesContent{
-            @include flexDisplay(flex-end,center, row);
-            .chatMessage{
+          @include flexDisplay(flex-start, center, row);
+          &.userChatMessagesContent {
+            @include flexDisplay(flex-end, center, row);
+            .chatMessage {
               background-color: var(--chatSenderMessageBackgroundColor);
             }
           }
-          padding:10px;
-          .chatMessage{
+          padding: 10px;
+          .chatMessage {
             background-color: var(--chatReciverMessageBackgroundColor);
             padding: 10px;
             border-radius: 20px;
             max-width: 55%;
             box-shadow: var(--shadow1);
-            p{
+            p {
               font-weight: 400;
             }
           }
@@ -180,32 +180,32 @@
       .chatAttachments {
         width: max-content;
         @include flexDisplay(space-between, center, row);
-        .icons{
-            margin-right: 15px;
+        .icons {
+          margin-right: 15px;
 
-        &.fileChooser{
+          &.fileChooser {
             position: relative;
             overflow: hidden;
-            input{
-                position: absolute;
-                top: 0;
-                left: 0;
-                width: 200px;
-                height: 200px;
-                opacity: 0;
-                cursor: pointer;
+            input {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 200px;
+              height: 200px;
+              opacity: 0;
+              cursor: pointer;
             }
-        }
-        &.mic{
-            margin: 0 ;
           }
-        svg{
-          font-size: 24px;
-          color: var(--lighterColor);
-          cursor: pointer;
-          z-index: 2;
+          &.mic {
+            margin: 0;
+          }
+          svg {
+            font-size: 24px;
+            color: var(--lighterColor);
+            cursor: pointer;
+            z-index: 2;
+          }
         }
-    }
       }
       .chatTextarea {
         height: 100%;

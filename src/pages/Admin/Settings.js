@@ -3,26 +3,25 @@ import SettingsNotification from "../../components/admin/SettingsNotification";
 import AdminSettings from "../../components/admin/AdminSettings";
 import AdminSecurity from "../../components/admin/AdminSecurity";
 import GeneralSettings from "../../components/admin/GeneralSettings";
+import {HiShieldCheck,HiBell,HiCog} from "react-icons/hi"
+import {RiAdminFill} from "react-icons/ri"
 const Settings = () => {
    
     return (
         <>
-       
-            <h2 className="heading">Settings</h2>
-
             <div className="settings">
-                <Tabs defaultValue="general-settings">
+                <Tabs orientation="vertical"  defaultValue="general-settings">
                     <Tabs.List position={"left"}>
-                        <Tabs.Tab value="general-settings">
+                        <Tabs.Tab icon={<HiCog style={{fontSize:"22px"}} />} value="general-settings">
                             <h3>General</h3>
                         </Tabs.Tab>
-                        <Tabs.Tab value="admin-settings">
+                        <Tabs.Tab icon={<RiAdminFill style={{fontSize:"22px"}} />} value="admin-settings">
                             <h3>Admin</h3>
                         </Tabs.Tab>
-                        <Tabs.Tab value="notification-settings">
+                        <Tabs.Tab icon={<HiBell style={{fontSize:"22px"}} />} value="notification-settings">
                             <h3>Notification</h3>
                         </Tabs.Tab>
-                        <Tabs.Tab value="security-settings">
+                        <Tabs.Tab icon={<HiShieldCheck style={{fontSize:"22px"}} />} value="security-settings">
                             <h3>Security</h3>
                         </Tabs.Tab>
                     </Tabs.List>

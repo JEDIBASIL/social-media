@@ -90,7 +90,7 @@ const MonthlyChart = () => {
                             bottom: 5,
                         }}
                     >
-                        <CartesianGrid strokeDasharray="3 3" />
+                        {/* <CartesianGrid strokeDasharray="3 3" /> */}
                         <XAxis dataKey="name" />
                         <YAxis />
                         <Tooltip contentStyle={{backgroundColor:'rgb(13, 13, 13)'}}/>

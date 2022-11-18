@@ -1,0 +1,45 @@
+.settings {
+  width: 100%;
+  min-height: calc(100vh + 30px);
+  transform: translateY(-15px);
+}
+.SettingsSideBar {
+  width: 250px;
+  height: calc(100vh - 80px);
+  border-right: 1px solid var(--border);
+  position: sticky;
+  top: 80px;
+  padding-top: 20px;
+  ul {
+    li {
+      margin-bottom: 10px;
+      padding: 0px 20px;
+      a {
+        padding: 12px;
+        @include flexDisplay(flex-start, center, row);
+        border-radius: 10px;
+        gap: 10px;
+        position: relative;
+        &:hover{
+          background-color: var(--hover);
+        }
+        &.active {
+          background-color: transparent !important;
+          border: 1px solid var(--border);
+          &::before {
+            position: absolute;
+            content: "";
+            width: 5px;
+            height: 70%;
+            border-radius: 50px;
+            left: -2.5px;
+            background-color: var(--majorColor);
+          }
+        }
+        svg {
+          font-size: 25px;
+        }
+      }
+    }
+  }
+}

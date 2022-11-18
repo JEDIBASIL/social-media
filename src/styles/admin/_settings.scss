@@ -1,29 +1,52 @@
 .settings {
-    background-color: var(--componentBackground);
-    padding: 10px;
-    border-radius: 10px;
-    margin-bottom: 30px;
+    background-color: var(--admin-componentBackground);
+    .mantine-Tabs-root	{
+        .mantine-Tabs-tabsList	{
+        width: 220px;
+        padding-left: 15px;
+        padding-top: 15px;
+        padding: 15px;
+        height: calc(100vh - 60px);
+        position: sticky;
+        top: 60px;
+        .mantine-Tabs-tab	{
+            border-radius: 8px;
+            border-color: transparent;
+            padding: 12px 20px;
+            margin-bottom: 5px;
+            h3{
+                font-weight: 500;
+                font-size: 14px;
+            }
+        }
+        [data-active]{
+            background-color: rgb(34,139,230) !important;
+            color: white;
 
+        }
+        }
+    }
     h3 {
         font-weight: 400;
+        font-size: 16px;
     }
     .settingsContainer {
         width: 100%;
         padding: 10px;
 
         h2 {
-            font-size: 18px;
+            font-size: 16px;
             margin-bottom: 20px;
             font-weight: 500;
-            color: var(--lighterColor);
+            color: var(--admin-color);
         }
 
         h4 {
             font-size: 20px;
-            color: var(--lighterColor);
+            color: var(--admin-lighterColor);
             margin-bottom: 20px;
             font-weight: 400;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--admin-border);
             padding-bottom: 10px;
         }
 
@@ -46,7 +69,7 @@
                         width: 200px;
                         border-radius: 5px;
                         overflow: hidden;
-                        border: 1px solid var(--border);
+                        border: 1px solid var(--admin-border);
                         padding-bottom: 10px;
                         cursor: pointer;
                      
@@ -56,12 +79,12 @@
                             padding: 10px 0px;
                             height: max-content;
                             font-size: 60px;
-                            background-color: var(--background);
+                            background-color: var(--admin-background);
                             overflow: hidden;
-                            border-bottom: 1px solid var(--border);
+                            border-bottom: 1px solid var(--admin-border);
                             transition: 0.1s ease-in-out;
                             &:hover{
-                                background-color: var(--hover);
+                                background-color: var(--admin-hover);
                             }
                         }
                         .themeSwitch{
@@ -91,8 +114,8 @@
                 border-radius: 10px;
                 ul {
                     width: 100%;
-                    border-left: 1px solid var(--border);
-                    border-right: 1px solid var(--border);
+                    border-left: 1px solid var(--admin-border);
+                    border-right: 1px solid var(--admin-border);
                     border-radius: 5px;
                     padding: 1px;
                     overflow: hidden;
@@ -102,10 +125,10 @@
                             center,
                             row
                         );
-                        border-bottom: 1px solid var(--border);
+                        border-bottom: 1px solid var(--admin-border);
                         padding: 12px 20px;
                         &:nth-child(1) {
-                            border-top: 1px solid var(--border);
+                            border-top: 1px solid var(--admin-border);
                         }
 
                         .adminDetails {
@@ -129,7 +152,7 @@
                                     margin-bottom: 1px;
                                 }
                                 p {
-                                    color: var(--lighterColor);
+                                    color: var(--admin-lighterColor);
                                     font-size: 14px;
                                 }
                             }
@@ -149,7 +172,7 @@
                                     center,
                                     row
                                 );
-                                color: var(--color);
+                                color: var(--admin-color);
                                 font-size: 18px;
                                 &.blockAdminIcon {
                                     &:hover {
@@ -195,12 +218,12 @@
                     color: crimson;
                     margin-bottom: 20px;
                     font-weight: 400;
-                    border-bottom: 1px solid var(--border);
+                    border-bottom: 1px solid var(--admin-border);
                     padding-bottom: 10px;
                 }
                 p {
                     font-size: 15px;
-                    color: var(--lighterColor);
+                    color: var(--admin-lighterColor);
                 }
                 button {
                     margin-top: 20px;

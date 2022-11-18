@@ -1,23 +1,29 @@
 import { Autocomplete } from "@mantine/core";
 import { BsSearch, BsBell } from 'react-icons/bs'
 import userImg from '../../static/images/anime.jpg'
+import {Link as A} from 'react-router-dom'
 const TopBar = () => {
     return (
         <div className="topBar">
-            <div className='adminProfile'>
-                <img src={userImg} alt="" />
-                <span>Good morning, John</span>
-            </div>
-            <div className="timer"></div>
+
             <div className={'topBarSearchBar'}>
 
                 <Autocomplete
-                    radius={50}
+                    radius={5}
                     icon={<BsSearch />}
                     data={['Settings']}
                     placeholder={'Search dashboard'}
                 />
-                <div className='topBarNotificationIcon'><BsBell /></div>
+                <div className='adminProfile'>
+                    <img src={userImg} alt="" />
+                </div>
+                <A to={"/admin/notifications"}>
+
+                    <div className='topBarNotificationIcon'>
+                        <BsBell />
+                    </div>
+                </A>
+
             </div>
         </div>
     );

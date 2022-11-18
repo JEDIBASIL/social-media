@@ -54,7 +54,7 @@ const IncomeMap = () => {
               }}
               style={{
                 default: {
-                  fill: "#D6D6DA",
+                  fill: "rgb(34,139,230)",
                   outline: "none"
                 },
                 hover: {

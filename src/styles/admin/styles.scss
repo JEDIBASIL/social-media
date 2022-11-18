@@ -1,206 +1,212 @@
-@import url("https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Livvic", sans-serif;
-    text-decoration: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat Alternates', sans-serif !important;
+  text-decoration: none;
+  list-style: none;
 }
 
 input,
 textarea {
-    font-family: "Livvic", sans-serif !important;
+  font-family: 'Montserrat Alternates', sans-serif !important;
 }
 
 :root {
-    --background: rgb(246,248,250);
-    --componentBackground: white;
-    --color: black;
-    --lightColor: rgb(77, 77, 77);
-    --lighterColor: gray;
-    --hover: rgb(250, 250, 250);
-    --majorColor: royalblue;
-    --topBar: rgba(245, 245, 245, 0.507);
-    --shadow1: 0px 0px 30px rgba(0, 0, 0, 0.062);
-    --shadow2: 0px 0px 20px #5946ffa9;
-    --border: gainsboro;
+  --admin-background: whitesmoke;
+  --admin-componentBackground: white;
+  --admin-color: black;
+  --admin-lightColor: rgb(77, 77, 77);
+  --admin-lighterColor: gray;
+  --admin-hover: rgb(245, 245, 245);
+  --admin-majorColor: royalblue;
+  --admin-topBar: gainsboro;
+  --admin-shadow1: 0px 0px 30px rgba(0, 0, 0, 0.062);
+  --admin-shadow2: 0px 0px 20px #5946ffa9;
+  --admin-border: gainsboro;
 }
 
 [data-theme="dark"] {
-    --background: rgb(34, 35, 41);
-    --componentBackground: rgb(26, 27, 29);
-    --color: white;
-    --lightColor: whitesmoke;
-    --lighterColor: rgb(211, 211, 211);
-    --hover: rgb(25, 25, 25);
-    --topBar: rgba(34, 35, 41, 0.533);
-    --shadow1: 0px 0px 30px rgba(13, 13, 13, 0.548);
-    --shadow2: 0px 0px 20px #5946ffa9;
-    --border: rgb(77, 77, 77);
+  --admin-background: rgb(18, 18, 21);
+  --admin-componentBackground: rgb(26, 27, 29);
+  --admin-color: white;
+  --admin-lightColor: whitesmoke;
+  --admin-lighterColor: rgb(211, 211, 211);
+  --admin-hover: rgb(25, 25, 25);
+  --admin-topBar: rgba(34, 35, 41, 0.533);
+  --admin-shadow1: 0px 0px 30px rgba(13, 13, 13, 0.548);
+  --admin-shadow2: 0px 0px 20px #5946ffa9;
+  --admin-border: rgb(77, 77, 77);
 }
 
 @mixin flexDisplay($justify, $align, $direction) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-    flex-direction: $direction;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
 }
 
 a {
-    color: inherit;
+  color: inherit;
 }
 
 .deleteAccountWarningText {
-    color: var(--lighterColor) !important;
-    text-align: center;
+  color: var(--admin-lighterColor) !important;
+  text-align: center;
 }
 
 .risky {
-    color: crimson;
+  color: crimson;
 }
 
 .subHeading {
-    margin-bottom: 30px;
-    font-size: 20px;
-    font-weight: 500;
-    color: var(--lightColor);
+  margin-bottom: 30px;
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--admin-lightColor);
 }
 
 .modalTitle {
-    color: var(--lightColor);
+  color: var(--admin-lightColor);
 }
 
 .main {
-    div,
-    nav {
-        background-color: var(--componentBackground) !important;
-        color: var(--color);
-        border-color: var(--border);
+  div,
+  nav {
+    background-color: var(--admin-componentBackground) !important;
+    color: var(--admin-color);
+    border-color: var(--admin-border);
+  }
+  nav {
+    svg {
+      fill: var(--admin-color);
     }
-    nav {
-        svg {
-            fill: var(--color);
-        }
-    }
+  }
 }
 
 .addAdminForm {
-    .roleContainer {
-        margin-top: 20px;
-        .roleContent {
-            margin-top: 25px;
-            .roleContentRadio {
-                @include flexDisplay(center, center, row);
-                width: max-content;
-                margin-bottom: 10px;
-                h3 {
-                    font-size: 16px;
-                    font-weight: 600;
-                    color: var(--color) !important;
-                }
-            }
-            .modalText {
-                color: var(--lighterColor) !important;
-                font-size: 15px;
-            }
+  .roleContainer {
+    margin-top: 20px;
+    .roleContent {
+      margin-top: 25px;
+      .roleContentRadio {
+        @include flexDisplay(center, center, row);
+        width: max-content;
+        margin-bottom: 10px;
+        h3 {
+          font-size: 16px;
+          font-weight: 600;
+          color: var(--admin-color) !important;
         }
+      }
+      .modalText {
+        color: var(--admin-lighterColor) !important;
+        font-size: 15px;
+      }
     }
-    button {
-        margin-top: 30px;
-        width: 100%;
-    }
+  }
+  button {
+    margin-top: 30px;
+    width: 100%;
+  }
 }
 
 .more {
-    @include flexDisplay(center, center, row);
-    border: none;
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    font-size: 20px;
-    background-color: transparent;
-    color: var(--color);
-    cursor: pointer;
-    &:hover {
-        background-color: var(--hover);
-    }
+  @include flexDisplay(center, center, row);
+  border: none;
+  max-width: 30px;
+  min-width: 30px;
+  max-height: 30px;
+  min-height: 30px;
+  border-radius: 50%;
+  font-size: 20px;
+  background-color: transparent;
+  color: var(--color);
+  cursor: pointer;
+  &:hover {
+    background-color: var(--hover);
+  }
 }
 
 .modalForm {
-    input {
-        margin-bottom: 20px;
-    }
-    button {
-        width: 100%;
-        margin-top: 20px;
-    }
+  input {
+    margin-bottom: 20px;
+  }
+  button {
+    width: 100%;
+    margin-top: 20px;
+  }
 }
 
 .roleContainer {
-    margin-top: 20px;
+  margin-top: 20px;
 }
 
 .gapBtnTwo {
-    @include flexDisplay(flex-start, center, row);
-    margin-top: 10px;
-    gap: 10px;
+  @include flexDisplay(flex-start, center, row);
+  margin-top: 10px;
+  gap: 10px;
 }
 
 .gapBtn {
-    @include flexDisplay(center, center, row);
-    margin-top: 20px;
-    gap: 30px;
+  @include flexDisplay(center, center, row);
+  margin-top: 20px;
+  gap: 30px;
 }
 
-
-
 body {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 .adminApp {
-    background-color: var(--background);
-    position: relative;
+  background-color: var(--admin-background);
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  color: var(--admin-color);
+  margin: auto;
+  @include flexDisplay(flex-start, flex-start, column);
+  @import "top_bar";
+    max-width: 1700px;
+  .heading {
+    margin: 20px 0;
+    padding-left: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    z-index: 3;
+    &.overviewHeading {
+      color: white;
+      margin-top: 100px;
+    }
+  }
+  @import "admin_side_bar";
+
+  .adminAppContainer {
     width: 100%;
-    min-height: 100vh;
-    color: var(--color);
-    margin: auto;
-    border-radius: 20px;
-    @include flexDisplay(flex-start, flex-start, row);
-    .heading {
-        margin-bottom: 20px;
-        padding-left: 10px;
-        font-size: 25px;
-        font-weight: 600;
+    @import "toast_notification";
+
+    .adminAppContent {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      // 
+      @import "overview";
+      @import "users";
+      @import "notification";
+      @import "settings";
+      @import "user_profile";
     }
-    @import "admin_side_bar";
-
-    .adminAppContainer {
-        width: 100%;
-        @import "toast_notification";
-        @import "top_bar";
-
-        .adminAppContent {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start;
-            padding: 10px 30px;
-            @import "overview";
-            @import "users";
-            @import "notification";
-            @import "settings";
-            @import "user_profile";
-
-        }
-    }
+  }
 }
-.map{
-    background-color: var(--componentBackground);
-    border-radius: 10px;
-    margin-top: 30px;
+.map {
+  background-color: var(--admin-componentBackground);
+  border-radius: 10px;
+  margin-top: 30px;
+  height: 500px;
+  color: var(--admin-color) !important;
 }
 
 @import "form";

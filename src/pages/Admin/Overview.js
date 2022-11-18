@@ -5,7 +5,7 @@ import RecentUsers from "../../components/admin/RecentUsers";
 import IncomeMap from "../../components/admin/IncomeMap";
 const Overview = () => {
     return (
-        <>
+        < div className="overviewContainer">
             <IncomeOverview />
            <div className='overviewChart'>
                 <DailyChart />
@@ -13,7 +13,7 @@ const Overview = () => {
             </div>
             <IncomeMap />
             <RecentUsers/>
-        </>
+        </div>
     );
 };
 

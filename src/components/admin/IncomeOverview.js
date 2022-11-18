@@ -6,9 +6,9 @@ import {
 const IncomeOverview = () => {
     return (
         <>
-            <h2 className="heading">Overview</h2>
-
+            <h2 className="heading overviewHeading">Overview</h2>
             <div className="incomeOverview">
+            <div className="background"><p>Welcome Back <span>Smith</span></p> </div>
                 <div className="incomeOverviewCardContainer">
                     <div className="card">
                         <i>

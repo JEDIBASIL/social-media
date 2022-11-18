@@ -1,27 +1,25 @@
 .topBar {
-    background-color: var(--topBar);
-    position: sticky;
-    top: 0;
     z-index: 10;
-    width: 100%;
-    backdrop-filter: blur(50px);
-    -webkit-backdrop-filter: blur(50px);
     height: 60px;
-    @include flexDisplay(space-between, center, row);
+    @include flexDisplay(center, center, row);
+    gap: 20px;
     padding: 0px 20px;
     border-radius: 20px;
+    position: sticky;
+    top: 0;
     .adminProfile {
-        background-color: var(--componentBackground);
+        background-color: rgb(26, 27, 29);
         padding: 5px 20px;
         border-radius: 50px;
         @include flexDisplay(center, center, row);
         gap: 20px;
+        color: white;
 
         img {
             width: 35px;
             height: 35px;
             object-fit: cover;
-            background-color: var(--background);
+            background-color: var(--admin-background);
             border-radius: 50%;
         }
     }
@@ -29,7 +27,7 @@
     .timer{
         width: 40%;
         height: 40px;
-        background-color: var(--componentBackground);
+        background-color: var(--admin-componentBackground);
         padding: 5px 20px;
         border-radius: 50px;
         @include flexDisplay(center, center, row);
@@ -44,9 +42,9 @@
             height: 35px;
             border-radius: 50%;
             border: 1px dashed gray;
-            color: gray;
             @include flexDisplay(center, center, row);
             font-size: 18px;
+            color: white;
         }
     }
 }

@@ -1,103 +1,198 @@
-@import url("https://fonts.googleapis.com/css2?family=Livvic:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,900&family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Livvic", sans-serif;
-
-    text-decoration: none;
-    list-style: none;
-    // font-family: 'Urbanist', sans-serif;
-
-
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Red Hat Display", sans-serif;
+  text-decoration: none;
+  list-style: none;
 }
 
 input,
-textarea {
-    font-family: "Livvic", sans-serif !important;
+textarea,
+button {
+  font-family: "Red Hat Display", sans-serif !important;
 }
 
 :root {
-    --background: rgb(247,249,249);
-    --componentBackground: white;
-    --color: black;
-    --lightColor: rgb(77, 77, 77);
-    --lighterColor: gray;
-    --hover: rgb(248, 248, 248);
-    --majorColor: rgb(32,155,240);
-    --topBar: rgba(245, 245, 245, 0.507);
-    --shadow1:0px 0px 2.5px rgba(0, 0, 0, 0.184);
-    --shadow2: 0px 0px 20px #5946ffa9;
-    --border: rgba(222, 226, 230, 0.746);
-    --chatBackgroundImage:url('../../static/images/chat-light-theme.jpeg');
-    --chatBackgroundBlendMode:lighten;
-    --chatBackgroundColor:rgba(245, 245, 245, 0.946);
-    --chatReciverMessageBackgroundColor:rgb(255, 255, 255);
-    --chatSenderMessageBackgroundColor:rgb(129, 202, 255);
+  --background: rgb(255, 255, 255);
+  --componentBackground: white;
+  --color: black;
+  --lightColor: rgb(77, 77, 77);
+  --lighterColor: gray;
+  --hover: rgb(248, 248, 248);
+  --majorColor: rgb(32, 155, 240);
+  --topBar: rgba(245, 245, 245, 0.507);
+  --shadow1: 0px 0px 2.5px rgba(0, 0, 0, 0.184);
+  --shadow2: 0px 0px 20px #5946ffa9;
+  --border: rgb(229, 229, 229);
+  --chatBackgroundImage: url("../../static/images/chat-light-theme.jpeg");
+  --chatBackgroundBlendMode: lighten;
+  --chatBackgroundColor: rgba(245, 245, 245, 0.946);
+  --chatReciverMessageBackgroundColor: rgb(255, 255, 255);
+  --chatSenderMessageBackgroundColor: rgb(129, 202, 255);
 }
 // rgb(32, 32, 36)
 [data-theme="dark"] {
-    --background: rgb(37, 37, 42);
-    --componentBackground: black;
-    --color: white;
-    --lightColor: whitesmoke;
-    --lighterColor: rgb(211, 211, 211);
-    --hover: rgb(28, 29, 31);
-    --topBar: rgba(34, 35, 41, 0.533);
-    --shadow1:0px 0px 2px rgba(225, 225, 225, 0.184);
-    --shadow2: 0px 0px 20px #5946ffa9;
-    --border: rgb(55,58,64);
-    --chatBackgroundImage:url('../../static/images/chat-dark-theme.jpeg');
-    --chatBackgroundBlendMode:darken;
-    --chatBackgroundColor:rgba(19, 19, 20, 0.946);
-    --chatReciverMessageBackgroundColor:rgb(52, 52, 52);
-    --chatSenderMessageBackgroundColor:rgb(67, 177, 255);
+  --background: rgb(0, 0, 0);
+  --componentBackground: rgb(3, 3, 3);
+  --color: rgb(213, 213, 213);
+  --lightColor: whitesmoke;
+  --lighterColor: rgb(211, 211, 211);
+  --hover: rgb(28, 29, 31);
+  --topBar: rgba(34, 35, 41, 0.533);
+  --shadow1: 0px 0px 2px rgba(225, 225, 225, 0.184);
+  --shadow2: 0px 0px 20px #5946ffa9;
+  --border: rgb(41, 46, 52);
+  --chatBackgroundImage: url("../../static/images/chat-dark-theme.jpeg");
+  --chatBackgroundBlendMode: darken;
+  --chatBackgroundColor: rgba(19, 19, 20, 0.946);
+  --chatReciverMessageBackgroundColor: rgb(52, 52, 52);
+  --chatSenderMessageBackgroundColor: rgb(67, 177, 255);
+}
+
+[data-theme="dimmed"] {
+  --background: rgb(36, 37, 43);
+  --componentBackground: rgb(36, 37, 43);
+  --color: rgb(213, 213, 213);
+  --lightColor: whitesmoke;
+  --lighterColor: rgb(211, 211, 211);
+  --hover: rgb(40, 44, 49);
+  --topBar: rgba(34, 35, 41, 0.533);
+  --shadow1: 0px 0px 2px rgba(225, 225, 225, 0.184);
+  --shadow2: 0px 0px 20px #5946ffa9;
+  --border: rgb(50, 51, 61);
+  --chatBackgroundImage: url("../../static/images/chat-dark-theme.jpeg");
+  --chatBackgroundBlendMode: darken;
+  --chatBackgroundColor: rgba(19, 19, 20, 0.946);
+  --chatReciverMessageBackgroundColor: rgb(52, 52, 52);
+  --chatSenderMessageBackgroundColor: rgb(67, 177, 255);
 }
 
 @mixin flexDisplay($justify, $align, $direction) {
-    display: flex;
-    justify-content: $justify;
-    align-items: $align;
-    flex-direction: $direction;
-}body{
-    width: 100%;
-    height: 100%;
-    background-color: inherit;
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
 }
-
-
+body {
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+}
 
 a {
-    color: inherit;
+  color: inherit;
 }
 
-.backArrow{
-    color: var(--color) !important;
-    fill: var(--color) !important;
-    font-size: 25px;
+.backArrow {
+  color: var(--color) !important;
+  fill: var(--color) !important;
+  font-size: 25px;
 }
 
-.userApp{
-    background-color:var(--componentBackground) ;
-    width: 100%;
-    min-height: 100vh;
-    color: var(--color);
-    border-color: var(--border) !important;
-    @import "side_bar";
-    input{
-        background-color: var(--componentBackground);
-        color: var(--color);
-    }
-    .appContainer{
+.userApp {
+  background-color: var(--background);
+  width: 100%;
+  min-height: 100vh;
+  color: var(--color);
+  border-color: var(--border) !important;
+  font-weight: 500;
+  @import "side_bar";
+  .appContainer {
     padding-top: 15px;
-    @include flexDisplay(center, flex-start, row); 
-     @import "home";
-     @import "explore";
-     @import "chat";
-     @import "call";
-     @import "profile";
-    
+    position: relative;
+    @include flexDisplay(center, flex-start, row);
+    @import "home";
+    @import "explore";
+    @import "chat";
+    @import "call";
+    @import "profile";
+    @import "settings";
+    @import "clip";
+  }
+}
+.BigPostCard {
+  &.mantine-Modal-root {
+    width: 100vw !important;
+    height: 100vh;
+    @include flexDisplay(center, center, row);
+    .mantine-Modal-inner {
+      width: max-content;
+      margin: 0px auto;
+      padding: 0px !important;
+      position: relative;
+      .mantine-Modal-header {
+        position: relative;
+        z-index: 1;
+        .mantine-Modal-close	 {
+          width: 40px;
+          height: 40px;
+          min-width: 40px;
+          min-height: 40px;
+          max-height: 40px;
+          border-radius: 50%;
+          svg{
+            font-size: 25px;
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+      .mantine-Modal-modal	 {
+        margin: 0 !important;
+        width: 100%;
+        height: calc(100vh - 30px);
+        min-width: calc(100vw - 70px);
+        max-width: calc(100vw - 70px);
+        overflow: hidden;
+      }
     }
+  }
+  .BigPostCardContent {
+    width: 100%;
+    height: 100%;
+    height: calc(100vh - 30px);
+    @include flexDisplay(center, flex-start, row);
+    position: absolute;
+    top: 0;
+    left: 0;
+    .imagePreview {
+      width: 60%;
+      height: 100%;
+      @include flexDisplay(center, center, column);
+      padding:0 20px;
+      .mySwiper{
+        width: 100%;
+        .swiper-button-next:after,
+        .swiper-button-prev:after {
+          font-size: 16px;
+          font-weight: 900;
+          min-width: 30px;
+          max-width: 30px;
+          min-height: 30px;
+          max-height: 30px;
+          @include flexDisplay(center, center, row);
+          border: 1px solid var(--majorColor);
+          border-radius: 50%;
+        }
+      }
+      .imagePreviewCard{
+        width: 100%;
+        height: 100%;
+        max-height: 80%;
+        padding:0 50px;
+        img{
+          width: 100%;
+          height: 100%;
+          border-radius: 5px;
+          object-fit: cover;
+        }
+      }
+    }
+    .commentSection {
+      width: 40%;
+      height: 100%;
+    }
+  }
 }

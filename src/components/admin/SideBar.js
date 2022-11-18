@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link as A,useLocation} from 'react-router-dom'
-import {BsGridFill,BsPeopleFill,BsGearFill,BsBellFill} from 'react-icons/bs'
+import TopBar from './TopBar'
 
 const SideBar = () => {
     const location = useLocation()
@@ -8,11 +8,11 @@ const SideBar = () => {
     <div className='sideBar'>
         <menu>
             <ul>
-                <li><A className={location.pathname==='/admin'?'active':''} to={'/admin'}><BsGridFill/><span>Overview</span></A></li>
-                <li><A  className={location.pathname==='/admin/users'?'active':''} to={'/admin/users'}><BsPeopleFill/><span>User</span></A></li>
-                <li><A className={location.pathname==='/admin/notifications'?'active':''} to={'/admin/notifications'}><BsBellFill/><span>Notifications</span></A></li>
-                <li><A  className={location.pathname==='/admin/settings'?'active':''} to={'/admin/settings'}><BsGearFill/><span>Settings</span></A></li>
+                <li><A className={location.pathname==='/admin'?'active':''} to={'/admin'}><span>Overview</span></A></li>
+                <li><A  className={location.pathname==='/admin/users'?'active':''} to={'/admin/users'}><span>User</span></A></li>
+                <li><A  className={location.pathname==='/admin/settings'?'active':''} to={'/admin/settings'}><span>Settings</span></A></li>
             </ul>
+            <TopBar />
         </menu>
     </div>
   )

@@ -90,18 +90,18 @@ const Chat = () => {
 
           <div className="chartTopBarIcons">
             <A to={"/call"}>
-            <button className="more">
-              <MdPhone />
-            </button>
+              <button className="more">
+                <MdPhone />
+              </button>
             </A>
             <A to={"/call"}>
-            <button className="more">
-              {" "}
-              <MdVideoCall />{" "}
-            </button>
+              <button className="more">
+                {" "}
+                <MdVideoCall />{" "}
+              </button>
             </A>
 
-            <Menu withArrow withinPortal  shadow="xs" width={200}>
+            <Menu withArrow withinPortal shadow="xs" width={200}>
               <Menu.Target>
                 <button className="more">
                   <BiDotsHorizontalRounded />
@@ -123,22 +123,22 @@ const Chat = () => {
           <div className="chatMessagesContainer">
             <div className="chatMessagesContent">
               <div className="chatMessage">
-                  <p>When are you coming back home sdfas fasdf asdf asdf asdf asdfa sdfa sdfa sdfas dfasd fas dfas dfasd fas dfas dfasd fas dfas dfas df</p>
+                <p>When are you coming back home sdfas fasdf asdf asdf asdf asdfa sdfa sdfa sdfas dfasd fas dfas dfasd fas dfas dfasd fas dfas dfas df</p>
               </div>
             </div>
             <div className="chatMessagesContent userChatMessagesContent">
               <div className="chatMessage">
-                  <p>When are you coming back home sdfas fasdf asdf asdf asdf asdfa sdfa sdfa sdfas dfasd fas dfas dfasd fas dfas dfasd fas dfas dfas df</p>
+                <p>When are you coming back home sdfas fasdf asdf asdf asdf asdfa sdfa sdfa sdfas dfasd fas dfas dfasd fas dfas dfasd fas dfas dfas df</p>
               </div>
             </div>
             <div className="chatMessagesContent ">
               <div className="chatMessage">
-                  <p>When are you coming back home</p>
+                <p>When are you coming back home</p>
               </div>
             </div>
             <div className="chatMessagesContent userChatMessagesContent">
               <div className="chatMessage">
-                  <p>tommorrow</p>
+                <p>tommorrow</p>
               </div>
             </div>
 
@@ -147,22 +147,6 @@ const Chat = () => {
 
         <div className="composeMessageContainer">
           <div className="chatAttachments">
-            {/* <Menu withArrow width={300}>
-            <Menu.Target>
-              <button className="more">
-                <BsPaperclip />
-              </button>
-            </Menu.Target>
-
-            <Menu.Dropdown>
-              <Menu.Item color={"blue"} icon={<BiUser />}>
-                View profile
-              </Menu.Item>
-              <Menu.Item icon={<BiBlock />} color={"red"}>
-                Delete
-              </Menu.Item>
-            </Menu.Dropdown>
-          </Menu> */}
             <div className={"icons fileChooser"}>
               <input type="file" />
               <BiImageAdd />
@@ -185,8 +169,8 @@ const Chat = () => {
             </button>
           </div>
           <div className="chatAttachments">
-          <div className={"icons mic"}>
-            <BiMicrophone />
+            <div className={"icons mic"}>
+              <BiMicrophone />
             </div>
           </div>
         </div>

@@ -1,0 +1,80 @@
+.clip {
+  height: calc(100vh - 100px);
+}
+.clipCard {
+  width: 400px;
+  height: 100%;
+  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.059);
+  box-shadow: 10px 0px 100px rgba(197, 197, 197, 0.253);
+  border-radius: 20px;
+  position: relative;
+  video{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    outline: none;
+    z-index: 5;
+    position: relative;
+  }
+  .text {
+    padding: 10px 5px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: max-content;
+    transition: 0.1s ease-in-out;
+    color: white;
+    @include flexDisplay(flex-start, center, column);
+    .followBtnAndNameContainer {
+      @include flexDisplay(flex-start, center, row);
+      margin-bottom: 3px;
+      button {
+        margin-left: 10px;
+        font-size: 11px;
+        padding: 3px 10px;
+        border: 1px solid var(--majorColor);
+        background-color: var(--majorColor);
+        border-radius: 50px;
+        font-weight: 800;
+        color: white;
+      }
+    }
+    .profile {
+      @include flexDisplay(flex-start, center, row);
+      width: 100%;
+      img {
+        width: 35px;
+        height: 35px;
+        border: 2px solid var(--border);
+        margin-right: 5px;
+        border-radius: 50%;
+      }
+      p {
+        font-size: 13px;
+        line-height: 1;
+        font-weight: 500;
+      }
+    }
+  }
+  .reactionContainer {
+    position: absolute;
+    top: 0;
+    right: -60px;
+    padding: 10px;
+    border-radius: 20px;
+    background-color: var(--componentBackground);
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.059);
+    box-shadow: 10px 0px 100px rgba(197, 197, 197, 0.253);
+    text-align: center;
+    @include flexDisplay(center, center, column);
+    gap: 20px;
+
+    .reactionIcon {
+      color: var(--lightColor);
+      svg {
+        font-size: 25px;
+      }
+    }
+  }
+}

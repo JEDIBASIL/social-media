@@ -1,55 +1,36 @@
-import {FaFire,FaGamepad,FaMusic,FaRobot} from 'react-icons/fa'
+import { FaFire, FaGamepad, FaMusic, FaRobot } from 'react-icons/fa'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
+import { Chip } from '@mantine/core';
 const ExploreCategories = () => {
 
   return (
     <div>
-        <Swiper
-        spaceBetween={30}
-        slidesPerView={2.3}
-        pagination={{
-          clickable: true,
-        }}
-        navigation={true}
-        modules={[Navigation]}
-        className="mySwiper ExploreCategories"
-      >
-          <SwiperSlide> 
+      <Chip.Group>
+        <div className="mySwiper ExploreCategories">
             <div className="card">
-                <FaFire style={{fill:"orange",}}  />
-                <h3>Entertainment</h3>
+              <Chip variant='filled' radius={50}>
+                  <FaFire />
+                  <h3>Entertainment</h3>
+              </Chip>
             </div>
-        </SwiperSlide>
-        
-        <SwiperSlide> 
-        <div className="card">
-            <FaGamepad  style={{fill:"green",}} />
-            <h3>Games</h3>
+            <div className="card">
+              <Chip variant='filled' radius={50}>
+                  <FaMusic />
+                  <h3>Music</h3>
+              </Chip>
+            </div>
+            <div className="card">
+              <Chip variant='filled' radius={50}>
+                  <FaGamepad />
+                  <h3>Games</h3>
+              </Chip>
+            </div>
         </div>
-        </SwiperSlide>
-        <SwiperSlide> 
-        <div className="card">
-            <FaMusic  style={{fill:"crimson",}} />
-            <h3>Music</h3>
-        </div>
-        </SwiperSlide>
-        <SwiperSlide> 
-        <div className="card">
-            <FaRobot  style={{fill:"royalblue",}} />
-            <h3>Technologies</h3>
-        </div>
-        </SwiperSlide>
-        <SwiperSlide> 
-        <div className="card">
-            <FaRobot />
-            <h3>Technologies</h3>
-        </div>
-        </SwiperSlide>
-        </Swiper>
+      </Chip.Group>
     </div>
   )
 }
