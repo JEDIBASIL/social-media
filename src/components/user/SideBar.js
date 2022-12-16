@@ -14,7 +14,7 @@ const SideBar = () => {
           <A to={"/"}><img src={logo} alt="" /></A>
         </div>
         <div className='searchBarContainer'>
-          <TextInput variant={"filled"} radius={5} size={"md"} icon={<BiSearch style={{ fontSize: "26px" }} />} placeholder={"Search..."} />
+          <TextInput variant={"default"} radius={50} size={"md"} icon={<BiSearch style={{ fontSize: "26px" }} />} placeholder={"Search..."} />
         </div>
       </div>
       <menu className='navigators'>

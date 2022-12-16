@@ -13,8 +13,6 @@
     .logo {
       margin-right: 20px;
       a {
-        // font-family: "Outfit", sans-serif;
-        font-family: "Urbanist", sans-serif;
         font-weight: 600;
         color: var(--majorColor);
         font-size: 25px;
@@ -144,6 +142,18 @@
           width: 30px;
           height: 30px;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .sideBar {
+    menu {
+      a {
+          span {
+            display: none;
+          }
       }
     }
   }

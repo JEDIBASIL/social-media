@@ -25,7 +25,7 @@ button {
   --topBar: rgba(245, 245, 245, 0.507);
   --shadow1: 0px 0px 2.5px rgba(0, 0, 0, 0.184);
   --shadow2: 0px 0px 20px #5946ffa9;
-  --border: rgb(229, 229, 229);
+  --border: rgb(229, 235, 242);
   --chatBackgroundImage: url("../../static/images/chat-light-theme.jpeg");
   --chatBackgroundBlendMode: lighten;
   --chatBackgroundColor: rgba(245, 245, 245, 0.946);
@@ -118,7 +118,6 @@ a {
   margin-right: 20px;
 }
 .userApp .sideBar .searchBar-Logo .logo a {
-  font-family: "Urbanist", sans-serif;
   font-weight: 600;
   color: var(--majorColor);
   font-size: 25px;
@@ -245,6 +244,11 @@ a {
   .userApp .sideBar menu .profileImg img {
     width: 30px;
     height: 30px;
+  }
+}
+@media screen and (max-width: 500px) {
+  .userApp .sideBar menu a span {
+    display: none;
   }
 }
 .userApp .appContainer {
@@ -453,10 +457,10 @@ a {
   visibility: visible;
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card img {
-  width: 55px;
-  min-width: 55px;
-  max-width: 55px;
-  height: 55px;
+  width: 50px;
+  min-width: 50px;
+  max-width: 50px;
+  height: 50px;
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -468,18 +472,17 @@ a {
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text .time {
   margin: 0;
   margin-bottom: 0px;
-  font-size: 12px;
+  font-size: 10px;
   color: var(--majorColor);
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text p {
   color: var(--lightColor);
   line-height: 1.3;
-  font-size: 14px;
+  font-size: 13px;
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text p span,
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text p a {
   font-weight: 700;
-  font-size: 14px;
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .more {
   position: absolute;
@@ -488,11 +491,10 @@ a {
   visibility: hidden;
 }
 .userApp .appContainer .postContainer {
-  width: 550px;
-  min-width: 550px;
+  width: 500px;
+  min-width: 500px;
   min-height: calc(100vh - 70px);
   padding: 0px 30px;
-  transition: 3s ease-in-out;
   margin: auto;
 }
 .userApp .appContainer .postContainer .CreatePost {
@@ -501,7 +503,7 @@ a {
   border-radius: 15px;
   background-color: var(--componentBackground);
   overflow: hidden;
-  height: 80px;
+  height: 60px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -514,6 +516,7 @@ a {
 .userApp .appContainer .postContainer .CreatePost .mantine-Textarea-root {
   align-items: flex-start;
   width: 100%;
+  margin-top: 10px;
 }
 .userApp .appContainer .postContainer .CreatePost .mantine-Textarea-root textarea {
   width: 100%;
@@ -536,6 +539,9 @@ a {
   max-height: -webkit-max-content;
   max-height: -moz-max-content;
   max-height: max-content;
+}
+.userApp .appContainer .postContainer .CreatePost.focused .mantine-Textarea-root {
+  margin-top: 0;
 }
 .userApp .appContainer .postContainer .CreatePost.focused .postImagePreview {
   width: 98%;
@@ -593,13 +599,15 @@ a {
   cursor: pointer;
 }
 .userApp .appContainer .postContainer .CreatePost .creatPostType .iconContainer svg {
-  font-size: 30px;
+  font-size: 22px;
   color: var(--majorColor);
+  cursor: pointer;
 }
 .userApp .appContainer .postContainer .CreatePost .creatPostType .iconContainer p {
-  font-size: 10px;
+  font-size: 9px;
   font-weight: 600;
   color: var(--lighterColor);
+  cursor: pointer;
 }
 .userApp .appContainer .postContainer .CreatePost .creatPostType .postBtnContainer {
   width: 50%;
@@ -853,8 +861,15 @@ a {
     display: none;
   }
 }
+@media screen and (max-width: 500px) {
+  .userApp .appContainer .postContainer {
+    width: 100%;
+    min-width: 100%;
+    padding: 0px 10px;
+  }
+}
 .userApp .appContainer .exploreContainer {
-  width: 550px;
+  width: 500px;
   padding: 0 30px;
 }
 .userApp .appContainer .exploreContainer .swiper-wrapper {
@@ -1032,6 +1047,12 @@ a {
   padding: 0;
   margin: 0 auto;
   margin-top: 30px;
+}
+@media screen and (max-width: 500px) {
+  .userApp .appContainer .exploreContainer {
+    width: 100%;
+    padding: 0px 10px;
+  }
 }
 .userApp .appContainer .Chat {
   width: 1000px;

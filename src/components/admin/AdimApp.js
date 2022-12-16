@@ -9,7 +9,7 @@ import '../../styles/admin/styles.css'
 const AdimApp = () => {
     const { appearanceTheme } = useContext(AdminSettingsContext);
 
-
+    
 
     return (
         <MantineProvider

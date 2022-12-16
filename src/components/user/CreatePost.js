@@ -26,9 +26,9 @@ const CreatePost = () => {
       <div className={(postText || postImages.length !== 0) ? "CreatePost focused" : "CreatePost"}>
         <Textarea
           onChange={(e) => setPostText(e.target.value.trim())}
-          icon={<IoMegaphone style={{ fontSize: "30px",fill:"rgb(32, 155, 240)" }} />}
+          icon={<IoMegaphone style={{ fontSize: "22px",fill:"rgb(32, 155, 240)" }} />}
           variant='unstyled'
-          placeholder="What's new" size='xl'
+          placeholder="What's new" size='md'
         />
         <div className={"C" + postImages.slice(0, 5).length + "_card " + 'postImagePreview '}>
           {
