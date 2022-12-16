@@ -1,13 +1,39 @@
-import React from 'react'
-import { HiHeart, HiChat, HiArrowUp,HiArrowDown } from "react-icons/hi"
+import React, { useEffect, useState } from 'react'
+import { useRef } from 'react';
+import { HiHeart, HiChat, HiArrowUp,HiArrowDown, HiPlay, HiOutlineVolumeUp } from "react-icons/hi"
 import pics2 from "../../static/images/anime.jpg";
 import vid from "../../static/images/vid.mp4"
 const Clips = () => {
+    const clipVid = useRef(null)
+    const [clipVidControls, setClipVidControls] = useState({
+        muted:true,
+        playing:false
+    })
+   const onPauseToggle = () => {
+    setClipVidControls({...clipVidControls, playing:true})
+    clipVidControls.playing ? clipVid.current.play() : clipVid.current.pause()
+    console.log(clipVidControls)
+    }
+
+    const onMutedToggle = (e) =>{
+        setClipVidControls({muted:this.muted, ...clipVidControls})
+        console.log(clipVidControls)
+    }
+    useEffect(()=>{
+        console.log(clipVid.current)
+        clipVid.current.play()
+
+    })
     console.log(vid)
     return (
         <div className='clip'>
             <div className='clipCard'>
-                <video  autoPlay controls src={vid}></video>
+                <div className='vid_controls'>
+                <HiPlay onClick={onPauseToggle}  />
+                <HiOutlineVolumeUp onClick={onMutedToggle} />
+
+                </div>
+                <video ref={clipVid} autoPlay muted={clipVidControls.muted} src={vid}></video>
                 <div className="text">
                     <div className="profile">
                         <img src={pics2} alt="" />

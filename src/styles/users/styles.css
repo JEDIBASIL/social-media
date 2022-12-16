@@ -870,6 +870,7 @@ a {
 }
 .userApp .appContainer .exploreContainer {
   width: 500px;
+  max-width: 500px;
   padding: 0 30px;
 }
 .userApp .appContainer .exploreContainer .swiper-wrapper {
@@ -901,6 +902,7 @@ a {
   padding-right: 20px;
   width: 100%;
   gap: 8px;
+  overflow: hidden;
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card {
   width: -webkit-max-content;
@@ -911,6 +913,7 @@ a {
   margin: 0;
   padding: 0;
   height: 40px;
+  margin-bottom: 10px;
   position: relative;
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card .mantine-Chip-label {
@@ -1050,8 +1053,12 @@ a {
 }
 @media screen and (max-width: 500px) {
   .userApp .appContainer .exploreContainer {
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
     padding: 0px 10px;
+  }
+  .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card img {
+    height: 180px;
   }
 }
 .userApp .appContainer .Chat {
@@ -1605,6 +1612,23 @@ a {
   box-shadow: 10px 0px 100px rgba(197, 197, 197, 0.253);
   border-radius: 20px;
   position: relative;
+}
+.userApp .appContainer .clipCard .vid_controls {
+  position: absolute;
+  bottom: 20px;
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  z-index: 6;
+  width: 100%;
+  padding: 0px 20px;
+}
+.userApp .appContainer .clipCard .vid_controls svg {
+  font-size: 40px;
+  color: white;
+  cursor: pointer;
 }
 .userApp .appContainer .clipCard video {
   width: 100%;

@@ -1,5 +1,6 @@
 .exploreContainer {
   width: 500px;
+  max-width: 500px;
   padding: 0 30px;
   .swiper-wrapper {
     width: calc(100% - 30px);
@@ -24,12 +25,14 @@
     padding-right: 20px;
     width: 100%;
     gap: 8px;
+    overflow: hidden;
     .card {
       width: max-content;
       .mantine-Chip-root {
         margin: 0;
         padding: 0;
         height: 40px;
+        margin-bottom: 10px;
         position: relative;
       }
       .mantine-Chip-label {
@@ -158,7 +161,19 @@
 
 @media screen and (max-width: 500px){
   .exploreContainer{
-    width: 100%;
+    width: 100vw;
+    max-width: 100vw;
     padding: 0px 10px;
+    .exploreTrendingPost{
+      .ExploreTrending{
+        .trendingPostContainer{
+          .card{
+            img{
+              height: 180px;
+            }
+          }
+        }
+      }
+    }
   }
 }
