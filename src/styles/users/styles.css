@@ -15,7 +15,7 @@ button {
 }
 
 :root {
-  --background: rgb(243,243,241);
+  --background: rgb(255, 255, 255);
   --componentBackground: white;
   --color: black;
   --lightColor: rgb(77, 77, 77);
@@ -35,7 +35,7 @@ button {
 
 [data-theme=dark] {
   --background: rgb(0, 0, 0);
-  --componentBackground: rgb(30, 32, 37);
+  --componentBackground: rgb(3, 3, 3);
   --color: rgb(213, 213, 213);
   --lightColor: whitesmoke;
   --lighterColor: rgb(211, 211, 211);
@@ -52,7 +52,7 @@ button {
 }
 
 [data-theme=dimmed] {
-  --background: rgb(20, 22, 31);
+  --background: rgb(28, 31, 43);
   --componentBackground: rgb(28, 31, 43);
   --color: rgb(213, 213, 213);
   --lightColor: whitesmoke;
