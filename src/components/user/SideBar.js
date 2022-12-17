@@ -46,7 +46,7 @@ const SideBar = () => {
 
 
         <div className={"sideBarMenu"}>
-          <Menu shadow="md" width={250}>
+          <Menu shadow="md" withArrow width={250}>
             <Menu.Target>
               <button className='profileImg'>
                 <img src={profileImg} alt="" />

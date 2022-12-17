@@ -12,19 +12,19 @@ const ExploreCategories = () => {
       <Chip.Group>
         <div className="mySwiper ExploreCategories">
             <div className="card">
-              <Chip variant='filled' radius={50}>
+              <Chip variant='filled' radius={8}>
                   <FaFire />
                   <h3>Entertainment</h3>
               </Chip>
             </div>
             <div className="card">
-              <Chip variant='filled' radius={50}>
+              <Chip variant='filled' radius={8}>
                   <FaMusic />
                   <h3>Music</h3>
               </Chip>
             </div>
             <div className="card">
-              <Chip variant='filled' radius={50}>
+              <Chip variant='filled' radius={8}>
                   <FaGamepad />
                   <h3>Games</h3>
               </Chip>
