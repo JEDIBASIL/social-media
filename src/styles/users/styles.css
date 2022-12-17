@@ -52,8 +52,8 @@ button {
 }
 
 [data-theme=dimmed] {
-  --background: rgb(36, 37, 43);
-  --componentBackground: rgb(36, 37, 43);
+  --background: rgb(28, 31, 43);
+  --componentBackground: rgb(28, 31, 43);
   --color: rgb(213, 213, 213);
   --lightColor: whitesmoke;
   --lighterColor: rgb(211, 211, 211);
@@ -61,7 +61,7 @@ button {
   --topBar: rgba(34, 35, 41, 0.533);
   --shadow1: 0px 0px 2px rgba(225, 225, 225, 0.184);
   --shadow2: 0px 0px 20px #5946ffa9;
-  --border: rgb(50, 51, 61);
+  --border: rgb(49, 59, 82);
   --chatBackgroundImage: url("../../static/images/chat-dark-theme.jpeg");
   --chatBackgroundBlendMode: darken;
   --chatBackgroundColor: rgba(19, 19, 20, 0.946);
@@ -867,6 +867,9 @@ a {
     min-width: 100%;
     padding: 0px 10px;
   }
+  .userApp .appContainer .postContainer .card {
+    padding: 20px 10px;
+  }
 }
 .userApp .appContainer .exploreContainer {
   width: 500px;
@@ -1608,10 +1611,9 @@ a {
 .userApp .appContainer .clipCard {
   width: 400px;
   height: 100%;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.059);
-  box-shadow: 10px 0px 100px rgba(197, 197, 197, 0.253);
   border-radius: 20px;
   position: relative;
+  border: 1px solid var(--border);
 }
 .userApp .appContainer .clipCard .vid_controls {
   position: absolute;
@@ -1626,15 +1628,13 @@ a {
   padding: 0px 20px;
 }
 .userApp .appContainer .clipCard .vid_controls svg {
-  font-size: 40px;
+  font-size: 30px;
   color: white;
   cursor: pointer;
 }
 .userApp .appContainer .clipCard video {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
   border-radius: 20px;
   outline: none;
   z-index: 5;
@@ -1694,12 +1694,9 @@ a {
 .userApp .appContainer .clipCard .reactionContainer {
   position: absolute;
   top: 0;
-  right: -60px;
+  right: -80px;
   padding: 10px;
   border-radius: 20px;
-  background-color: var(--componentBackground);
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.059);
-  box-shadow: 10px 0px 100px rgba(197, 197, 197, 0.253);
   text-align: center;
   display: flex;
   justify-content: center;
@@ -1709,9 +1706,53 @@ a {
 }
 .userApp .appContainer .clipCard .reactionContainer .reactionIcon {
   color: var(--lightColor);
+  width: 50px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid var(--border);
+}
+.userApp .appContainer .clipCard .reactionContainer .reactionIcon:hover {
+  background-color: var(--hover);
+}
+.userApp .appContainer .clipCard .reactionContainer .reactionIcon:hover h5 {
+  height: 22px;
 }
 .userApp .appContainer .clipCard .reactionContainer .reactionIcon svg {
   font-size: 25px;
+}
+.userApp .appContainer .clipCard .reactionContainer .reactionIcon h5 {
+  height: 0;
+  overflow: hidden;
+  transition: 0.2s ease-in-out;
+}
+@media screen and (max-width: 700px) {
+  .userApp .appContainer .clip {
+    height: calc(100vh - 150px);
+  }
+  .userApp .appContainer .clipCard .reactionContainer {
+    left: 0;
+    top: 100%;
+    bottom: -70px;
+    z-index: 7;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+}
+@media screen and (max-width: 700px) {
+  .userApp .appContainer .clip {
+    padding: 0px 5px;
+  }
+  .userApp .appContainer .clip .clipCard {
+    width: 100%;
+  }
 }
 
 .BigPostCard.mantine-Modal-root {

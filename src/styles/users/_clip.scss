@@ -4,10 +4,9 @@
 .clipCard {
   width: 400px;
   height: 100%;
-  box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.059);
-  box-shadow: 10px 0px 100px rgba(197, 197, 197, 0.253);
   border-radius: 20px;
   position: relative;
+  border: 1px solid var(--border);
   .vid_controls{
     position: absolute;
     bottom: 20px;
@@ -17,7 +16,7 @@
     width: 100%;
     padding: 0px 20px;
     svg{
-      font-size: 40px;
+      font-size: 30px;
       color: white;
       cursor: pointer;
     }
@@ -25,7 +24,6 @@
   video{
     width: 100%;
     height: 100%;
-    object-fit: cover;
     border-radius: 20px;
     outline: none;
     z-index: 5;
@@ -74,21 +72,60 @@
   .reactionContainer {
     position: absolute;
     top: 0;
-    right: -60px;
+    right: -80px;
     padding: 10px;
     border-radius: 20px;
-    background-color: var(--componentBackground);
-    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.059);
-    box-shadow: 10px 0px 100px rgba(197, 197, 197, 0.253);
     text-align: center;
     @include flexDisplay(center, center, column);
     gap: 20px;
 
     .reactionIcon {
       color: var(--lightColor);
+      width: 50px;
+      height: 50px;
+      padding: 5px;
+      border-radius: 50%;
+      @include flexDisplay(center, center, column);
+      &:hover{
+        background-color: var(--hover);
+        h5{
+          height: 22px;
+        }
+      }
+      border: 1px solid var(--border);
       svg {
         font-size: 25px;
       }
+      h5{
+        height: 0;
+        overflow: hidden;
+        transition: 0.2s ease-in-out;
+      }
     }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .clip {
+    height: calc(100vh - 150px);
+  }
+  .clipCard{
+    .reactionContainer{
+      left: 0;
+      top: 100%;
+      bottom: -70px;
+      z-index: 7;
+      width: 100%;
+      @include flexDisplay(space-between, center, row);
+    }
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .clip {
+   padding: 0px 5px;
+   .clipCard{
+    width: 100%;
+   }
   }
 }
