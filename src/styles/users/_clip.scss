@@ -7,6 +7,7 @@
   border-radius: 20px;
   position: relative;
   border: 1px solid var(--border);
+  background-color: var(--componentBackground);
   .vid_controls{
     position: absolute;
     bottom: 20px;
@@ -27,6 +28,7 @@
     border-radius: 20px;
     outline: none;
     z-index: 5;
+    object-fit: cover;
     position: relative;
   }
   .text {
@@ -38,6 +40,7 @@
     transition: 0.1s ease-in-out;
     color: white;
     @include flexDisplay(flex-start, center, column);
+    z-index: 6;
     .followBtnAndNameContainer {
       @include flexDisplay(flex-start, center, row);
       margin-bottom: 3px;
@@ -78,7 +81,7 @@
     text-align: center;
     @include flexDisplay(center, center, column);
     gap: 20px;
-
+    
     .reactionIcon {
       color: var(--lightColor);
       width: 50px;
@@ -86,6 +89,7 @@
       padding: 5px;
       border-radius: 50%;
       @include flexDisplay(center, center, column);
+      background-color: var(--componentBackground);
       &:hover{
         background-color: var(--hover);
         h5{
@@ -116,7 +120,7 @@
       bottom: -70px;
       z-index: 7;
       width: 100%;
-      @include flexDisplay(space-between, center, row);
+      @include flexDisplay(center, center, row);
     }
   }
 }

@@ -15,7 +15,7 @@ button {
 }
 
 :root {
-  --background: rgb(245, 241, 241);
+  --background: rgb(243,243,241);
   --componentBackground: white;
   --color: black;
   --lightColor: rgb(77, 77, 77);
@@ -1615,6 +1615,7 @@ a {
   border-radius: 20px;
   position: relative;
   border: 1px solid var(--border);
+  background-color: var(--componentBackground);
 }
 .userApp .appContainer .clipCard .vid_controls {
   position: absolute;
@@ -1639,6 +1640,8 @@ a {
   border-radius: 20px;
   outline: none;
   z-index: 5;
+  -o-object-fit: cover;
+     object-fit: cover;
   position: relative;
 }
 .userApp .appContainer .clipCard .text {
@@ -1655,6 +1658,7 @@ a {
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
+  z-index: 6;
 }
 .userApp .appContainer .clipCard .text .followBtnAndNameContainer {
   display: flex;
@@ -1715,6 +1719,7 @@ a {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: var(--componentBackground);
   border: 1px solid var(--border);
 }
 .userApp .appContainer .clipCard .reactionContainer .reactionIcon:hover {
@@ -1742,7 +1747,7 @@ a {
     z-index: 7;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-direction: row;
   }

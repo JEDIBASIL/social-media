@@ -7,7 +7,7 @@ const Clips = () => {
     const clipVid = useRef(null)
     const [clipVidControls, setClipVidControls] = useState({
         muted: false,
-        playing: true
+        playing: false
     })
     const onPauseToggle = () => {
         setClipVidControls({ ...clipVidControls, playing: !clipVidControls.playing })
@@ -19,21 +19,20 @@ const Clips = () => {
         setClipVidControls({ ...clipVidControls, muted: !clipVidControls.muted })
     }
 
-    useEffect(()=> clipVid.current.play(),[])
 
     return (
         <div className='clip'>
             <div className='clipCard'>
                 <div className='vid_controls'>
                     <span onClick={onPauseToggle}>
-                        {clipVidControls.playing ? <RiPlayFill />: <RiPauseFill />}
+                        {!clipVidControls.playing ? <RiPlayFill />: <RiPauseFill />}
                     </span>
                     <span onClick={onMutedToggle} >
                         {! clipVidControls.muted ? <RiVolumeUpFill /> : <RiVolumeMuteFill />}
                     </span>
 
                 </div>
-                <video ref={clipVid} controls={false} muted={clipVidControls.muted} src={vid}></video>
+                <video tabIndex={"-1"} playsInline webkit-playsInline  ref={clipVid} autoPlay  controls={false} muted={clipVidControls.muted} src={vid}></video>
                 <div className="text">
                     <div className="profile">
                         <img src={pics2} alt="" />

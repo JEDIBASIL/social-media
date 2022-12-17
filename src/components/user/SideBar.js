@@ -1,5 +1,5 @@
 import { Link as A, useLocation } from 'react-router-dom'
-import { BiSearch, BiMoviePlay, BiMessageDetail, BiCompass, BiBell, BiUser, BiCog } from "react-icons/bi";
+import { BiSearch, BiMoviePlay, BiMessageDetail, BiCompass, BiBell, BiUser, BiCog, BiSun, BiMoon, BiPowerOff, BiQuestionMark, BiBook } from "react-icons/bi";
 import profileImg from "../../static/images/lolita.jpg"
 import { Menu, TextInput, } from "@mantine/core";
 import { GoHome } from 'react-icons/go';
@@ -46,7 +46,7 @@ const SideBar = () => {
 
 
         <div className={"sideBarMenu"}>
-          <Menu shadow="md" withArrow width={250}>
+          <Menu position={"right-start"} shadow="md" withArrow width={300}>
             <Menu.Target>
               <button className='profileImg'>
                 <img src={profileImg} alt="" />
@@ -54,6 +54,7 @@ const SideBar = () => {
             </Menu.Target>
 
             <Menu.Dropdown>
+            <Menu.Label><h3>Account</h3></Menu.Label>
               <A to={"/profile"}>
                 <Menu.Item icon={<BiUser />}>
                   <h4>View profile</h4>
@@ -62,6 +63,36 @@ const SideBar = () => {
               <A to={"/settings-privacy"}>
                 <Menu.Item icon={<BiCog />}>
                   <h4>Settings & Privacy</h4>
+                </Menu.Item>
+              </A>
+
+              <Menu.Divider />
+              <Menu.Label><h3>Theme</h3></Menu.Label>
+              <Menu.Item icon={<BiSun />}>
+                  <h4>Light</h4>
+                </Menu.Item>
+                <Menu.Item icon={<BiMoon />}>
+                  <h4>Dark</h4>
+                </Menu.Item>
+
+                <Menu.Item icon={<BiMoon style={{fill:"royalblue"}}/>}>
+                  <h4>Blue</h4>
+                </Menu.Item>
+                <Menu.Divider />
+                <A to={"/settings-privacy"}>
+                <Menu.Item icon={<BiQuestionMark />}>
+                  <h4>Help</h4>
+                </Menu.Item>
+              </A>
+              <A to={"/settings-privacy"}>
+                <Menu.Item icon={<BiBook />}>
+                  <h4>About</h4>
+                </Menu.Item>
+              </A>
+                <Menu.Divider />
+                <A to={"/settings-privacy"}>
+                <Menu.Item icon={<BiPowerOff />}>
+                  <h4>Logout</h4>
                 </Menu.Item>
               </A>
             </Menu.Dropdown>
