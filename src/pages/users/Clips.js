@@ -19,7 +19,8 @@ const Clips = () => {
         setClipVidControls({ ...clipVidControls, muted: !clipVidControls.muted })
     }
 
-    console.log(vid)
+    useEffect(()=> clipVid.current.play(),[])
+
     return (
         <div className='clip'>
             <div className='clipCard'>
@@ -32,7 +33,7 @@ const Clips = () => {
                     </span>
 
                 </div>
-                <video ref={clipVid} controls={false} autoPlay muted={clipVidControls.muted} src={vid}></video>
+                <video ref={clipVid} controls={false} muted={clipVidControls.muted} src={vid}></video>
                 <div className="text">
                     <div className="profile">
                         <img src={pics2} alt="" />
