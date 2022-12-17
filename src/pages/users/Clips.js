@@ -6,7 +6,7 @@ import vid from "../../static/images/vid.mp4"
 const Clips = () => {
     const clipVid = useRef(null)
     const [clipVidControls, setClipVidControls] = useState({
-        muted: true,
+        muted: false,
         playing: true
     })
     const onPauseToggle = () => {
@@ -25,14 +25,14 @@ const Clips = () => {
             <div className='clipCard'>
                 <div className='vid_controls'>
                     <span onClick={onPauseToggle}>
-                        {!clipVidControls.playing ? <RiPlayFill />: <RiPauseFill />}
+                        {clipVidControls.playing ? <RiPlayFill />: <RiPauseFill />}
                     </span>
                     <span onClick={onMutedToggle} >
-                        {!clipVidControls.muted ? <RiVolumeUpFill /> : <RiVolumeMuteFill />}
+                        {! clipVidControls.muted ? <RiVolumeUpFill /> : <RiVolumeMuteFill />}
                     </span>
 
                 </div>
-                <video ref={clipVid} autoPlay muted={clipVidControls.muted} src={vid}></video>
+                <video ref={clipVid} controls={false} autoPlay muted={clipVidControls.muted} src={vid}></video>
                 <div className="text">
                     <div className="profile">
                         <img src={pics2} alt="" />
