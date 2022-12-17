@@ -1454,8 +1454,9 @@ a {
 .userApp .appContainer .Profile .profileDetailsContainer {
   width: 100%;
   overflow: hidden;
-  border-radius: 15px;
+  border-radius: 15px 15px 0 0;
   border: 1px solid var(--border);
+  background-color: var(--componentBackground);
   padding-bottom: 30px;
 }
 .userApp .appContainer .Profile .profileDetailsContainer .profileImgContainer {
@@ -1558,6 +1559,35 @@ a {
 .userApp .appContainer .Profile .profileMediaAndSuggested .ActivityAndTrendingBar {
   margin-top: 30px;
   width: 420px;
+}
+@media screen and (max-width: 700px) {
+  .userApp .appContainer .Profile .profileDetailsContainer .profileImgContainer {
+    height: 150px;
+  }
+  .userApp .appContainer .Profile .profileDetailsContainer .profileImgContainer .profilePics {
+    bottom: -50px;
+    left: 20px;
+    width: 100px;
+    height: 100px;
+  }
+  .userApp .appContainer .Profile .profileDetailsContainer .profileImgContainer .profileName {
+    bottom: -80px;
+    left: 20px;
+    font-size: 18px;
+  }
+  .userApp .appContainer .Profile .profileDetailsContainer .profileImgContainer .profileName svg {
+    color: var(--majorColor);
+  }
+  .userApp .appContainer .Profile .profileDetailsContainer .followAndMore {
+    padding-top: 20px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .userApp .appContainer .Profile .profileDetailsContainer .followAndMore .profileActionsContainer {
+    padding-top: 15px;
+    width: 100%;
+    justify-content: flex-end;
+  }
 }
 .userApp .appContainer .settings {
   width: 100%;
