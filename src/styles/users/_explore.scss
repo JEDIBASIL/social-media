@@ -24,10 +24,13 @@
     @include flexDisplay(flex-start, center, row);
     padding-right: 20px;
     width: 100%;
-    gap: 8px;
     overflow: hidden;
     .card {
       width: max-content;
+      margin-right: 8px;
+      &:nth-last-child(1){
+        margin-right: 0;
+      }
       .mantine-Chip-root {
         margin: 0;
         padding: 0;

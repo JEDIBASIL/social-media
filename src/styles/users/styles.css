@@ -957,13 +957,16 @@ a {
   flex-direction: row;
   padding-right: 20px;
   width: 100%;
-  gap: 8px;
   overflow: hidden;
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card {
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
+  margin-right: 8px;
+}
+.userApp .appContainer .exploreContainer .ExploreCategories .card:nth-last-child(1) {
+  margin-right: 0;
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card .mantine-Chip-root {
   margin: 0;
