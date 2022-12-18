@@ -116,6 +116,14 @@ a {
 }
 .userApp .sideBar .searchBar-Logo .search_icon {
   display: none;
+  background-color: var(--hover);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
   margin-left: 30px;
 }
 .userApp .sideBar .searchBar-Logo .logo {
@@ -165,9 +173,6 @@ a {
   margin-left: 15px;
   transition: ease-in-out 0.2s;
   color: var(--lightColor);
-}
-.userApp .sideBar menu a:hover {
-  background-color: var(--hover);
 }
 .userApp .sideBar menu a svg {
   font-size: 30px;
@@ -264,17 +269,18 @@ a {
   .userApp .sideBar {
     flex-direction: column;
     justify-content: center;
-    height: 100px;
+    height: 120px;
     top: -40px;
   }
   .userApp .sideBar .searchBar-Logo {
     width: 100%;
     padding-bottom: 10px;
+    padding-left: 10px;
   }
   .userApp .sideBar .menu_container {
     width: 100%;
     justify-content: center;
-    gap: 7%;
+    gap: 0%;
   }
   .userApp .sideBar menu {
     margin: 0;
@@ -283,8 +289,19 @@ a {
     width: 100%;
     justify-content: space-between;
   }
+  .userApp .sideBar menu a {
+    padding: 0;
+  }
+  .userApp .sideBar menu a svg {
+    width: 35px;
+    height: 50px;
+  }
   .userApp .sideBar menu a span {
-    display: none;
+    font-size: 10px;
+  }
+  .userApp .sideBar menu .sideBarMenu .profileImg img {
+    width: 38px;
+    height: 38px;
   }
 }
 .userApp .appContainer {
@@ -799,7 +816,7 @@ a {
   max-height: 550px;
   min-height: 0;
   display: grid;
-  gap: 8px;
+  gap: 4px;
 }
 .userApp .appContainer .postContainer .card .postContent.C5_card {
   grid-template-columns: repeat(2, 1fr);
@@ -966,7 +983,6 @@ a {
   height: 40px;
   top: -50%;
   position: relative;
-  background-color: var(--componentBackground);
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card svg {
   font-size: 20px;
@@ -991,12 +1007,12 @@ a {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 8px;
+  gap: 5px;
 }
 .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card {
   position: relative;
   width: 100%;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
 }
 .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card:hover {

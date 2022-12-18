@@ -12,6 +12,11 @@
     @include flexDisplay(space-between, center, row);
     .search_icon {
       display: none;
+      background-color: var(--hover);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      @include flexDisplay(center, center, row);
       margin-left: 30px;
     }
     .logo {
@@ -49,9 +54,6 @@
       margin-left: 15px;
       transition: ease-in-out 0.2s;
       color: var(--lightColor);
-      &:hover {
-        background-color: var(--hover);
-      }
       svg {
         font-size: 30px;
         fill: var(--lightColor);
@@ -115,7 +117,7 @@
       .search_icon {
         display: flex;
       }
-      .search_input{
+      .search_input {
         display: none;
       }
     }
@@ -162,26 +164,41 @@
   .sideBar {
     flex-direction: column;
     justify-content: center;
-    height: 100px;
+    height: 120px;
     top: -40px;
     .searchBar-Logo {
       width: 100%;
       padding-bottom: 10px;
+      padding-left: 10px;
     }
     .menu_container {
       width: 100%;
       justify-content: center;
-      gap: 7%;
+      gap: 0%;
     }
     menu {
       margin: 0;
       &.navigators {
-        width:100%;
+        width: 100%;
         justify-content: space-between;
       }
       a {
+        padding: 0;
+        svg {
+          width: 35px;
+          height: 50px;
+        }
         span {
-          display: none;
+          // display: none;
+          font-size: 10px;
+        }
+      }
+      .sideBarMenu{
+        .profileImg {
+          img {
+            width: 38px;
+            height: 38px;
+          }
         }
       }
     }
