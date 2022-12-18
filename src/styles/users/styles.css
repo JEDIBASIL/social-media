@@ -293,12 +293,11 @@ a {
     padding: 0;
   }
   .userApp .sideBar menu a svg {
-    width: 25px;
-    height: 30px;
-    font-size: 0;
+    font-size: 45px !important;
   }
   .userApp .sideBar menu a span {
     font-size: 10px;
+    font-weight: 600;
   }
   .userApp .sideBar menu .sideBarMenu .profileImg img {
     width: 38px;

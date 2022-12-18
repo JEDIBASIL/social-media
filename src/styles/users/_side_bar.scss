@@ -185,12 +185,11 @@
       a {
         padding: 0;
         svg {
-          width: 25px;
-          height: 30px;
-          font-size: 0;
+          font-size: 45px !important;
         }
         span {
           font-size: 10px;
+          font-weight: 600;
         }
       }
       .sideBarMenu{
