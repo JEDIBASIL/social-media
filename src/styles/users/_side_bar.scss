@@ -5,7 +5,7 @@
   position: sticky;
   top: 0;
   z-index: 200;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 2px solid var(--border);
   @include flexDisplay(space-between, center, row);
   background-color: var(--componentBackground);
   .searchBar-Logo {
