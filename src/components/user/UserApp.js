@@ -5,18 +5,23 @@ import { MantineProvider } from '@mantine/core'
 import { useState, useEffect } from 'react'
 
 const UserApp = () => {
-  const [theme, setTheme] = useState("light");
+  const [theme, setTheme] = useState(true);
+  const [presentTheme, setPresentTheme] = useState("");
+
   useEffect(() => {
-    // setTheme("light")
-  }, [])
+    checkTheme()
+    }, [theme])
+  const checkTheme = () =>{
+    return  theme ? setPresentTheme("dark") : setPresentTheme("light")
+  }
   return (
     <MantineProvider
-      theme={{ colorScheme: (theme === "dark" || theme === "dimmed") ? "dark" : "light" }}
+      theme={{ colorScheme: presentTheme}}
       withGlobalStyles
       withNormalizeCSS
     >
-      <div className="userApp" data-theme={theme}>
-        <SideBar />
+      <div className="userApp" data-theme={presentTheme}>
+        <SideBar theme={theme} presentTheme={presentTheme} setTheme={setTheme} />
         <div className='appContainer'>
           <Outlet />
         </div>

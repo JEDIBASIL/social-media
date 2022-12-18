@@ -32,7 +32,7 @@ const PostCard = ({ title, image, showModal }) => {
           </Menu.Dropdown>
         </Menu>
       </div>
-      <p className="postCaption">LIFE IS GOOD 💀</p>
+      <p className="postCaption">Grammarly works instantly across websites and desktop applications to ensure everything you type is mistake-free, clear, and professional. Download now! 💀</p>
       <div className="postDetails">
 
       </div>

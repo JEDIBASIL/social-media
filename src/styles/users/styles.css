@@ -1,19 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Red Hat Display", sans-serif;
-  text-decoration: none;
-  list-style: none;
-}
-
-input,
-textarea,
-button {
-  font-family: "Red Hat Display", sans-serif !important;
-}
-
+@import url("https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap");
 :root {
   --background: rgb(238, 238, 238);
   --componentBackground: white;
@@ -31,6 +16,7 @@ button {
   --chatBackgroundColor: rgba(245, 245, 245, 0.946);
   --chatReciverMessageBackgroundColor: rgb(255, 255, 255);
   --chatSenderMessageBackgroundColor: rgb(129, 202, 255);
+  --textFont:"Lexend", sans-serif;
 }
 
 [data-theme=dark] {
@@ -67,6 +53,14 @@ button {
   --chatBackgroundColor: rgba(19, 19, 20, 0.946);
   --chatReciverMessageBackgroundColor: rgb(52, 52, 52);
   --chatSenderMessageBackgroundColor: rgb(67, 177, 255);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
 }
 
 body {
@@ -125,6 +119,10 @@ a {
   flex-direction: row;
   display: none;
   margin-left: 30px;
+  padding: 10px;
+}
+.userApp .sideBar .searchBar-Logo .search_icon svg {
+  fill: var(--lightColor);
 }
 .userApp .sideBar .searchBar-Logo .logo {
   margin-right: 20px;
@@ -175,7 +173,7 @@ a {
   color: var(--lightColor);
 }
 .userApp .sideBar menu a svg {
-  font-size: 30px;
+  font-size: 25px;
   fill: var(--lightColor);
   color: var(--lightColor);
   stroke: var(--lightColor);
@@ -186,7 +184,6 @@ a {
 .userApp .sideBar menu a span {
   font-size: 11px;
   font-weight: 800;
-  transform: translateY(-2px);
 }
 .userApp .sideBar menu a.active {
   color: var(--majorColor);
@@ -270,7 +267,7 @@ a {
     flex-direction: column;
     justify-content: center;
     height: 120px;
-    top: -60px;
+    top: -55px;
   }
   .userApp .sideBar .searchBar-Logo {
     width: 100%;
@@ -296,6 +293,9 @@ a {
     padding: 0;
     margin: 0;
     height: 40px;
+  }
+  .userApp .sideBar menu a:not(.profileImg) svg {
+    font-size: 20px;
   }
   .userApp .sideBar menu a:not(.profileImg) span {
     font-size: 10px;
@@ -403,7 +403,7 @@ a {
   position: sticky;
   top: 85px;
   width: 380px;
-  padding: 20px 20px;
+  padding: 20px 10px;
   height: calc(100vh - 105px);
   background-color: var(--componentBackground);
   overflow-y: auto;
@@ -526,17 +526,19 @@ a {
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text .time {
   margin: 0;
   margin-bottom: 0px;
-  font-size: 10px;
+  font-size: 12px;
   color: var(--majorColor);
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text p {
   color: var(--lightColor);
-  line-height: 1.3;
-  font-size: 13px;
+  line-height: 1.1;
+  font-family: var(--textFont);
+  font-weight: 400;
+  font-size: 15px;
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text p span,
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .text p a {
-  font-weight: 700;
+  font-weight: 600;
 }
 .userApp .appContainer .ActivityAndTrendingBar .activityCardContainer .card .more {
   position: absolute;
@@ -575,6 +577,9 @@ a {
 .userApp .appContainer .postContainer .CreatePost .mantine-Textarea-root textarea {
   width: 100%;
   font-weight: 600;
+  font-family: var(--textFont) !important;
+  font-weight: 400;
+  font-size: 16px;
 }
 .userApp .appContainer .postContainer .CreatePost .mantine-Textarea-root textarea::-moz-placeholder {
   color: var(--majorColor);
@@ -778,7 +783,7 @@ a {
   background-color: var(--componentBackground);
   transition: 0.2s;
   border-radius: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   border: 1px solid var(--border);
 }
 .userApp .appContainer .postContainer .card .postProfile {
@@ -810,6 +815,9 @@ a {
 }
 .userApp .appContainer .postContainer .card .postCaption {
   margin-top: 10px;
+  font-family: var(--textFont);
+  font-weight: 300;
+  font-size: 15px;
 }
 .userApp .appContainer .postContainer .card .postContent {
   margin-top: 10px;
@@ -1980,4 +1988,31 @@ a {
 .BigPostCard .BigPostCardContent .commentSection {
   width: 40%;
   height: 100%;
+}
+
+.drawer_container .drawer_label {
+  color: var(--lighterColor);
+  margin-bottom: 10px;
+  font-size: 13px;
+  border-bottom: 1px solid var(--border);
+}
+.drawer_container .drawer_item {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  padding: 10px;
+  font-weight: 300;
+  font-size: 15px;
+  color: var(--lightColor);
+  margin-bottom: 5px;
+  border-radius: 5px;
+}
+.drawer_container .drawer_item:hover {
+  background-color: var(--hover);
+}
+.drawer_container .drawer_item svg {
+  font-size: 20px;
 }/*# sourceMappingURL=styles.css.map */

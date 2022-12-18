@@ -1,6 +1,7 @@
 import { Button, Textarea } from '@mantine/core'
 import { useState } from 'react'
-import { IoMegaphone, IoVideocam, IoImage, IoClose } from "react-icons/io5"
+import { IoClose } from "react-icons/io5"
+import {TfiAnnouncement, TfiImage, TfiVideoCamera} from "react-icons/tfi";
 
 const CreatePost = () => {
   const [postText, setPostText] = useState("")
@@ -26,7 +27,7 @@ const CreatePost = () => {
       <div className={(postText || postImages.length !== 0) ? "CreatePost focused" : "CreatePost"}>
         <Textarea
           onChange={(e) => setPostText(e.target.value.trim())}
-          icon={<IoMegaphone style={{ fontSize: "22px",fill:"rgb(32, 155, 240)" }} />}
+          icon={<TfiAnnouncement style={{ fontSize: "22px",fill:"rgb(32, 155, 240)" }} />}
           variant='unstyled'
           placeholder="What's new" size='md'
         />
@@ -58,11 +59,11 @@ const CreatePost = () => {
         <div className='creatPostType'>
           <button className='iconContainer'>
             <input accept='video/mp4,image/*' multiple type="file" onChange={getPostImages} />
-            <IoImage />
+            <TfiImage />
             <p>Photo/Video</p>
           </button>
           <button className='iconContainer' >
-            <IoVideocam /> <p>Go live</p>
+            <TfiVideoCamera /> <p>Go live</p>
           </button>
           {
             (postText || postImages.length > 0)

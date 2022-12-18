@@ -1,12 +1,15 @@
 import { Link as A, useLocation } from 'react-router-dom'
-import { BiSearch, BiMoviePlay, BiMessageDetail, BiCompass, BiBell, BiUser, BiCog, BiSun, BiMoon, BiPowerOff, BiQuestionMark, BiBook } from "react-icons/bi";
+import { BiUser, BiMoon, BiPowerOff, BiQuestionMark, BiBook } from "react-icons/bi";
+import { TfiHome, TfiBell, TfiCommentAlt, TfiVideoClapper, TfiGallery, TfiSettings, TfiSearch } from "react-icons/tfi"
 import profileImg from "../../static/images/lolita.jpg"
-import { Menu, TextInput, } from "@mantine/core";
+import { Menu, Switch, TextInput, Drawer } from "@mantine/core";
 import { GoHome } from 'react-icons/go';
 import { GrAppsRounded } from 'react-icons/gr'
 import logo from "../../static/images/M.png"
-const SideBar = () => {
+import { useState } from 'react';
+const SideBar = ({theme, setTheme, presentTheme}) => {
   const location = useLocation();
+  const [profileDrawer, setProfileDrawer] = useState(false)
   return (
     <nav className="sideBar">
       <div className="searchBar-Logo">
@@ -14,100 +17,101 @@ const SideBar = () => {
           <A to={"/"}><img src={logo} alt="" /></A>
         </div>
         <div className='searchBarContainer'>
-        <div className='search_icon'>
-        <BiSearch style={{ fontSize: "26px" }} />
-        </div>
-        <div className='search_input'>
-        <TextInput variant={"default"} radius={50} size={"md"} icon={<BiSearch style={{ fontSize: "26px" }} />} placeholder={"Search..."} />
-        </div>
+          <div className='search_icon'>
+            <TfiSearch style={{ fontSize: "26px" }} />
+          </div>
+          <div className='search_input'>
+            <TextInput variant={"default"} radius={50} size={"md"} icon={<TfiSearch style={{ fontSize: "20px" }} />} placeholder={"Search..."} />
+          </div>
         </div>
       </div>
       <div className='menu_container'>
 
         <menu className='navigators'>
           <A to={"/"} className={location.pathname === '/' && 'active'}>
-            <GoHome />
+            <TfiHome />
             <span>Home</span>
           </A>
           <A to={"/explore"} className={location.pathname === '/explore' && 'active'}>
-            <BiCompass />
+            <TfiGallery />
             <span>Explore</span>
           </A>
 
           <A to={"/clips"} className={location.pathname === '/clips' && 'active'}>
-            <BiMoviePlay />
+            <TfiVideoClapper />
             <span>Clips</span>
           </A>
 
           <A to={"/chats"} className={location.pathname === '/chats' && 'active'}>
-            <BiMessageDetail />
+            <TfiCommentAlt />
             <span>Chats</span>
           </A>
         </menu>
 
         <menu>
           <A to={"/activity"} className={location.pathname === '/activity' && 'active'}>
-            <BiBell />
+            <TfiBell />
             <span>Activity</span>
           </A>
 
 
           <div className={"sideBarMenu"}>
-            <Menu position={"bottom-end"} shadow="md" withArrow width={300}>
-              <Menu.Target>
-                <button className='profileImg'>
+                <button onClick={()=> setProfileDrawer(true)} className='profileImg'>
                   <img src={profileImg} alt="" />
                 </button>
-              </Menu.Target>
-
-              <Menu.Dropdown>
-                <Menu.Label><h3>Account</h3></Menu.Label>
-                <A to={"/profile"}>
-                  <Menu.Item icon={<BiUser />}>
-                    <h4>View profile</h4>
-                  </Menu.Item>
-                </A>
-                <A to={"/settings-privacy"}>
-                  <Menu.Item icon={<BiCog />}>
-                    <h4>Settings & Privacy</h4>
-                  </Menu.Item>
-                </A>
-
-                <Menu.Divider />
-                <Menu.Label><h3>Theme</h3></Menu.Label>
-                <Menu.Item icon={<BiSun />}>
-                  <h4>Light</h4>
-                </Menu.Item>
-                <Menu.Item icon={<BiMoon />}>
-                  <h4>Dark</h4>
-                </Menu.Item>
-
-                <Menu.Item icon={<BiMoon style={{ fill: "royalblue" }} />}>
-                  <h4>Blue</h4>
-                </Menu.Item>
-                <Menu.Divider />
-                <A to={"/settings-privacy"}>
-                  <Menu.Item icon={<BiQuestionMark />}>
-                    <h4>Help</h4>
-                  </Menu.Item>
-                </A>
-                <A to={"/settings-privacy"}>
-                  <Menu.Item icon={<BiBook />}>
-                    <h4>About</h4>
-                  </Menu.Item>
-                </A>
-                <Menu.Divider />
-                <A to={"/settings-privacy"}>
-                  <Menu.Item icon={<BiPowerOff />}>
-                    <h4>Logout</h4>
-                  </Menu.Item>
-                </A>
-              </Menu.Dropdown>
-            </Menu>
           </div>
 
         </menu>
       </div>
+      <Drawer
+        opened={profileDrawer}
+        onClose={()=> setProfileDrawer(false)}
+        overlayBlur={2}
+        padding="md"
+        position='right'
+        data-theme={presentTheme}
+      >
+        <div className='drawer_container'>
+          <div>
+            <h3 className='drawer_label'  >Account</h3>
+            <A className='drawer_item' to={"/profile"}>
+              <BiUser />
+              <h4>View profile</h4>
+            </A>
+
+            <A className='drawer_item' to={"/settings-privacy"}>
+              <TfiSettings />
+              <h4>Settings & Privacy</h4>
+            </A>
+
+            <h3 className='drawer_label'>Theme</h3>
+            <div className='drawer_item'>
+              <BiMoon />
+              <div style={{ width: "100%", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                <h4>Dark</h4>
+                <Switch onChange={()=> {
+                  setTheme(!theme)
+                }} />
+              </div>
+            </div>
+
+            <h3 className='drawer_label'></h3>
+
+            <A className='drawer_item' to={"/settings-privacy"}>
+              <BiQuestionMark />
+              <h4>Help</h4>
+            </A>
+            <A className='drawer_item' to={"/settings-privacy"}>
+              <BiBook />
+              <h4>About</h4>
+            </A>
+            <A className='drawer_item' to={"/settings-privacy"}>
+              <BiPowerOff />
+              <h4>Logout</h4>
+            </A>
+          </div>
+        </div>
+      </Drawer>
     </nav>
   );
 };

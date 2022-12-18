@@ -1,19 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Red Hat Display", sans-serif;
-  text-decoration: none;
-  list-style: none;
-}
-
-input,
-textarea,
-button {
-  font-family: "Red Hat Display", sans-serif !important;
-}
-
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100;200;300;400;500;600;700;800;900&display=swap');
 :root {
   --background: rgb(238, 238, 238);
   --componentBackground: white;
@@ -31,6 +16,8 @@ button {
   --chatBackgroundColor: rgba(245, 245, 245, 0.946);
   --chatReciverMessageBackgroundColor: rgb(255, 255, 255);
   --chatSenderMessageBackgroundColor: rgb(129, 202, 255);
+  --textFont:'Lexend', sans-serif;
+
 }
 // rgb(32, 32, 36)
 [data-theme="dark"] {
@@ -49,6 +36,7 @@ button {
   --chatBackgroundColor: rgba(19, 19, 20, 0.946);
   --chatReciverMessageBackgroundColor: rgb(52, 52, 52);
   --chatSenderMessageBackgroundColor: rgb(67, 177, 255);
+
 }
 
 [data-theme="dimmed"] {
@@ -75,6 +63,19 @@ button {
   align-items: $align;
   flex-direction: $direction;
 }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+}
+
+
+
+
+
 body {
   width: 100%;
   height: 100%;
@@ -193,6 +194,32 @@ a {
     .commentSection {
       width: 40%;
       height: 100%;
+    }
+  }
+}
+
+.drawer_container{
+  .drawer_label{
+    color: var(--lighterColor);
+    margin-bottom: 10px;
+    font-size: 13px;
+    border-bottom: 1px solid var(--border);
+  }
+  .drawer_item{
+    width: 100%;
+    @include flexDisplay(flex-start, center, row);
+    gap: 10px;
+    padding: 10px;
+    font-weight: 300;
+    font-size: 15px;
+    color: var(--lightColor);
+    margin-bottom: 5px;
+    border-radius: 5px;
+    &:hover{
+      background-color: var(--hover);
+    }
+    svg{
+      font-size: 20px;
     }
   }
 }
