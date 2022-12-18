@@ -43,7 +43,7 @@ button {
   --topBar: rgba(34, 35, 41, 0.533);
   --shadow1: 0px 0px 2px rgba(225, 225, 225, 0.184);
   --shadow2: 0px 0px 20px #5946ffa9;
-  --border: rgb(50, 53, 58);
+  --border: rgb(54,59,64);
   --chatBackgroundImage: url("../../static/images/chat-dark-theme.jpeg");
   --chatBackgroundBlendMode: darken;
   --chatBackgroundColor: rgba(19, 19, 20, 0.946);
@@ -918,10 +918,29 @@ a {
   .userApp .appContainer .postContainer {
     width: 100%;
     min-width: 100%;
-    padding: 0px 10px;
+    padding: 0px 0px;
   }
-  .userApp .appContainer .postContainer .card {
+  .userApp .appContainer .postContainer .card, .userApp .appContainer .postContainer .CreatePost {
     padding: 20px 10px;
+    border-radius: 0px;
+    border-right: none;
+    border-left: none;
+  }
+  .userApp .appContainer .ActivityAndTrendingBar.notificationContainer {
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+    padding: 20px 10px;
+  }
+  .userApp .appContainer .ActivityAndTrendingBar .activityContainer .notificationDetails .img {
+    width: 40px;
+    height: 40px;
+  }
+  .userApp .appContainer .ActivityAndTrendingBar .activityContainer .notificationDetails h4 {
+    font-size: 18px;
+  }
+  .userApp .appContainer .ActivityAndTrendingBar .activityContainer .notificationDetails p {
+    font-size: 16px;
   }
 }
 .userApp .appContainer .exploreContainer {
@@ -1114,6 +1133,9 @@ a {
   .userApp .appContainer .exploreContainer {
     width: 100vw;
     max-width: 100vw;
+    padding: 0px 0px;
+  }
+  .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending {
     padding: 0px 10px;
   }
   .userApp .appContainer .exploreContainer .exploreTrendingPost .ExploreTrending .trendingPostContainer .card img {

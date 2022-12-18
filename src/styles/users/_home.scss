@@ -584,9 +584,34 @@
   .postContainer{
     width: 100%;
     min-width: 100%;
-    padding: 0px 10px;
-    .card {
+    padding: 0px 0px;
+    .card,.CreatePost {
       padding: 20px 10px;
+      border-radius: 0px;
+      border-right: none;
+      border-left: none;
+    }
+  }
+  .ActivityAndTrendingBar{
+    &.notificationContainer{
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+    padding: 20px 10px;
+    }
+    .activityContainer{
+      .notificationDetails{
+        .img{
+          width: 40px;
+          height: 40px;
+        }
+        h4{
+          font-size: 18px;
+        }
+        p{
+          font-size: 16px;
+        }
+      }
     }
   }
 }
