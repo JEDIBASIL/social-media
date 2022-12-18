@@ -582,8 +582,8 @@
 
 @media screen and (max-width: 500px) {
   .postContainer{
-    width: 100%;
-    min-width: 100%;
+    width: 100vw;
+    min-width: 100vw;
     padding: 0px 0px;
     .card,.CreatePost {
       padding: 20px 10px;

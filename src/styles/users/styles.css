@@ -275,12 +275,11 @@ a {
   .userApp .sideBar .searchBar-Logo {
     width: 100%;
     padding-bottom: 10px;
-    padding-left: 10px;
   }
   .userApp .sideBar .menu_container {
     width: 100%;
     justify-content: center;
-    gap: 0%;
+    gap: 10%;
   }
   .userApp .sideBar menu {
     margin: 0;
@@ -289,15 +288,17 @@ a {
     width: 100%;
     justify-content: space-between;
   }
-  .userApp .sideBar menu a {
+  .userApp .sideBar menu:nth-child(2) {
+    gap: 15%;
+    padding-right: 10px;
+  }
+  .userApp .sideBar menu a:not(.profileImg) {
     padding: 0;
+    margin: 0;
+    height: 40px;
   }
-  .userApp .sideBar menu a svg {
-    font-size: 45px !important;
-  }
-  .userApp .sideBar menu a span {
+  .userApp .sideBar menu a:not(.profileImg) span {
     font-size: 10px;
-    font-weight: 600;
   }
   .userApp .sideBar menu .sideBarMenu .profileImg img {
     width: 38px;
@@ -916,8 +917,8 @@ a {
 }
 @media screen and (max-width: 500px) {
   .userApp .appContainer .postContainer {
-    width: 100%;
-    min-width: 100%;
+    width: 100vw;
+    min-width: 100vw;
     padding: 0px 0px;
   }
   .userApp .appContainer .postContainer .card, .userApp .appContainer .postContainer .CreatePost {
@@ -946,7 +947,7 @@ a {
 .userApp .appContainer .exploreContainer {
   width: 500px;
   max-width: 500px;
-  padding: 0 30px;
+  padding: 0 20px;
 }
 .userApp .appContainer .exploreContainer .swiper-wrapper {
   width: calc(100% - 30px);
@@ -1005,6 +1006,7 @@ a {
   height: 40px;
   top: -50%;
   position: relative;
+  background-color: var(--componentBackground);
 }
 .userApp .appContainer .exploreContainer .ExploreCategories .card svg {
   font-size: 20px;
