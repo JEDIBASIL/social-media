@@ -107,9 +107,13 @@
 }
 @media screen and (max-width: 700px) {
   .Profile {
+    width: 100vw;
     .profileDetailsContainer {
+      border-radius: 0;
+      border-right: none;
+      border-left: none;
       .profileImgContainer {
-        height: 150px;
+        height: 120px;
         .profilePics {
           bottom: -50px;
           left: 20px;
@@ -119,20 +123,30 @@
         .profileName {
           bottom: -80px;
           left: 20px;
-            font-size: 18px;
+          font-size: 18px;
           svg {
             color: var(--majorColor);
           }
         }
       }
-      .followAndMore{
+      .followAndMore {
         padding-top: 20px;
         flex-direction: column;
         align-items: flex-start;
-        .profileActionsContainer{
+        .profileActionsContainer {
           padding-top: 10px;
           width: 100%;
           justify-content: flex-end;
+        }
+      }
+    }
+    .profileMediaAndSuggested{
+      .profileTab{
+        .mantine-Tabs-tabsList{
+          border-radius: 0;
+          border-right: none;
+          border-left: none;
+          top: 60px;
         }
       }
     }

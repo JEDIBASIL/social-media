@@ -295,6 +295,7 @@ a {
   .userApp .sideBar menu a svg {
     width: 25px;
     height: 30px;
+    font-size: 0;
   }
   .userApp .sideBar menu a span {
     font-size: 10px;
@@ -1638,8 +1639,16 @@ a {
   width: 420px;
 }
 @media screen and (max-width: 700px) {
+  .userApp .appContainer .Profile {
+    width: 100vw;
+  }
+  .userApp .appContainer .Profile .profileDetailsContainer {
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+  }
   .userApp .appContainer .Profile .profileDetailsContainer .profileImgContainer {
-    height: 150px;
+    height: 120px;
   }
   .userApp .appContainer .Profile .profileDetailsContainer .profileImgContainer .profilePics {
     bottom: -50px;
@@ -1664,6 +1673,12 @@ a {
     padding-top: 10px;
     width: 100%;
     justify-content: flex-end;
+  }
+  .userApp .appContainer .Profile .profileMediaAndSuggested .profileTab .mantine-Tabs-tabsList {
+    border-radius: 0;
+    border-right: none;
+    border-left: none;
+    top: 60px;
   }
 }
 .userApp .appContainer .settings {
