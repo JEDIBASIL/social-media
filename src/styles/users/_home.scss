@@ -3,7 +3,7 @@
   height: 100%;
   .HomeSideBar {
     width: 280px;
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: var(--componentBackground);
     border: 1px solid var(--border);
     overflow: hidden;
@@ -61,7 +61,7 @@
     rgb(17, 188, 255),
     rgb(90, 205, 190)
   );
-  border-radius: 15px;
+  border-radius: 5px;
   text-align: center;
   color: white;
   @include flexDisplay(center, center, column);
@@ -86,7 +86,7 @@
   background-color: var(--componentBackground);
   overflow-y: auto;
   border: 1px solid var(--border);
-  border-radius: 15px;
+  border-radius: 5px;
 
   &:hover {
     &::-webkit-scrollbar-thumb {
@@ -228,7 +228,7 @@
   .CreatePost {
     margin-bottom: 30px;
     border: 1px solid var(--border);
-    border-radius: 15px;
+    border-radius: 5px;
     background-color: var(--componentBackground);
     overflow: hidden;
     height:60px;
@@ -438,7 +438,7 @@
     width: 100%;
     background-color: var(--componentBackground);
     transition: 0.2s;
-    border-radius: 15px;
+    border-radius: 5px;
     margin-bottom: 20px;
     border: 1px solid var(--border);
     .postProfile {

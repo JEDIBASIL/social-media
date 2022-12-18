@@ -43,7 +43,7 @@ button {
   --topBar: rgba(34, 35, 41, 0.533);
   --shadow1: 0px 0px 2px rgba(225, 225, 225, 0.184);
   --shadow2: 0px 0px 20px #5946ffa9;
-  --border: rgb(41, 46, 52);
+  --border: rgb(49, 55, 63);
   --chatBackgroundImage: url("../../static/images/chat-dark-theme.jpeg");
   --chatBackgroundBlendMode: darken;
   --chatBackgroundColor: rgba(19, 19, 20, 0.946);
@@ -114,6 +114,10 @@ a {
   align-items: center;
   flex-direction: row;
 }
+.userApp .sideBar .searchBar-Logo .search_icon {
+  display: none;
+  margin-left: 30px;
+}
 .userApp .sideBar .searchBar-Logo .logo {
   margin-right: 20px;
 }
@@ -124,6 +128,13 @@ a {
 }
 .userApp .sideBar .searchBar-Logo .logo a img {
   width: 50px;
+}
+.userApp .sideBar .menu_container {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }
 .userApp .sideBar menu {
   border-radius: 10px;
@@ -212,7 +223,10 @@ a {
   .userApp .sideBar .searchBar-Logo .logo {
     margin-right: 0;
   }
-  .userApp .sideBar .searchBarContainer {
+  .userApp .sideBar .searchBar-Logo .search_icon {
+    display: flex;
+  }
+  .userApp .sideBar .searchBar-Logo .search_input {
     display: none;
   }
 }
@@ -247,6 +261,28 @@ a {
   }
 }
 @media screen and (max-width: 500px) {
+  .userApp .sideBar {
+    flex-direction: column;
+    justify-content: center;
+    height: 100px;
+    top: -40px;
+  }
+  .userApp .sideBar .searchBar-Logo {
+    width: 100%;
+    padding-bottom: 10px;
+  }
+  .userApp .sideBar .menu_container {
+    width: 100%;
+    justify-content: center;
+    gap: 7%;
+  }
+  .userApp .sideBar menu {
+    margin: 0;
+  }
+  .userApp .sideBar menu.navigators {
+    width: 100%;
+    justify-content: space-between;
+  }
   .userApp .sideBar menu a span {
     display: none;
   }
@@ -268,7 +304,7 @@ a {
 }
 .userApp .appContainer .homeContainer .HomeSideBar {
   width: 280px;
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: var(--componentBackground);
   border: 1px solid var(--border);
   overflow: hidden;
@@ -326,7 +362,7 @@ a {
   position: sticky;
   top: 80px;
   background: linear-gradient(45deg, slateblue, royalblue, rgb(17, 188, 255), rgb(90, 205, 190));
-  border-radius: 15px;
+  border-radius: 5px;
   text-align: center;
   color: white;
   display: flex;
@@ -354,7 +390,7 @@ a {
   background-color: var(--componentBackground);
   overflow-y: auto;
   border: 1px solid var(--border);
-  border-radius: 15px;
+  border-radius: 5px;
 }
 .userApp .appContainer .ActivityAndTrendingBar:hover::-webkit-scrollbar-thumb {
   background-color: var(--border);
@@ -500,7 +536,7 @@ a {
 .userApp .appContainer .postContainer .CreatePost {
   margin-bottom: 30px;
   border: 1px solid var(--border);
-  border-radius: 15px;
+  border-radius: 5px;
   background-color: var(--componentBackground);
   overflow: hidden;
   height: 60px;
@@ -723,7 +759,7 @@ a {
   width: 100%;
   background-color: var(--componentBackground);
   transition: 0.2s;
-  border-radius: 15px;
+  border-radius: 5px;
   margin-bottom: 20px;
   border: 1px solid var(--border);
 }
@@ -1454,7 +1490,7 @@ a {
 .userApp .appContainer .Profile .profileDetailsContainer {
   width: 100%;
   overflow: hidden;
-  border-radius: 15px 15px 0 0;
+  border-radius: 5px 5px 0 0;
   border: 1px solid var(--border);
   background-color: var(--componentBackground);
   padding-bottom: 30px;
@@ -1551,7 +1587,7 @@ a {
   top: 65px;
   background-color: var(--componentBackground);
   border: 1px solid var(--border);
-  border-radius: 0px 0px 15px 15px;
+  border-radius: 0px 0px 5px 5px;
   border-top: 0;
   overflow: hidden;
   padding-bottom: 2px;
