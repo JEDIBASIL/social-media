@@ -536,12 +536,15 @@
           font-size: 15px;
           line-height: 1;
           svg {
-            font-size: 25px;
+            font-size: 20px;
             fill: gray;
+          }
+          h6{
+            font-size: 9px;
           }
           &:nth-child(2) {
             svg {
-              fill: rgb(173, 13, 47);
+              // fill: rgb(173, 13, 47);
             }
           }
         }

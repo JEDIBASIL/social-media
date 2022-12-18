@@ -11,12 +11,12 @@
   .searchBar-Logo {
     @include flexDisplay(space-between, center, row);
     .search_icon {
-      display: none;
       background-color: var(--hover);
       width: 40px;
       height: 40px;
       border-radius: 50%;
       @include flexDisplay(center, center, row);
+      display: none ;
       margin-left: 30px;
     }
     .logo {
@@ -165,7 +165,7 @@
     flex-direction: column;
     justify-content: center;
     height: 120px;
-    top: -40px;
+    top: -60px;
     .searchBar-Logo {
       width: 100%;
       padding-bottom: 10px;
