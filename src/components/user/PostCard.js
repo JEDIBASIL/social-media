@@ -1,6 +1,8 @@
 import profileImg from "../../static/images/anime.jpg";
 import { Menu, TextInput } from "@mantine/core";
-import { BiDotsVerticalRounded, BiUser, BiBlock, BiCommentDots, BiArrowToRight } from "react-icons/bi";
+import { BiDotsVerticalRounded, BiUser, BiBlock, BiCommentDots, BiShare } from "react-icons/bi";
+import { RiHeartFill, RiChatQuoteFill} from "react-icons/ri"
+
 import { HiHeart, HiChat } from "react-icons/hi"
 const PostCard = ({ title, image, showModal }) => {
   return (
@@ -57,15 +59,15 @@ const PostCard = ({ title, image, showModal }) => {
         </div>
         <div className="postReactionsContent">
           <div className="postReactionIconContainer">
-            <HiChat />
+            <RiChatQuoteFill />
             <h6>200</h6>
           </div>
           <div className="postReactionIconContainer">
-            <HiHeart />
+            <RiHeartFill />
             <h6>200</h6>
           </div>
           <div className="postReactionIconContainer">
-            <BiArrowToRight />
+            <BiShare />
             <h6>200</h6>
           </div>
         </div>
