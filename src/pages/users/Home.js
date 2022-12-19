@@ -1,5 +1,5 @@
 import { Button, Modal } from "@mantine/core"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import ActivityAndTrendingBar from "../../components/user/ActivityAndTrendingBar"
 import CreatePost from "../../components/user/CreatePost"
 import HomeSideBarDetails from "../../components/user/HomeSideBarDetails"
@@ -9,6 +9,10 @@ import UpgradeAds from "../../components/user/UpgradeAds"
 
 const Home = () => {
   const [showModal, setShowModal] = useState(false)
+  const [posts, setPosts] = useState([])
+  useEffect(()=>{
+    console.log(posts)
+  })
   return (
     <div className="homeContainer">
       <Modal overlayBlur={"5"} radius={10} shadow="xl" centered opened={false}>
@@ -24,9 +28,11 @@ const Home = () => {
 
       <div className="postContainer">
         <div>
-          <CreatePost />
+          <CreatePost posts={posts} setPosts={setPosts} />
         </div>
-        <PostCard showModal={setShowModal} />
+        {
+          posts.map(({title, image}, i) =>  <PostCard key={i} title={title} media={image} showModal={setShowModal} />)
+        }
       </div>
       <ActivityAndTrendingBar />
     </div>

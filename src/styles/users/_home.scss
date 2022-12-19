@@ -233,7 +233,7 @@
     border-radius: 15px;
     background-color: var(--componentBackground);
     overflow: hidden;
-    height:60px;
+    height:100px;
     @include flexDisplay(space-between, center, row);
     .mantine-Textarea-icon {
       padding-top: 10px;
@@ -502,7 +502,7 @@
       &.C2_card {
         grid-template-columns: repeat(2, 1fr) !important;
         .previewCard {
-          height: 300px !important;
+          height: 250px !important;
         }
       }
       &.C3_card {

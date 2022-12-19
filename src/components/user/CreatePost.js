@@ -3,9 +3,22 @@ import { useState } from 'react'
 import { IoClose } from "react-icons/io5"
 import {TfiAnnouncement, TfiImage, TfiVideoCamera} from "react-icons/tfi";
 
-const CreatePost = () => {
+const CreatePost = ({posts, setPosts}) => {
   const [postText, setPostText] = useState("")
   const [postImages, setPostImages] = useState([])
+
+  const onPost = (e) =>{
+    e.preventDefault()
+    console.log(postText)
+    console.log({
+      title:postText,
+      image:postImages
+    })
+    setPosts([ {
+      title:postText,
+      image:postImages
+    }, ...posts])
+  }
 
   const getPostImages = (e) => {
     const fileList = e.target.files;
@@ -24,9 +37,11 @@ const CreatePost = () => {
   }
   return (
     <>
-      <div className={(postText || postImages.length !== 0) ? "CreatePost focused" : "CreatePost"}>
+      <form onSubmit={onPost} className={(postText || postImages.length !== 0) ? "CreatePost focused" : "CreatePost"}>
         <Textarea
-          onChange={(e) => setPostText(e.target.value.trim())}
+          onChange={(e) => {setPostText(e.target.value.trim())
+            console.log(postText)
+          }}
           icon={<TfiAnnouncement style={{ fontSize: "22px",fill:"rgb(32, 155, 240)" }} />}
           variant='unstyled'
           placeholder="What's new" size='md'
@@ -69,11 +84,11 @@ const CreatePost = () => {
             (postText || postImages.length > 0)
             &&
             <div className='postBtnContainer'>
-              <Button radius={50} color={"blue"} variant='filled'>Post</Button>
+              <Button type={"submit"} radius={50} color={"blue"} variant='filled'>Post</Button>
             </div>
           }
         </div>
-      </div>
+      </form>
 
     </>
   )

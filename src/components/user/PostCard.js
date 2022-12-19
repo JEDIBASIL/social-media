@@ -1,10 +1,10 @@
 import profileImg from "../../static/images/anime.jpg";
 import { Menu, TextInput } from "@mantine/core";
 import { BiDotsVerticalRounded, BiUser, BiBlock, BiCommentDots, BiShare } from "react-icons/bi";
-import { RiHeartFill, RiChatQuoteFill} from "react-icons/ri"
-
-import { HiHeart, HiChat } from "react-icons/hi"
-const PostCard = ({ title, image, showModal }) => {
+import { RiHeartFill, RiChatQuoteFill } from "react-icons/ri"
+import { useEffect } from "react";
+const PostCard = ({ title, media, showModal }) => {
+ 
   return (
     <div className="card">
       <div className="postProfile">
@@ -32,30 +32,31 @@ const PostCard = ({ title, image, showModal }) => {
           </Menu.Dropdown>
         </Menu>
       </div>
-      <p className="postCaption">Grammarly works instantly across websites and desktop applications to ensure everything you type is mistake-free, clear, and professional. Download now! 💀</p>
+      <p className="postCaption">
+        {title}
+        {/* Grammarly works instantly across websites and desktop applications to ensure everything you type is mistake-free, clear, and professional. Download now! 💀</p> */}
+      </p>
       <div className="postDetails">
 
       </div>
+      {/* C2_card */}
 
-      <div onClick={() => showModal(true)} className="postContent C4_card">
-        <div className="previewCard">
-          <img src="https://pbs.twimg.com/media/FdLhlX7XwAEeAjd?format=jpg&name=900x900" alt="" />
+      {
+        (media !== null && media !== undefined && media.length !== undefined && media.length !== 0)
+        &&
+        <div onClick={() => showModal(true)} className={media.length == 1 ? "postContent" : `postContent C${media.length}_card`}>
+          {
+              media.map(file => 
+              <div className="previewCard">
+                <img src={file.media} alt="" />
+              </div>)
+            }
         </div>
-        <div className="previewCard">
-          <img src={"https://pbs.twimg.com/media/FdWwJ0HXgAImS8U?format=jpg&name=small"} alt="" />
-        </div>
-        <div className="previewCard">
-          <img src={"https://pbs.twimg.com/media/Fd_jMWkXEAEIEKW?format=jpg&name=small"} alt="" />
-        </div>
-
-        <div className="previewCard">
-          <img src={"https://pbs.twimg.com/media/Fd_jMWkXEAEIEKW?format=jpg&name=small"} alt="" />
-        </div>
-      </div>
+      }
 
       <div className="postReactions">
         <div className="postCommentSection">
-          <TextInput variant={"filled"} size={"md"} radius={"50px"} placeholder={"Write a comment..."} icon={<BiCommentDots />} />
+          <TextInput variant={"filled"} size={"sm"} radius={"50px"} placeholder={"Write a comment..."} icon={<BiCommentDots />} />
         </div>
         <div className="postReactionsContent">
           <div className="postReactionIconContainer">
