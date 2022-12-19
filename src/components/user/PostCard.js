@@ -13,7 +13,8 @@ const PostCard = ({ title, media, showModal }) => {
     isPlaying: true,
     isMute: false,
     progress: 0,
-    duration: 0
+    duration: 0,
+    currentTime:0
   })
 
   const onTogglePlaying = () => {
@@ -28,7 +29,7 @@ const PostCard = ({ title, media, showModal }) => {
   const onPlaying = () => {
     const duration = videoElement.current.duration;
     const ct = videoElement.current.currentTime;
-    setVideoStatus({ ...videoStatus, progress: ct / duration * 100, duration: videoElement.current.duration })
+    setVideoStatus({ ...videoStatus, progress: ct / duration * 100, duration, currentTime:ct })
   }
 
   const checkWidth = (e) => {
@@ -83,11 +84,14 @@ const PostCard = ({ title, media, showModal }) => {
             media.map(file =>
               file.extName === "mp4" ?
                 <div className="previewCard">
-                  <video onTimeUpdate={onPlaying} muted={videoStatus.isMute} ref={videoElement} autoPlay src={file.media}></video>
+                  <video onClick={onTogglePlaying} onTimeUpdate={onPlaying} muted={videoStatus.isMute} ref={videoElement} autoPlay src={file.media}></video>
                   <div className="video_controls">
                     <div className="controls_icons_label">
+                    <div  className="control_icons_container">
                       <div className="control_icon" onClick={onTogglePlaying}>
                         {videoStatus.isPlaying ? <MdPlayArrow /> : <MdPause />}
+                      </div>
+                      <p>{parseInt(videoStatus.currentTime+"")}/{parseInt(videoStatus.duration+"")}</p>
                       </div>
                       <div  className="control_icons_container">
                         <div className="control_icon" onClick={onToggleMute}>
