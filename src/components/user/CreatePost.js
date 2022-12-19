@@ -1,7 +1,7 @@
 import { Button, Textarea } from '@mantine/core'
 import { useState } from 'react'
 import { IoClose } from "react-icons/io5"
-import {TfiAnnouncement, TfiImage, TfiVideoCamera, TfiCamera, TfiHeadphone} from "react-icons/tfi";
+import {TfiAnnouncement, TfiImage, TfiVideoCamera, TfiCamera, TfiMicrophone} from "react-icons/tfi";
 import profileImg from "../../static/images/anime.jpg";
 
 
@@ -43,7 +43,7 @@ const CreatePost = ({posts, setPosts}) => {
           icon={
           <div className='post_profile_image'>
             <img src={profileImg} alt="" />
-            <TfiAnnouncement style={{ fontSize: "22px",fill:"rgb(32, 155, 240)" }} />
+            <TfiAnnouncement style={{ fontSize: "30px",fill:"rgb(32, 155, 240)" }} />
           </div>}
           variant='unstyled'
           placeholder="What's new" size='md'
@@ -87,7 +87,7 @@ const CreatePost = ({posts, setPosts}) => {
 
           <button className='iconContainer'>
             <input accept='video/mp4' multiple type="file" onChange={getPostImages} />
-            <TfiHeadphone />
+            <TfiMicrophone />
             <p>Audio</p>
           </button>
 

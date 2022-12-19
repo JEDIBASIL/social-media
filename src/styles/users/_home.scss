@@ -238,8 +238,8 @@
     .mantine-Textarea-icon {
       align-items: flex-start;
       justify-content: flex-start;
-      padding-left: 20px;
-      width: 150px;
+      padding-left: 10px;
+      width: 80px;
     }
     .mantine-Textarea-root {
       align-items: flex-start;
@@ -248,21 +248,22 @@
       .post_profile_image{
         @include flexDisplay(flex-start, center, row);
         img{
-          width: 38px;
-          height: 38px;
+          width: 50px;
+          height: 50px;
           border-radius: 50%;
           margin-right: 5px;
         }
       }
       textarea {
         width: 100%;
-        margin-left: 50px;
+        margin-left: 60px;
         font-weight: 600;
         font-family: var(--textFont) !important;
         font-weight: 400;
         font-size: 16px;
         &::placeholder {
           color: var(--majorColor);
+          font-size: 20px;
         }
       }
     }
@@ -306,7 +307,7 @@
       }
     }
     .creatPostType {
-      width: 200px;
+      width: 180px;
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 10px;
@@ -563,11 +564,12 @@
           line-height: 1;
           svg {
             font-size: 20px;
-            fill: gray;
+            color: var(--lighterColor);
           }
           h6{
             font-size: 9px;
             margin-top: 5px;
+            color: var(--lighterColor);
           }
           &:nth-child(2) {
             svg {

@@ -1,15 +1,15 @@
 import { Link as A } from "react-router-dom"
-import {IoMdPerson, IoMdColorPalette, IoMdPhotos, IoMdNotifications, IoMdLock, IoMdChatboxes} from "react-icons/io"
+import {TfiPalette, TfiLock, TfiCommentAlt, TfiCamera, TfiBell, TfiUser} from "react-icons/tfi"
 const SettingsSideBar = () => {
   return (
     <div className={"SettingsSideBar"}>
         <ul>
-            <li><A className={"active"} to={"/"}> <IoMdPerson /> Account</A></li>
-            <li><A to={"/"}> <IoMdColorPalette /> Appearance</A></li>
-            <li><A to={"/"}> <IoMdPhotos /> Post</A></li>
-            <li><A to={"/"}> <IoMdLock /> Privacy</A></li>
-            <li><A to={"/"}> <IoMdChatboxes /> Chat</A></li>
-            <li><A to={"/"}> <IoMdNotifications /> Notification</A></li>
+            <li><A className={"active"} to={"/"}> <TfiUser /> Account</A></li>
+            <li><A to={"/"}> <TfiPalette /> Appearance</A></li>
+            <li><A to={"/"}> <TfiCamera /> Post</A></li>
+            <li><A to={"/"}> <TfiLock /> Privacy</A></li>
+            <li><A to={"/"}> <TfiCommentAlt /> Chat</A></li>
+            <li><A to={"/"}> <TfiBell /> Notification</A></li>
         </ul>
     </div>
   )
