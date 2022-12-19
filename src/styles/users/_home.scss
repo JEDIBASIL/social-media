@@ -172,7 +172,6 @@
       width: 100%;
       padding: 10px;
       @include flexDisplay(space-between, center, row);
-      border-bottom: 1px solid var(--border);
       position: relative;
       &:hover {
         background-color: var(--hover);
@@ -214,7 +213,6 @@
         position: absolute;
         top: 10px;
         right: 10px;
-        visibility: hidden;
       }
     }
   }
@@ -534,12 +532,20 @@
       .previewCard {
         width: 100%;
         border-radius: 8px;
-        height: 300px;
+        height: 100%;
         overflow: hidden;
         background-position: top;
+        video{
+          width: 100%;
+          height: max-content;
+          max-height: 450px;
+          object-fit: cover;
+          border-radius: 8px;
+        }
         img{
           width: 100%;
           height: 100%;
+          max-height: 450px;
           object-fit: cover;
         }
       }
@@ -614,6 +620,16 @@
     width: 100vw;
     min-width: 100vw;
     padding: 0px 0px;
+    .CreatePost{
+      .mantine-Textarea-root{
+        textarea{
+          &::placeholder {
+            color: var(--majorColor);
+            font-size: 16px;
+          }
+        }
+    }
+    }
     .card,.CreatePost {
       padding: 20px 10px;
       border-radius: 0px;

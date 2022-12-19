@@ -74,24 +74,24 @@ const CreatePost = ({posts, setPosts}) => {
           }
         </div>
         <div className='creatPostType'>
-          <button className='iconContainer'>
+          <button type={"button"} className='iconContainer'>
             <input accept='image/*' multiple type="file" onChange={getPostImages} />
             <TfiImage />
             <p>Photo</p>
           </button>
-          <button className='iconContainer'>
-            <input accept='video/mp4' multiple type="file" onChange={getPostImages} />
+          <button type={"button"} className='iconContainer'>
+            <input accept='video/mp4' type="file" onChange={getPostImages} />
             <TfiCamera />
             <p>Video</p>
           </button>
 
-          <button className='iconContainer'>
-            <input accept='video/mp4' multiple type="file" onChange={getPostImages} />
+          <button type={"button"} className='iconContainer'>
+            <input accept='audio/mp3' type="file" onChange={getPostImages} />
             <TfiMicrophone />
             <p>Audio</p>
           </button>
 
-          <button className='iconContainer' >
+          <button type={"button"} className='iconContainer' >
             <TfiVideoCamera /> <p>Go live</p>
           </button>
 

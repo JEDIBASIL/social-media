@@ -1,8 +1,7 @@
 import profileImg from "../../static/images/anime.jpg";
 import { Menu, TextInput } from "@mantine/core";
-import { BiDotsVerticalRounded, BiUser, BiBlock, BiCommentDots } from "react-icons/bi";
+import { BiDotsVerticalRounded, BiUser, BiBlock } from "react-icons/bi";
 import {TfiHeart, TfiComment, TfiShare} from "react-icons/tfi"
-import { useEffect } from "react";
 const PostCard = ({ title, media, showModal }) => {
  
   return (
@@ -47,6 +46,14 @@ const PostCard = ({ title, media, showModal }) => {
         <div onClick={() => showModal(true)} className={media.length == 1 ? "postContent" : `postContent C${media.length}_card`}>
           {
               media.map(file => 
+              file.extName === "mp4" ?  
+              <div className="previewCard">
+              <video src={file.media}></video>
+              <div className="video_controls">
+                
+              </div>
+            </div>
+            :
               <div className="previewCard">
                 <img src={file.media} alt="" />
               </div>)

@@ -1,5 +1,6 @@
 import { Button, Center, Menu } from "@mantine/core";
-import { BiDotsVerticalRounded, BiUser, BiBlock } from "react-icons/bi";
+import { BiUser, BiBlock } from "react-icons/bi";
+import {TfiMore} from "react-icons/tfi"
 const ActivityAndTrendingBar = () => {
   return (
     <div className="ActivityAndTrendingBar">
@@ -14,7 +15,7 @@ const ActivityAndTrendingBar = () => {
           <Menu shadow="md" width={200}>
             <Menu.Target>
               <button className="more">
-                <BiDotsVerticalRounded />
+                <TfiMore />
               </button>
             </Menu.Target>
 
@@ -37,7 +38,7 @@ const ActivityAndTrendingBar = () => {
           <Menu shadow="md" width={200}>
             <Menu.Target>
               <button className="more">
-                <BiDotsVerticalRounded />
+                <TfiMore />
               </button>
             </Menu.Target>
 
@@ -60,7 +61,7 @@ const ActivityAndTrendingBar = () => {
           <Menu shadow="md" width={200}>
             <Menu.Target>
               <button className="more">
-                <BiDotsVerticalRounded />
+                <TfiMore />
               </button>
             </Menu.Target>
 
@@ -83,7 +84,7 @@ const ActivityAndTrendingBar = () => {
           <Menu shadow="md" width={200}>
             <Menu.Target>
               <button className="more">
-                <BiDotsVerticalRounded />
+                <TfiMore />
               </button>
             </Menu.Target>
 
