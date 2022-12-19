@@ -233,7 +233,7 @@
     border-radius: 15px;
     background-color: var(--componentBackground);
     overflow: hidden;
-    height:100px;
+    height:120px;
     @include flexDisplay(space-between, center, row);
     .mantine-Textarea-icon {
       padding-top: 10px;
@@ -269,6 +269,7 @@
       .creatPostType {
         width: 100%;
         border: none;
+        grid-template-columns: repeat(5, 1fr);
       }
       .mantine-Textarea-root {
         align-items: flex-start;
@@ -293,8 +294,10 @@
       }
     }
     .creatPostType {
-      width: 220px;
-      @include flexDisplay(space-between, center, row);
+      width: 200px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
       border-left: 1px solid var(--border);
       padding: 12px;
       padding-bottom: 20px;
@@ -305,8 +308,8 @@
         overflow: hidden;
         position: relative;
         cursor: pointer;
-        width: max-content;
-
+        width: 100%;
+        text-align: center;
         input {
           width: 200px;
           height: 200px;
@@ -329,7 +332,7 @@
         }
       }
       .postBtnContainer {
-        width: 50%;
+        width: 100%;
         display: flex;
         justify-content: flex-end;
       }
@@ -535,7 +538,8 @@
       padding-top: 15px;
       @include flexDisplay(space-between, center, row);
       .postReactionsContent {
-        width: 100%;
+        width: 80%;
+        margin: 0px auto;
         border-radius: 30px;
         padding: 5px 10px;
         @include flexDisplay(space-between, center, row);

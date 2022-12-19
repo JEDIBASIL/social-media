@@ -561,7 +561,7 @@ a {
   border-radius: 15px;
   background-color: var(--componentBackground);
   overflow: hidden;
-  height: 100px;
+  height: 120px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -610,6 +610,7 @@ a {
 .userApp .appContainer .postContainer .CreatePost.focused .creatPostType {
   width: 100%;
   border: none;
+  grid-template-columns: repeat(5, 1fr);
 }
 .userApp .appContainer .postContainer .CreatePost.focused .mantine-Textarea-root {
   align-items: flex-start;
@@ -631,11 +632,10 @@ a {
   background-color: gray;
 }
 .userApp .appContainer .postContainer .CreatePost .creatPostType {
-  width: 220px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
+  width: 200px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   border-left: 1px solid var(--border);
   padding: 12px;
   padding-bottom: 20px;
@@ -646,9 +646,8 @@ a {
   overflow: hidden;
   position: relative;
   cursor: pointer;
-  width: -webkit-max-content;
-  width: -moz-max-content;
-  width: max-content;
+  width: 100%;
+  text-align: center;
 }
 .userApp .appContainer .postContainer .CreatePost .creatPostType .iconContainer input {
   width: 200px;
@@ -671,7 +670,7 @@ a {
   cursor: pointer;
 }
 .userApp .appContainer .postContainer .CreatePost .creatPostType .postBtnContainer {
-  width: 50%;
+  width: 100%;
   display: flex;
   justify-content: flex-end;
 }
@@ -886,7 +885,8 @@ a {
   flex-direction: row;
 }
 .userApp .appContainer .postContainer .card .postReactions .postReactionsContent {
-  width: 100%;
+  width: 80%;
+  margin: 0px auto;
   border-radius: 30px;
   padding: 5px 10px;
   display: flex;
