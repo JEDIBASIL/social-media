@@ -178,13 +178,16 @@
     .menu_container {
       width: 100%;
       justify-content: center;
-      gap: 10%;
+      // gap: 10%;
     }
     menu {
       margin: 0;
       &.navigators {
         width: 100%;
         justify-content: space-between;
+      }
+      &:nth-child(2){
+        margin-left: 8%;
       }
       &:nth-child(2){
         gap: 15%;

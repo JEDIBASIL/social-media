@@ -276,7 +276,6 @@ a {
   .userApp .sideBar .menu_container {
     width: 100%;
     justify-content: center;
-    gap: 10%;
   }
   .userApp .sideBar menu {
     margin: 0;
@@ -284,6 +283,9 @@ a {
   .userApp .sideBar menu.navigators {
     width: 100%;
     justify-content: space-between;
+  }
+  .userApp .sideBar menu:nth-child(2) {
+    margin-left: 8%;
   }
   .userApp .sideBar menu:nth-child(2) {
     gap: 15%;
@@ -2002,7 +2004,6 @@ a {
   justify-content: flex-start;
   align-items: center;
   flex-direction: row;
-  gap: 10px;
   padding: 10px;
   font-weight: 300;
   font-size: 15px;
@@ -2015,4 +2016,5 @@ a {
 }
 .drawer_container .drawer_item svg {
   font-size: 20px;
+  margin-right: 10px;
 }/*# sourceMappingURL=styles.css.map */
