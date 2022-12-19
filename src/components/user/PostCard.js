@@ -1,9 +1,46 @@
 import profileImg from "../../static/images/anime.jpg";
 import { Menu, TextInput } from "@mantine/core";
-import { BiDotsVerticalRounded, BiUser, BiBlock } from "react-icons/bi";
-import {TfiHeart, TfiComment, TfiShare} from "react-icons/tfi"
+import { BiUser, BiBlock } from "react-icons/bi";
+import { TfiHeart, TfiComment, TfiShare, TfiMore } from "react-icons/tfi"
+import { MdVolumeUp, MdVolumeOff, MdPlayArrow, MdPause, MdZoomOutMap } from "react-icons/md"
+import { useRef, useState } from "react";
+
+
 const PostCard = ({ title, media, showModal }) => {
- 
+  const videoElement = useRef(null)
+  const clickRef = useRef();
+  const [videoStatus, setVideoStatus] = useState({
+    isPlaying: true,
+    isMute: false,
+    progress: 0,
+    duration: 0
+  })
+
+  const onTogglePlaying = () => {
+    videoStatus.isPlaying ? videoElement.current.pause() : videoElement.current.play()
+    setVideoStatus({ ...videoStatus, isPlaying: !videoStatus.isPlaying })
+  }
+
+  const onToggleMute = () => {
+    setVideoStatus({ ...videoStatus, isMute: !videoStatus.isMute })
+  }
+
+  const onPlaying = () => {
+    const duration = videoElement.current.duration;
+    const ct = videoElement.current.currentTime;
+    setVideoStatus({ ...videoStatus, progress: ct / duration * 100, duration: videoElement.current.duration })
+  }
+
+  const checkWidth = (e) => {
+    let width = clickRef.current.clientWidth;
+    const offset = e.nativeEvent.offsetX;
+
+    const divprogress = offset / width * 100;
+    videoElement.current.currentTime = divprogress / 100 * videoStatus.duration;
+
+  }
+
+
   return (
     <div className="card">
       <div className="postProfile">
@@ -17,7 +54,7 @@ const PostCard = ({ title, media, showModal }) => {
         <Menu shadow="md" width={200}>
           <Menu.Target>
             <button className="more">
-              <BiDotsVerticalRounded />
+              <TfiMore />
             </button>
           </Menu.Target>
 
@@ -33,31 +70,52 @@ const PostCard = ({ title, media, showModal }) => {
       </div>
       <p className="postCaption">
         {title}
-        {/* Grammarly works instantly across websites and desktop applications to ensure everything you type is mistake-free, clear, and professional. Download now! 💀</p> */}
       </p>
       <div className="postDetails">
 
       </div>
-      {/* C2_card */}
 
       {
         (media !== null && media !== undefined && media.length !== undefined && media.length !== 0)
         &&
-        <div onClick={() => showModal(true)} className={media.length == 1 ? "postContent" : `postContent C${media.length}_card`}>
+        <div className={media.length == 1 ? "postContent" : `postContent C${media.length}_card`}>
           {
-              media.map(file => 
-              file.extName === "mp4" ?  
-              <div className="previewCard">
-              <video src={file.media}></video>
-              <div className="video_controls">
-                
-              </div>
-            </div>
-            :
-              <div className="previewCard">
-                <img src={file.media} alt="" />
-              </div>)
-            }
+            media.map(file =>
+              file.extName === "mp4" ?
+                <div className="previewCard">
+                  <video onTimeUpdate={onPlaying} muted={videoStatus.isMute} ref={videoElement} autoPlay src={file.media}></video>
+                  <div className="video_controls">
+                    <div className="controls_icons_label">
+                      <div className="control_icon" onClick={onTogglePlaying}>
+                        {videoStatus.isPlaying ? <MdPlayArrow /> : <MdPause />}
+                      </div>
+                      <div  className="control_icons_container">
+                        <div className="control_icon" onClick={onToggleMute}>
+                          {!videoStatus.isMute ? <MdVolumeUp /> : <MdVolumeOff />}
+                        </div>
+                        <div className="control_icon">
+                         <MdZoomOutMap />
+                        </div>
+                      </div>
+                    </div>
+
+                    <div onClick={checkWidth} ref={clickRef} className="progress_track_container">
+                      <div className="progress_track">
+                        <div style={{ width: `${videoStatus.progress}%` }} className="progress_track_bar">
+                          <div className="progress_track_thumb">
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+                :
+                <div className="previewCard">
+                  <img src={file.media} alt="" />
+                </div>)
+          }
         </div>
       }
 

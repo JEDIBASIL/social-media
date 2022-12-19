@@ -176,7 +176,7 @@
       &:hover {
         background-color: var(--hover);
         border-radius: 8px;
-        .more{
+        .more {
           visibility: visible;
         }
       }
@@ -231,7 +231,7 @@
     border-radius: 15px;
     background-color: var(--componentBackground);
     overflow: hidden;
-    height:120px;
+    height: 120px;
     @include flexDisplay(space-between, center, row);
     .mantine-Textarea-icon {
       align-items: flex-start;
@@ -243,9 +243,9 @@
       align-items: flex-start;
       width: 100%;
       margin-top: 10px;
-      .post_profile_image{
+      .post_profile_image {
         @include flexDisplay(flex-start, center, row);
-        img{
+        img {
           width: 50px;
           height: 50px;
           border-radius: 50%;
@@ -312,7 +312,7 @@
       border-left: 1px solid var(--border);
       padding: 12px;
       padding-bottom: 20px;
-      
+
       .iconContainer {
         border: none;
         background-color: transparent;
@@ -486,7 +486,6 @@
       font-family: var(--textFont);
       font-weight: 300;
       font-size: 15px;
-
     }
     .postContent {
       margin-top: 10px;
@@ -535,14 +534,79 @@
         height: 100%;
         overflow: hidden;
         background-position: top;
-        video{
+        position: relative;
+        .video_controls {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          padding: 0px 10px;
+          width: 100%;
+          height: 65px;
+
+          svg {
+            font-size: 22px;
+            color: white;
+            cursor: pointer;
+          }
+          .controls_icons_label {
+            @include flexDisplay(space-between, center, row);
+            .control_icon {
+              width: 36px;
+              height: 36px;
+              margin-bottom: 5px;
+              border-radius: 50%;
+              @include flexDisplay(center, center, row);
+              &:hover {
+                background-color: rgba(0, 0, 0, 0.255);
+              }
+            }
+            .control_icons_container {
+              display: grid;
+              grid-template-columns: repeat(2, 1fr);
+              gap: 15px;
+            }
+          }
+          .progress_track_container {
+            width: 100%;
+            .progress_track {
+              width: 100%;
+              height: 3px;
+              background-color: rgb(181, 181, 181);
+              border-radius: 50px;
+              cursor: pointer;
+              .progress_track_bar {
+                background-color: white;
+                position: relative;
+                height: 100%;
+                cursor: pointer;
+                border-radius: 50px;
+                @include flexDisplay(flex-end, center, row);
+                .progress_track_thumb {
+                  position: absolute;
+                  border-radius: 50%;
+                  background-color: white;
+                }
+              }
+              &:hover {
+                height: 5px;
+                .progress_track_bar {
+                  .progress_track_thumb {
+                    width: 15px;
+                    height: 15px;
+                  }
+                }
+              }
+            }
+          }
+        }
+        video {
           width: 100%;
           height: max-content;
           max-height: 450px;
           object-fit: cover;
           border-radius: 8px;
         }
-        img{
+        img {
           width: 100%;
           height: 100%;
           max-height: 450px;
@@ -572,7 +636,7 @@
             font-size: 20px;
             color: var(--lighterColor);
           }
-          h6{
+          h6 {
             font-size: 9px;
             margin-top: 5px;
             color: var(--lighterColor);
@@ -616,44 +680,45 @@
 }
 
 @media screen and (max-width: 500px) {
-  .postContainer{
+  .postContainer {
     width: 100vw;
     min-width: 100vw;
     padding: 0px 0px;
-    .CreatePost{
-      .mantine-Textarea-root{
-        textarea{
+    .CreatePost {
+      .mantine-Textarea-root {
+        textarea {
           &::placeholder {
             color: var(--majorColor);
             font-size: 16px;
           }
         }
+      }
     }
-    }
-    .card,.CreatePost {
+    .card,
+    .CreatePost {
       padding: 20px 10px;
       border-radius: 0px;
       border-right: none;
       border-left: none;
     }
   }
-  .ActivityAndTrendingBar{
-    &.notificationContainer{
-    border-radius: 0;
-    border-right: none;
-    border-left: none;
-    padding: 20px 10px;
+  .ActivityAndTrendingBar {
+    &.notificationContainer {
+      border-radius: 0;
+      border-right: none;
+      border-left: none;
+      padding: 20px 10px;
     }
-    .activityContainer{
-      .notificationDetails{
-        .img{
+    .activityContainer {
+      .notificationDetails {
+        .img {
           width: 40px;
           height: 40px;
         }
-        h4{
+        h4 {
           font-size: 18px;
         }
-        p{
+        p {
           font-size: 16px;
         }
       }
