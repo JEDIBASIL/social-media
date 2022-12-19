@@ -1,7 +1,7 @@
 import profileImg from "../../static/images/anime.jpg";
 import { Menu, TextInput } from "@mantine/core";
-import { BiDotsVerticalRounded, BiUser, BiBlock, BiCommentDots, BiShare } from "react-icons/bi";
-import { RiHeartFill, RiChatQuoteFill } from "react-icons/ri"
+import { BiDotsVerticalRounded, BiUser, BiBlock, BiCommentDots } from "react-icons/bi";
+import {TfiHeart, TfiComment, TfiShare} from "react-icons/tfi"
 import { useEffect } from "react";
 const PostCard = ({ title, media, showModal }) => {
  
@@ -55,20 +55,20 @@ const PostCard = ({ title, media, showModal }) => {
       }
 
       <div className="postReactions">
-        <div className="postCommentSection">
+        {/* <div className="postCommentSection">
           <TextInput variant={"filled"} size={"sm"} radius={"50px"} placeholder={"Write a comment..."} icon={<BiCommentDots />} />
-        </div>
+        </div> */}
         <div className="postReactionsContent">
           <div className="postReactionIconContainer">
-            <RiChatQuoteFill />
+            <TfiComment />
             <h6>200</h6>
           </div>
           <div className="postReactionIconContainer">
-            <RiHeartFill />
+            <TfiHeart />
             <h6>200</h6>
           </div>
           <div className="postReactionIconContainer">
-            <BiShare />
+            <TfiShare />
             <h6>200</h6>
           </div>
         </div>
