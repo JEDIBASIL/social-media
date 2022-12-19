@@ -236,15 +236,27 @@
     height:120px;
     @include flexDisplay(space-between, center, row);
     .mantine-Textarea-icon {
-      padding-top: 10px;
       align-items: flex-start;
+      justify-content: flex-start;
+      padding-left: 20px;
+      width: 150px;
     }
     .mantine-Textarea-root {
       align-items: flex-start;
       width: 100%;
       margin-top: 10px;
+      .post_profile_image{
+        @include flexDisplay(flex-start, center, row);
+        img{
+          width: 38px;
+          height: 38px;
+          border-radius: 50%;
+          margin-right: 5px;
+        }
+      }
       textarea {
         width: 100%;
+        margin-left: 50px;
         font-weight: 600;
         font-family: var(--textFont) !important;
         font-weight: 400;
@@ -261,7 +273,7 @@
       height: 100%;
       max-height: max-content;
       .mantine-Textarea-root {
-        margin-top: 0;
+        margin-top: 20px;
       }
       .postImagePreview {
         width: 98%;
@@ -301,7 +313,7 @@
       border-left: 1px solid var(--border);
       padding: 12px;
       padding-bottom: 20px;
-
+      
       .iconContainer {
         border: none;
         background-color: transparent;

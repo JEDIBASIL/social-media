@@ -568,16 +568,31 @@ a {
   flex-direction: row;
 }
 .userApp .appContainer .postContainer .CreatePost .mantine-Textarea-icon {
-  padding-top: 10px;
   align-items: flex-start;
+  justify-content: flex-start;
+  padding-left: 20px;
+  width: 150px;
 }
 .userApp .appContainer .postContainer .CreatePost .mantine-Textarea-root {
   align-items: flex-start;
   width: 100%;
   margin-top: 10px;
 }
+.userApp .appContainer .postContainer .CreatePost .mantine-Textarea-root .post_profile_image {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: row;
+}
+.userApp .appContainer .postContainer .CreatePost .mantine-Textarea-root .post_profile_image img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  margin-right: 5px;
+}
 .userApp .appContainer .postContainer .CreatePost .mantine-Textarea-root textarea {
   width: 100%;
+  margin-left: 50px;
   font-weight: 600;
   font-family: var(--textFont) !important;
   font-weight: 400;
@@ -602,7 +617,7 @@ a {
   max-height: max-content;
 }
 .userApp .appContainer .postContainer .CreatePost.focused .mantine-Textarea-root {
-  margin-top: 0;
+  margin-top: 20px;
 }
 .userApp .appContainer .postContainer .CreatePost.focused .postImagePreview {
   width: 98%;
@@ -1702,6 +1717,7 @@ a {
   width: 250px;
   height: calc(100vh - 80px);
   border-right: 1px solid var(--border);
+  background-color: var(--componentBackground);
   position: -webkit-sticky;
   position: sticky;
   top: 80px;

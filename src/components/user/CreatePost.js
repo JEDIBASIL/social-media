@@ -2,6 +2,8 @@ import { Button, Textarea } from '@mantine/core'
 import { useState } from 'react'
 import { IoClose } from "react-icons/io5"
 import {TfiAnnouncement, TfiImage, TfiVideoCamera, TfiCamera, TfiHeadphone} from "react-icons/tfi";
+import profileImg from "../../static/images/anime.jpg";
+
 
 const CreatePost = ({posts, setPosts}) => {
   const [postText, setPostText] = useState("")
@@ -38,7 +40,11 @@ const CreatePost = ({posts, setPosts}) => {
         <Textarea
         value={postText}
           onChange={(e) => setPostText(e.target.value)}
-          icon={<TfiAnnouncement style={{ fontSize: "22px",fill:"rgb(32, 155, 240)" }} />}
+          icon={
+          <div className='post_profile_image'>
+            <img src={profileImg} alt="" />
+            <TfiAnnouncement style={{ fontSize: "22px",fill:"rgb(32, 155, 240)" }} />
+          </div>}
           variant='unstyled'
           placeholder="What's new" size='md'
         />

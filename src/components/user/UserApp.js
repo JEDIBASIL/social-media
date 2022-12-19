@@ -5,7 +5,7 @@ import { MantineProvider } from '@mantine/core'
 import { useState, useEffect } from 'react'
 
 const UserApp = () => {
-  const [theme, setTheme] = useState(true);
+  const [theme, setTheme] = useState(false);
   const [presentTheme, setPresentTheme] = useState("");
 
   useEffect(() => {
