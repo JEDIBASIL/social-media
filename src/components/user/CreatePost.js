@@ -51,7 +51,7 @@ return (
         icon={
           <div className='post_profile_image'>
             <img src={profileImg} alt="" />
-            <TfiAnnouncement style={{ fontSize: "30px", fill: "rgb(32, 155, 240)" }} />
+            <TfiAnnouncement style={{ fontSize: "25px", fill: "rgb(32, 155, 240)" }} />
           </div>}
         variant='unstyled'
         placeholder="What's new" size='md'
@@ -73,7 +73,7 @@ return (
               }
 
               {
-                image.extName === "mp4" ?
+                (image.extName.toLowerCase() === "mp4" || image.extName.toLowerCase() === "mov") ?
                   <video controls autoPlay mute src={image.media}></video>
                   : <img src={image.media} alt="" />
               }
@@ -86,7 +86,7 @@ return (
           <TfiImage />
           <p>Photo</p>
         </button>
-        <button onClick={() => onMediaTypeClick({ accept: "video/mp4 video/mov", isMultiple: false, typeName: "Video" })} type={"button"} className='iconContainer'>
+        <button onClick={() => onMediaTypeClick({ accept: "video/mp4, video/mov", isMultiple: false, typeName: "Video" })} type={"button"} className='iconContainer'>
           <TfiCamera />
           <p>Video</p>
         </button>
