@@ -86,7 +86,7 @@ return (
           <TfiImage />
           <p>Photo</p>
         </button>
-        <button onClick={() => onMediaTypeClick({ accept: "video/mp4", isMultiple: false, typeName: "Video" })} type={"button"} className='iconContainer'>
+        <button onClick={() => onMediaTypeClick({ accept: "video/mp4 video/mov", isMultiple: false, typeName: "Video" })} type={"button"} className='iconContainer'>
           <TfiCamera />
           <p>Video</p>
         </button>

@@ -82,9 +82,9 @@ const PostCard = ({ title, media, showModal }) => {
         <div className={media.length == 1 ? "postContent" : `postContent C${media.length}_card`}>
           {
             media.map(file =>
-              file.extName === "mp4" ?
+              (file.extName === "mp4" || file.extName === "mov") ?
                 <div className="previewCard">
-                  <video onClick={onTogglePlaying} onTimeUpdate={onPlaying} muted={videoStatus.isMute} ref={videoElement} autoPlay src={file.media}></video>
+                  <video onClick={onTogglePlaying} onTimeUpdate={onPlaying} muted={videoStatus.isMute} playsInline webkit-playsInline  ref={videoElement} autoPlay src={file.media}></video>
                   <div className="video_controls">
                     <div className="controls_icons_label">
                     <div  className="control_icons_container">
